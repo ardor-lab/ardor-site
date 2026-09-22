@@ -293,7 +293,7 @@
       line-height: 1.4;
     }
 
-    /* --- Soluções Aplicadas (Abas Estilo Pílula Interativa) --- */
+    /* --- Soluções Aplicadas (Abas em Formato de Pílula) --- */
     .interactive-section {
       padding: 85px 0;
       background: #FFFFFF;
@@ -327,7 +327,6 @@
       margin-bottom: 30px;
     }
 
-    /* Container dos botões em formato de cápsula evidente */
     .tabs-nav-wrapper {
       background: #F1ECE3;
       padding: 6px;
@@ -363,7 +362,6 @@
       background: rgba(255, 255, 255, 0.6);
     }
 
-    /* Aba selecionada salta com fundo branco, borda e sombra */
     .tab-btn.active {
       background: #FFFFFF !important;
       color: var(--terracotta) !important;
@@ -452,7 +450,7 @@
       display: block;
     }
 
-    /* --- Programas de Acompanhamento (Carrossel Horizontal Restaurado) --- */
+    /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
     .packages-section {
       padding: 85px 0;
       background: linear-gradient(180deg, #F0ECE4 0%, #E9E4DA 100%);
@@ -678,9 +676,9 @@
 </head>
 <body>
 
-  <!-- Logo Flutuante -->
+  <!-- Logo Flutuante (Carregamento Prioritário) -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
-    <img src="https://i.postimg.cc/XY9Rdy6x/In-Shot-20260920-210942061.png" alt="Ardor Gestão" class="brand-logo-img">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
 
   <div class="container">
@@ -705,7 +703,7 @@
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="https://i.postimg.cc/PxV9TWY9/In-Shot-20260920-195610542.jpg" alt="Método Aplicado no Balcão">
+          <img class="proof-img" src="assets/hero.jpg" alt="Aplicação Prática no Balcão" fetchpriority="high" loading="eager">
           <div class="proof-badge">Método aplicado no balcão e no ecossistema de IA</div>
         </div>
       </div>
@@ -736,7 +734,7 @@
     </div>
   </section>
 
-  <!-- Soluções Aplicadas com Botões Cápsula -->
+  <!-- Soluções Aplicadas com Botões em Cápsula -->
   <section class="interactive-section" id="solucoes">
     <div class="container">
       <div class="reveal">
@@ -745,7 +743,6 @@
         <p class="section-desc">Clique nos botões abaixo para ver as áreas de intervenção prática.</p>
       </div>
 
-      <!-- Barra de Botões com formato nítido -->
       <div class="tabs-nav-wrapper reveal delay-1">
         <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação Independente</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-margem')">Margem & Engenharia</button>
@@ -765,7 +762,7 @@
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20alinhar%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Estruturar Minha Equipe</a>
         </div>
         <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Operação e Balcão" class="tab-media-img">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Operação e Balcão" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
@@ -782,7 +779,7 @@
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20auditar%20a%20margem%20do%20meu%20card%C3%A1pio." class="btn" target="_blank" rel="noopener noreferrer">Blindar Minha Margem</a>
         </div>
         <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem" class="tab-media-img">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
@@ -799,7 +796,7 @@
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20de%20tra%C3%A7%C3%A3o%20e%20cron%C3%B4metro." class="btn" target="_blank" rel="noopener noreferrer">Acelerar Minhas Vendas</a>
         </div>
         <div class="tab-media-frame">
-          <img src="https://lh3.googleusercontent.com/d/1w0u1rBG6ZToQU27u5XIMT4R74zONysy7" alt="Cronômetro e Salão" class="tab-media-img">
+          <img src="https://lh3.googleusercontent.com/d/1w0u1rBG6ZToQU27u5XIMT4R74zONysy7" alt="Cronômetro e Salão" class="tab-media-img" loading="lazy">
         </div>
       </div>
     </div>
@@ -891,7 +888,6 @@
   </footer>
 
   <script>
-    // Alternância de Abas
     function switchTab(evt, tabId) {
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(c => c.classList.remove('active'));
@@ -904,7 +900,6 @@
       evt.currentTarget.classList.add('active');
     }
 
-    // Scroll Reveal
     document.addEventListener('DOMContentLoaded', function() {
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -918,7 +913,6 @@
       reveals.forEach(el => observer.observe(el));
     });
 
-    // Scroll do Logo Flutuante
     (function() {
       const logo = document.getElementById('ardorLogo');
       if (logo) {
