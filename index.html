@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ardor | Gestão Prática, Operação e Crescimento Local</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F8F6F2;
+      --card-bg: #FFFFFF;
+      --dark-surface: #1B1815;
+      --dark-surface-card: #26211C;
+      --terracotta: #bb5928;
+      --terracotta-hover: #9c481e;
+      --terracotta-soft: rgba(187, 89, 40, 0.1);
+      --amber-gold: #c9882b;
+      --amber-soft: rgba(201, 136, 43, 0.12);
+      --text-main: #201D1A;
+      --text-muted: #625C56;
+      --text-light-muted: #A69E96;
+      --border: #E8E3DA;
+      --border-dark: #D4CDBC;
+      --border-night: rgba(255, 255, 255, 0.08);
+      --shadow-sm: 0 4px 16px rgba(45, 35, 25, 0.04);
+      --shadow-md: 0 12px 32px rgba(45, 35, 25, 0.07);
+      --shadow-xl: 0 20px 48px rgba(45, 35, 25, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Animações Dinâmicas de Revelação (Scroll Reveal) --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* --- Logotipo Flutuante Dinâmico --- */
+    .brand-floating {
+      position: fixed;
+      top: 14px;
+      left: max(24px, calc((100vw - 1080px) / 2 + 24px));
+      z-index: 2147483647;
+      display: inline-flex;
+      align-items: center;
+      height: 88px;
+      cursor: pointer;
+      user-select: none;
+      transform-origin: left center;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .brand-floating.scrolled {
+      opacity: 0.4;
+      top: 10px;
+      transform: scale(0.80) translate3d(0, 0, 0);
+    }
+
+    .brand-floating:hover {
+      opacity: 1 !important;
+      transform: scale(0.84) translate3d(0, 0, 0);
+    }
+
+    .brand-logo-img {
+      height: 88px;
+      width: auto;
+      display: block;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 16px rgba(187, 89, 40, 0.2));
+    }
+
+    /* --- Barra Superior --- */
+    .top-bar {
+      min-height: 105px;
+      padding: 16px 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 24px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+    }
+
+    .nav-link-cta {
+      border: 1.5px solid var(--terracotta);
+      color: var(--terracotta) !important;
+      background: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .nav-link-cta:hover {
+      background: var(--terracotta) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 60px 0 70px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-quote {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      border-left: 3px solid var(--terracotta);
+      padding: 6px 0 6px 14px;
+      background: linear-gradient(90deg, rgba(187, 89, 40, 0.05), transparent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .hero h1 {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.9px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+      max-width: 540px;
+    }
+
+    /* Botão com Efeito Shimmer Automotivo */
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      padding: 17px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 20px rgba(187, 89, 40, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.75s ease;
+    }
+
+    .btn:hover::before {
+      left: 140%;
+    }
+
+    .btn:hover {
+      background: var(--terracotta-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(187, 89, 40, 0.4);
+    }
+
+    .proof-frame {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+
+    .proof-img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .proof-frame:hover .proof-img {
+      transform: scale(1.02);
+    }
+
+    .proof-badge {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(27, 24, 21, 0.88);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .proof-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34D399;
+      box-shadow: 0 0 10px #34D399;
+    }
+
+    /* --- Seção de Métricas / Ficha Técnica Operacional --- */
+    .metrics-bar {
+      background: var(--dark-surface);
+      color: #FFFFFF;
+      padding: 50px 0;
+      border-top: 1px solid var(--border-night);
+      border-bottom: 1px solid var(--border-night);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .metric-card {
+      border-left: 2px solid var(--terracotta);
+      padding-left: 18px;
+    }
+
+    .metric-number {
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .metric-number span {
+      color: var(--amber-gold);
+    }
+
+    .metric-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1.4;
+    }
+
+    /* --- Tabs Dinâmicas de Soluções --- */
+    .interactive-section {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+      background: var(--amber-soft);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 36px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+    }
+
+    .tab-btn.active {
+      color: var(--terracotta);
+      background: rgba(187, 89, 40, 0.08);
+    }
+
+    .tab-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--terracotta);
+      border-radius: 3px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeInTab 0.4s ease forwards;
+    }
+
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-info h3 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .tab-info p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .tab-feature-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .tab-feature-list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .tab-feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .tab-media-frame {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      height: 340px;
+      background: #EAE6DE;
+    }
+
+    .tab-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* --- Carrossel de Programas com Efeito Hover 3D --- */
+    .packages-section {
+      padding: 90px 0;
+      background: linear-gradient(180deg, #F5F1E9 0%, #EDE7DD 100%);
+      border-top: 1px solid var(--border);
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .package-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(187, 89, 40, 0.35);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 18px 42px rgba(187, 89, 40, 0.18);
+      transform: translateY(-4px);
+    }
+
+    .package-card.featured:hover {
+      transform: translateY(-12px);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: #FFFFFF;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      padding: 5px 18px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .package-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .package-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+
+    .package-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .package-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .package-list li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.5;
+    }
+
+    .package-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+    }
+
+    .btn-package {
+      width: 100%;
+      padding: 14px;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-dark);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    /* --- Rodapé --- */
+    footer {
+      padding: 50px 0 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: #FAF8F5;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.86rem;
+      padding: 10px 22px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 30px;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: rgba(187, 89, 40, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* --- Responsividade Mobile --- */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 30px 0 40px;
+        gap: 30px;
+      }
+      .hero h1 { font-size: 2.1rem; }
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .tab-content.active {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .package-card.featured {
+        transform: none;
+      }
+      .brand-floating {
+        height: 65px;
+      }
+      .brand-logo-img {
+        height: 65px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo Flutuante -->
+  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
+    <img src="https://i.postimg.cc/XY9Rdy6x/In-Shot-20260920-210942061.png" alt="Ardor Gestão" class="brand-logo-img">
+  </div>
+
+  <div class="container">
+    <header class="top-bar">
+      <nav class="nav-links">
+        <a href="#solucoes" class="nav-link">Soluções</a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20Raio-X." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Sessão Raio-X</a>
+      </nav>
+    </header>
+
+    <!-- Hero com Animação Reveal -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <p class="hero-quote">“Se eu sair do balcão um único dia, a operação para.”</p>
+        <h1>Gestão prática, processos e chão de loja real.</h1>
+        <p>Estruturamos rotinas e equipes para o comércio local operar com autonomia, estancando desperdícios de margem e acelerando o salão e delivery.</p>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20solicitar%20o%20Raio-X." class="btn" target="_blank" rel="noopener noreferrer">
+          Solicitar Raio-X de Fuga de Lucro
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-media reveal delay-1">
+        <div class="proof-frame">
+          <img class="proof-img" src="https://i.postimg.cc/PxV9TWY9/In-Shot-20260920-195610542.jpg" alt="Método Aplicado no Balcão">
+          <div class="proof-badge">Operação & Ecossistema de IA</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Métricas Rápidas (Estilo Ficha Técnica / Concessionária) -->
+  <section class="metrics-bar">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card reveal">
+          <div class="metric-number">40<span>min</span></div>
+          <div class="metric-label">Diagnóstico de Gargalos</div>
+        </div>
+        <div class="metric-card reveal delay-1">
+          <div class="metric-number">+100<span>%</span></div>
+          <div class="metric-label">Foco em Chão de Loja Real</div>
+        </div>
+        <div class="metric-card reveal delay-2">
+          <div class="metric-number">Curva <span>ABC</span></div>
+          <div class="metric-label">Engenharia de Cardápio</div>
+        </div>
+        <div class="metric-card reveal delay-3">
+          <div class="metric-number">360<span>°</span></div>
+          <div class="metric-label">Tráfego, IA e Rotina</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Interativa com Abas (Tabs) -->
+  <section class="interactive-section" id="solucoes">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Soluções Aplicadas</span>
+        <h2 class="section-title">O Que Move o Seu Balcão</h2>
+        <p class="section-desc">Alterne entre as áreas de intervenção para ver a engenharia do método Ardor.</p>
+      </div>
+
+      <div class="tabs-nav reveal delay-1">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação Independente</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-margem')">Margem & Engenharia</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Gamificação & Tração</button>
+      </div>
+
+      <!-- Tab 1: Operação -->
+      <div id="tab-operacao" class="tab-content active">
+        <div class="tab-info">
+          <h3>Rotinas e Checklists de Abertura, Turno e Fechamento</h3>
+          <p>O dono não pode ser o único bombeiro da loja. Estruturamos os processos operacionais para que a equipe execute as obrigações diárias com autonomia rigorosa.</p>
+          <ul class="tab-feature-list">
+            <li>Checklists visuais anti-erro no balcão e na cozinha.</li>
+            <li>Matriz de responsabilidade diária por colaborador.</li>
+            <li>Eliminação do retrabalho e redução de perdas de turno.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20alinhar%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Estruturar Minha Equipe</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Operação e Balcão" class="tab-media-img">
+        </div>
+      </div>
+
+      <!-- Tab 2: Margem -->
+      <div id="tab-margem" class="tab-content">
+        <div class="tab-info">
+          <h3>Ficha Técnica Real e Proteção de Caixa</h3>
+          <p>Faturamento alto com conta zerada no fim do mês é sintoma de fuga invisível de margem. Ajustamos o custo por porção e recalculamos seu menu.</p>
+          <ul class="tab-feature-list">
+            <li>Engenharia de cardápio destacando pratos de maior margem líquida.</li>
+            <li>Auditoria de desperdício em compras e armazenamento.</li>
+            <li>Blindagem de CMV (Custo de Mercadoria Vendida).</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20auditar%20a%20margem%20do%20meu%20card%C3%A1pio." class="btn" target="_blank" rel="noopener noreferrer">Blindar Minha Margem</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem" class="tab-media-img">
+        </div>
+      </div>
+
+      <!-- Tab 3: Atração -->
+      <div id="tab-atracao" class="tab-content">
+        <div class="tab-info">
+          <h3>Gamificação com Cronômetro e Tráfego Local</h3>
+          <p>Trazemos clientes para a porta através da integração de anúncios de raio curto, SEO para Google e ferramentas interativas de salão.</p>
+          <ul class="tab-feature-list">
+            <li>Instalação do Cronômetro Interativo para retenção e consumo no salão.</li>
+            <li>Produção audiovisual com atores para dramatizar soluções reais.</li>
+            <li>Ranqueamento técnico no Google Maps e buscas por IA.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20de%20tra%C3%A7%C3%A3o%20e%20cron%C3%B4metro." class="btn" target="_blank" rel="noopener noreferrer">Acelerar Minhas Vendas</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://lh3.googleusercontent.com/d/1w0u1rBG6ZToQU27u5XIMT4R74zONysy7" alt="Cronômetro e Salão" class="tab-media-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programas de Acompanhamento -->
+  <section class="packages-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Níveis de Parceria</span>
+        <h2 class="section-title">Programas de Acompanhamento</h2>
+        <p class="section-desc">Soluções dimensionadas para o momento de caixa e maturidade do seu ponto.</p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="package-card reveal">
+          <div>
+            <h3 class="package-title">Start Operacional</h3>
+            <div class="package-badge">Margem & Base</div>
+            <p class="package-desc">Para quem precisa estancar o sangramento do caixa e criar rotinas imediatas.</p>
+            <ul class="package-list">
+              <li>Consultoria de chão de loja em ciclos semanais.</li>
+              <li>Engenharia de cardápio e análise Curva ABC.</li>
+              <li>Blindagem do Perfil de Empresas no Google Maps.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20Start%20Operacional." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer o Start</a>
+        </div>
+
+        <div class="package-card featured reveal delay-1">
+          <div class="featured-tag">Carro-Chefe</div>
+          <div>
+            <h3 class="package-title">Aceleração de Salão</h3>
+            <div class="package-badge">Tração & Salão Cheio</div>
+            <p class="package-desc">O ecossistema completo para arrumar a casa e puxar fluxo com tecnologia e anúncios.</p>
+            <ul class="package-list">
+              <li>Consultoria Operacional de chão de loja completa.</li>
+              <li>Implantação do <strong>Cronômetro Interativo</strong> de salão.</li>
+              <li>Gravação audiovisual profissional com ator.</li>
+              <li>Gestão de Tráfego Pago local (Meta Ads + Google).</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20contratar%20a%20Acelera%C3%A7%C3%A3o%20de%20Sal%C3%A3o." class="btn btn-package" target="_blank" rel="noopener noreferrer">Contratar Aceleração</a>
+        </div>
+
+        <div class="package-card reveal delay-2">
+          <div>
+            <h3 class="package-title">Gestão 360°</h3>
+            <div class="package-badge">Governança & Escala</div>
+            <p class="package-desc">Acompanhamento contínuo para negócios consolidados que buscam auditoria constante.</p>
+            <ul class="package-list">
+              <li>Comitê estratégico mensal com análise de DRE.</li>
+              <li>Licença e suporte contínuo da gamificação de salão.</li>
+              <li>Campanhas recorrentes de tráfego pago e branding.</li>
+              <li>Monitoramento contínuo de reputação e notas.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20a%20Gest%C3%A3o%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com Consultor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://instagram.com/ardorgestao" class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @ardorgestao
+        </a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          (11) 96669-9449
+        </a>
+      </div>
+      <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Alternância de Abas
+    function switchTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    // Scroll Reveal com IntersectionObserver
+    document.addEventListener('DOMContentLoaded', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      reveals.forEach(el => observer.observe(el));
+    });
+
+    // Comportamento do Logo no Scroll e Retorno ao Topo
+    (function() {
+      const logo = document.getElementById('ardorLogo');
+      if (logo) {
+        logo.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      function onScroll() {
+        const pos = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (pos > 25) {
+          logo.classList.add('scrolled');
+        } else {
+          logo.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
