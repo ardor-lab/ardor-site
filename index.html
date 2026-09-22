@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ardor | Gestão Prática, Operação e Crescimento Local</title>
   
-  <!-- Favicon Oficial da Aba -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <!-- Favicon Oficial em Formato Quadrado (Ícone "A" da Ardor) -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
       --bg: #F9F7F4;
       --card-bg: #FFFFFF;
       --dark-surface: #181513;
-      --dark-card: #221D18;
       --terracotta: #bb5928;
       --terracotta-hover: #9c481e;
       --terracotta-soft: rgba(187, 89, 40, 0.08);
@@ -157,7 +156,7 @@
       transform: translateY(-1px);
     }
 
-    /* --- Bloco Hero com Iluminação Suave --- */
+    /* --- Bloco Hero --- */
     .hero {
       padding: 60px 0 70px;
       display: grid;
@@ -194,7 +193,6 @@
       max-width: 540px;
     }
 
-    /* Botão com Pulso e Brilho Dinâmico */
     .btn {
       position: relative;
       display: inline-flex;
@@ -288,7 +286,7 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Métricas Rápidas: Contraste Profundo --- */
+    /* --- Métricas Rápidas --- */
     .metrics-bar {
       background: linear-gradient(180deg, #1A1613 0%, #14110F 100%);
       color: #FFFFFF;
@@ -330,7 +328,7 @@
       line-height: 1.4;
     }
 
-    /* --- Soluções Aplicadas (Abas Cápsula Elevadas) --- */
+    /* --- Soluções Aplicadas (Abas) --- */
     .interactive-section {
       padding: 95px 0;
       background: #FFFFFF;
@@ -980,7 +978,6 @@
   </footer>
 
   <script>
-    // Alternância de Abas
     function switchTab(evt, tabId) {
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(c => c.classList.remove('active'));
@@ -993,7 +990,6 @@
       evt.currentTarget.classList.add('active');
     }
 
-    // Scroll Suave dos Pacotes pelas Setas
     function scrollPackages(distance) {
       const track = document.getElementById('packagesTrack');
       if (track) {
@@ -1001,7 +997,6 @@
       }
     }
 
-    // Scroll Reveal
     document.addEventListener('DOMContentLoaded', function() {
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -1015,7 +1010,6 @@
       reveals.forEach(el => observer.observe(el));
     });
 
-    // Scroll do Logótipo Flutuante
     (function() {
       const logo = document.getElementById('ardorLogo');
       if (logo) {
