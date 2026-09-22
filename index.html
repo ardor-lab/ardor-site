@@ -17,15 +17,16 @@
       --terracotta: #bb5928;
       --terracotta-hover: #9c481e;
       --terracotta-soft: rgba(187, 89, 40, 0.08);
+      --terracotta-glow: rgba(187, 89, 40, 0.18);
       --amber-gold: #c9882b;
       --amber-soft: rgba(201, 136, 43, 0.12);
       --text-main: #201D1A;
       --text-muted: #625C56;
       --border: #E8E3DA;
       --border-dark: #D4CDBC;
-      --shadow-sm: 0 4px 16px rgba(45, 35, 25, 0.05);
-      --shadow-md: 0 10px 28px rgba(45, 35, 25, 0.08);
-      --shadow-xl: 0 18px 40px rgba(45, 35, 25, 0.12);
+      --shadow-sm: 0 4px 16px rgba(45, 35, 25, 0.04);
+      --shadow-md: 0 12px 30px rgba(45, 35, 25, 0.07);
+      --shadow-hover: 0 18px 42px rgba(45, 35, 25, 0.12);
     }
 
     * {
@@ -54,7 +55,7 @@
       padding: 0 24px;
     }
 
-    /* --- Animação Suave ao Rolar --- */
+    /* --- Animação Scroll Reveal --- */
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -70,7 +71,7 @@
     .delay-1 { transition-delay: 0.12s; }
     .delay-2 { transition-delay: 0.22s; }
 
-    /* --- Logo Flutuante --- */
+    /* --- Logotipo Flutuante com Sombra Suave --- */
     .brand-floating {
       position: fixed;
       top: 14px;
@@ -142,6 +143,7 @@
       color: var(--terracotta) !important;
       background: #FFFFFF;
       font-weight: 700;
+      box-shadow: var(--shadow-sm);
     }
 
     .nav-link-cta:hover {
@@ -165,8 +167,9 @@
       color: var(--text-muted);
       margin-bottom: 20px;
       border-left: 3px solid var(--terracotta);
-      padding: 4px 0 4px 14px;
+      padding: 6px 0 6px 14px;
       background: linear-gradient(90deg, rgba(187, 89, 40, 0.05), transparent);
+      border-radius: 0 4px 4px 0;
     }
 
     .hero h1 {
@@ -180,7 +183,7 @@
     .hero p {
       font-size: 1.02rem;
       color: var(--text-muted);
-      margin-bottom: 30px;
+      margin-bottom: 32px;
       max-width: 540px;
     }
 
@@ -198,7 +201,7 @@
       font-weight: 700;
       font-size: 0.94rem;
       transition: all 0.25s ease;
-      box-shadow: 0 4px 16px rgba(187, 89, 40, 0.25);
+      box-shadow: 0 6px 20px rgba(187, 89, 40, 0.28);
       border: none;
       cursor: pointer;
     }
@@ -206,41 +209,47 @@
     .btn:hover {
       background: var(--terracotta-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(187, 89, 40, 0.35);
+      box-shadow: 0 10px 26px rgba(187, 89, 40, 0.38);
     }
 
     .proof-frame {
       position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 12px;
       box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+
+    .proof-frame:hover {
+      transform: translateY(-3px);
     }
 
     .proof-img {
       width: 100%;
-      height: 390px;
+      height: 395px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
       display: block;
     }
 
     .proof-badge {
       position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(27, 24, 21, 0.88);
+      bottom: 22px;
+      right: 22px;
+      background: rgba(27, 24, 21, 0.90);
       backdrop-filter: blur(8px);
       color: #FFFFFF;
-      padding: 9px 16px;
+      padding: 9px 18px;
       border-radius: 30px;
       font-size: 0.76rem;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       display: flex;
       align-items: center;
       gap: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .proof-badge::before {
@@ -249,31 +258,32 @@
       height: 8px;
       border-radius: 50%;
       background: #34D399;
-      box-shadow: 0 0 8px #34D399;
+      box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Métricas / Ficha Operacional --- */
+    /* --- Métricas Rápidas --- */
     .metrics-bar {
       background: var(--dark-surface);
       color: #FFFFFF;
-      padding: 42px 0;
+      padding: 44px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
     }
 
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .metric-card {
-      border-left: 2px solid var(--terracotta);
-      padding-left: 16px;
+      border-left: 2.5px solid var(--terracotta);
+      padding-left: 18px;
     }
 
     .metric-number {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       font-weight: 900;
       line-height: 1;
       margin-bottom: 6px;
@@ -293,7 +303,7 @@
       line-height: 1.4;
     }
 
-    /* --- Soluções Aplicadas (Abas em Formato de Pílula) --- */
+    /* --- Soluções Aplicadas (Abas em Cápsula com Profundidade) --- */
     .interactive-section {
       padding: 85px 0;
       background: #FFFFFF;
@@ -324,17 +334,18 @@
     .section-desc {
       font-size: 0.96rem;
       color: var(--text-muted);
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .tabs-nav-wrapper {
-      background: #F1ECE3;
-      padding: 6px;
-      border-radius: 12px;
+      background: #EFEAE0;
+      padding: 7px;
+      border-radius: 14px;
       display: inline-flex;
       gap: 8px;
       margin-bottom: 36px;
       border: 1px solid var(--border-dark);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
       max-width: 100%;
       overflow-x: auto;
       scrollbar-width: none;
@@ -347,8 +358,8 @@
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--text-muted);
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.22s ease;
       white-space: nowrap;
@@ -359,13 +370,13 @@
 
     .tab-btn:hover {
       color: var(--text-main);
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.65);
     }
 
     .tab-btn.active {
       background: #FFFFFF !important;
       color: var(--terracotta) !important;
-      box-shadow: 0 4px 14px rgba(45, 35, 25, 0.08);
+      box-shadow: 0 4px 16px rgba(45, 35, 25, 0.09);
       font-weight: 800;
     }
 
@@ -389,8 +400,9 @@
       align-items: center;
       background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 34px 30px;
+      border-radius: 18px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow-sm);
     }
 
     @keyframes fadeInTab {
@@ -408,7 +420,7 @@
     .tab-info p {
       font-size: 0.92rem;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       line-height: 1.6;
     }
 
@@ -435,11 +447,11 @@
     }
 
     .tab-media-frame {
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      height: 310px;
+      box-shadow: var(--shadow-md);
+      height: 315px;
       background: #EAE6DE;
     }
 
@@ -450,7 +462,7 @@
       display: block;
     }
 
-    /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
+    /* --- Programas de Acompanhamento (Carrossel Horizontal com Profundidade) --- */
     .packages-section {
       padding: 85px 0;
       background: linear-gradient(180deg, #F0ECE4 0%, #E9E4DA 100%);
@@ -482,26 +494,30 @@
       flex: 0 0 340px;
       background: #FFFFFF;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 34px 26px 26px;
+      border-radius: 16px;
+      padding: 36px 28px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       scroll-snap-align: start;
       box-shadow: var(--shadow-sm);
-      transition: all 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .package-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(187, 89, 40, 0.4);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(187, 89, 40, 0.35);
     }
 
     .package-card.featured {
       border: 2px solid var(--terracotta);
-      box-shadow: 0 16px 36px rgba(187, 89, 40, 0.16);
+      box-shadow: 0 16px 36px var(--terracotta-glow);
+    }
+
+    .package-card.featured:hover {
+      box-shadow: 0 20px 48px rgba(187, 89, 40, 0.26);
     }
 
     .featured-tag {
@@ -514,10 +530,11 @@
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 1.2px;
-      padding: 5px 16px;
+      padding: 5px 18px;
       border-radius: 30px;
       text-transform: uppercase;
       white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(187, 89, 40, 0.35);
     }
 
     .package-title {
@@ -601,14 +618,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
       text-decoration: none;
       transition: all 0.25s ease;
     }
 
     .whatsapp-float:hover {
       transform: scale(1.08) translateY(-3px);
-      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.5);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
     }
 
     .whatsapp-float svg {
@@ -646,6 +663,7 @@
       border: 1.5px solid var(--terracotta);
       border-radius: 30px;
       background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
     }
 
@@ -660,7 +678,7 @@
       fill: currentColor;
     }
 
-    /* --- Ajustes Mobile --- */
+    /* --- Responsivo Mobile --- */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       .brand-floating { height: 65px; left: 16px; }
@@ -734,7 +752,7 @@
     </div>
   </section>
 
-  <!-- Soluções Aplicadas com Botões em Cápsula -->
+  <!-- Soluções Aplicadas com Abas em Cápsula -->
   <section class="interactive-section" id="solucoes">
     <div class="container">
       <div class="reveal">
@@ -796,13 +814,13 @@
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20de%20tra%C3%A7%C3%A3o%20e%20cron%C3%B4metro." class="btn" target="_blank" rel="noopener noreferrer">Acelerar Minhas Vendas</a>
         </div>
         <div class="tab-media-frame">
-          <img src="https://lh3.googleusercontent.com/d/1w0u1rBG6ZToQU27u5XIMT4R74zONysy7" alt="Cronômetro e Salão" class="tab-media-img" loading="lazy">
+          <img src="assets/salao.jpg" alt="Cronômetro e Salão" class="tab-media-img" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programas de Acompanhamento (Carrossel Horizontal Deslizante) -->
+  <!-- Programas de Acompanhamento (Carrossel Horizontal) -->
   <section class="packages-section">
     <div class="container">
       <div class="reveal">
