@@ -21,7 +21,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ardor | Gestão, Rotina e Margem para Negócios Locais</title>
+  <title>Ardor | Consultoria Operacional, Margem e Governança Comercial</title>
   
   <!-- Favicon Oficial em Formato Quadrado -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -141,16 +141,18 @@
 
     .nav-links {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-link {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
-      padding: 9px 20px;
+      padding: 8px 16px;
       border-radius: 24px;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -307,6 +309,48 @@
       border-radius: 50%;
       background: #34D399;
       box-shadow: 0 0 10px #34D399;
+    }
+
+    /* --- Manifesto Anti-Agência --- */
+    .manifesto-section {
+      padding: 70px 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .manifesto-box {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .manifesto-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+      padding: 4px 14px;
+      border-radius: 4px;
+      margin-bottom: 18px;
+    }
+
+    .manifesto-title {
+      font-size: 1.95rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .manifesto-text {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
     }
 
     /* --- Métricas Rápidas --- */
@@ -504,6 +548,29 @@
       font-size: 0.95rem;
     }
 
+    .tab-action-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .link-subpage {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid var(--terracotta);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .link-subpage:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+    }
+
     .tab-media-frame {
       border-radius: 14px;
       overflow: hidden;
@@ -518,6 +585,35 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    /* --- Bloco Institucional / Sobre Resumido --- */
+    .about-summary-section {
+      padding: 85px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-summary-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-summary-card h2 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+
+    .about-summary-card p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
     }
 
     /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
@@ -768,11 +864,10 @@
       fill: currentColor;
     }
 
-    /* --- Responsivo Mobile Cirúrgico (Correção do Topo e Botões) --- */
+    /* --- Responsivo Mobile --- */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
-      /* Topo e Logo no Mobile */
       .brand-floating { 
         height: 48px; 
         top: 14px; 
@@ -783,19 +878,16 @@
       }
       .top-bar { 
         min-height: 76px; 
-        padding: 12px 0 12px 110px; /* Garante que os links nunca fiquem sob o logo */
-        justify-content: flex-end;
+        padding: 10px 0 10px 90px;
       }
       .nav-links {
-        gap: 6px;
+        gap: 4px;
       }
       .nav-link {
-        font-size: 0.74rem;
-        padding: 7px 11px;
-        white-space: nowrap;
+        font-size: 0.72rem;
+        padding: 6px 10px;
       }
 
-      /* Hero e Títulos */
       .hero { 
         grid-template-columns: 1fr; 
         gap: 24px; 
@@ -810,14 +902,19 @@
         margin-bottom: 24px;
       }
 
-      /* Botões proporcionais e harmônicos */
+      .manifesto-section {
+        padding: 45px 0;
+      }
+      .manifesto-title {
+        font-size: 1.45rem;
+      }
+
       .btn {
         width: 100%;
         padding: 14px 22px;
         font-size: 0.88rem;
       }
 
-      /* Métricas em 2 colunas proporcionais */
       .metrics-bar {
         padding: 32px 0;
       }
@@ -832,7 +929,6 @@
         font-size: 0.72rem;
       }
 
-      /* Abas Interativas no Mobile */
       .interactive-section {
         padding: 55px 0;
       }
@@ -845,8 +941,8 @@
         gap: 4px;
       }
       .tab-btn {
-        padding: 9px 15px;
-        font-size: 0.78rem;
+        padding: 9px 13px;
+        font-size: 0.76rem;
       }
       .tab-content.active { 
         grid-template-columns: 1fr; 
@@ -856,15 +952,24 @@
       .tab-info h3 {
         font-size: 1.25rem;
       }
-      .tab-feature-list li {
-        font-size: 0.84rem;
-        padding-left: 20px;
+      .tab-action-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .link-subpage {
+        text-align: center;
       }
       .tab-media-frame { 
         height: 200px; 
       }
 
-      /* Carrossel de Pacotes no Mobile */
+      .about-summary-section {
+        padding: 55px 0;
+      }
+      .about-summary-card {
+        padding: 30px 20px;
+      }
+
       .packages-section {
         padding: 55px 0;
       }
@@ -876,7 +981,6 @@
         display: none; 
       }
 
-      /* Botão do WhatsApp no Celular */
       .whatsapp-float {
         bottom: 18px;
         right: 18px;
@@ -892,7 +996,7 @@
 </head>
 <body>
 
-  <!-- Logótipo Flutuante (Carregamento Prioritário) -->
+  <!-- Logótipo Flutuante -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
     <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
@@ -900,8 +1004,11 @@
   <div class="container">
     <header class="top-bar">
       <nav class="nav-links">
-        <a href="#solucoes" class="nav-link">Nossos Pilares</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="operacao-e-margem.html" class="nav-link">Operação & Margem</a>
+        <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
+        <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20o%20diagn%C3%B3stico%20operacional%20da%20minha%20empresa." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
       </nav>
     </header>
 
@@ -910,21 +1017,37 @@
       <div class="hero-content reveal">
         <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
         <h1>O seu negócio merece dar <span class="highlight">lucro real</span>. E você merece paz para liderar.</h1>
-        <p>Quem vive do próprio comércio conhece a dedicação que a rotina exige. A Ardor organiza sua operação, alinha sua equipe e protege sua margem com métodos testados no dia a dia da nossa própria empresa física.</p>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20o%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">
-          Quero Organizar Meu Comércio
+        <p>Não somos uma agência de marketing de palco. Estruturamos processos de chão de loja, auditamos perdas de margem e posicionamos sua empresa onde as IAs e clientes decidem a compra hoje — tudo validado na rotina da nossa própria operação comercial.</p>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20solicitar%20um%20diagn%C3%B3stico%20operacional%20para%20o%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">
+          Solicitar Diagnóstico Operacional
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="assets/hero.jpg" alt="Vivência e Aplicação Real no Comércio" fetchpriority="high" loading="eager">
-          <div class="proof-badge">Feito por quem vive o balcão e a gestão todos os dias</div>
+          <img class="proof-img" src="assets/hero.jpg" alt="Método e Governança em Comércio Real" fetchpriority="high" loading="eager">
+          <div class="proof-badge">Método testado em laboratório comercial próprio</div>
         </div>
       </div>
     </section>
   </div>
+
+  <!-- Manifesto Anti-Agência -->
+  <section class="manifesto-section">
+    <div class="container">
+      <div class="manifesto-box reveal">
+        <span class="manifesto-tag">Por Que Somos Diferentes</span>
+        <h2 class="manifesto-title">Comércio físico não sobrevive de curtidas ou promessas de agência.</h2>
+        <p class="manifesto-text">
+          A maioria das agências tradicionais se orgulha de métricas de vaidade: visualizações vazias e postagens prontas de calendário. Elas nunca precisaram fechar um caixa sob pressão, gerenciar uma escala de equipe no balcão ou recalcular o custo por quilo de insumos para fechar o mês no azul.
+        </p>
+        <p class="manifesto-text">
+          A Ardor Gestão foi construída a partir de duas décadas de governança corporativa, análise de risco e tecnologia da informação — consolidadas na prática diária de uma operação física real. Criamos métodos onde a rotina falha, estancamos perdas onde o dinheiro escapa e colocamos a sua empresa como referência geográfica indiscutível.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Métricas Rápidas -->
   <section class="metrics-bar">
@@ -935,8 +1058,8 @@
           <div class="metric-label">Método Testado no Balcão</div>
         </div>
         <div class="metric-card reveal delay-1">
-          <div class="metric-number">Paz<span>&</span>Lucro</div>
-          <div class="metric-label">Finanças Claras e Organizadas</div>
+          <div class="metric-number">GEO<span>+</span></div>
+          <div class="metric-label">Otimização para IAs e Busca</div>
         </div>
         <div class="metric-card reveal delay-2">
           <div class="metric-number">Curva <span>ABC</span></div>
@@ -955,67 +1078,93 @@
     <div class="container">
       <div class="section-header-wrap reveal">
         <div>
-          <span class="section-tag">Nossos Pilares</span>
-          <h2 class="section-title">Como Ajudamos Seu Comércio a Prosperar</h2>
-          <p class="section-desc">Cuidado prático nas três frentes mais importantes da sua empresa.</p>
+          <span class="section-tag">Pilares de Atuação</span>
+          <h2 class="section-title">As Três Frentes de Intervenção da Ardor</h2>
+          <p class="section-desc">Entenda onde atuamos para profissionalizar a sua empresa de ponta a ponta.</p>
         </div>
       </div>
 
       <div class="tabs-nav-wrapper reveal delay-1">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Rotina & Equipe</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-margem')">Proteção de Margem</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Salão & Clientes</button>
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">1. Operação & Margem</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-ia-trafego')">2. Tráfego & SEO para IA</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">3. Salão & Ativação</button>
       </div>
 
       <!-- Tab 1 -->
       <div id="tab-operacao" class="tab-content active">
         <div class="tab-info">
-          <h3>Processos claros para a sua equipe trabalhar com orgulho</h3>
-          <p>Uma empresa madura não depende do dono apagando incêndios a cada minuto. Estruturamos rotinas práticas para que sua equipe atenda com o mesmo padrão e cuidado que você sempre teve.</p>
+          <h3>Rotinas autônomas, manuais de equipe e controle rigoroso de CMV</h3>
+          <p>O empresário não pode passar o dia apagando incêndios operacionais. Desenhamos processos simples de abertura, turno e fechamento, alinhamos a equipe intermediária e auditamos fichas técnicas para proteger o caixa contra desperdícios.</p>
           <ul class="tab-feature-list">
-            <li>Rotinas visuais e simples: cada colaborador sabe exatamente o que fazer.</li>
-            <li>Menos estresse com retrabalho e mais harmonia no dia a dia da equipe.</li>
-            <li>Liberdade para você pensar no futuro do negócio com tranquilidade.</li>
+            <li>Engenharia de cardápio e mix com foco em margem líquida real (Curva ABC).</li>
+            <li>Rotinas visuais anti-erro no balcão e retaguarda da loja.</li>
+            <li>Autonomia de lideranças para o negócio manter o padrão sem a sua vigília contínua.</li>
           </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20a%20rotina%20e%20equipe%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Organizar Minha Equipe</a>
+          <div class="tab-action-group">
+            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20a%20opera%C3%A7%C3%A3o%20e%20margem%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Organizar Operação</a>
+            <a href="operacao-e-margem.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+          </div>
         </div>
         <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Equipe e Rotina" class="tab-media-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Operação e Equipe" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
       <!-- Tab 2 -->
-      <div id="tab-margem" class="tab-content">
+      <div id="tab-ia-trafego" class="tab-content">
         <div class="tab-info">
-          <h3>Cuidado com o dinheiro suado que entra no seu caixa</h3>
-          <p>Ver o comércio com movimento e a conta apertada no fim do mês desanima qualquer um. Analisamos custo por custo para garantir que a sua energia diária se transforme em sobra financeira real.</p>
+          <h3>Sua empresa indicada por Inteligências Artificiais e tráfego com retorno real</h3>
+          <p>O consumidor moderno não pesquisa como há 10 anos: ele pergunta para as IAs onde ir e quem é referência. Estruturamos os dados do seu comércio para ser resposta prioritária em motores generativos e geramos tráfego pago focado em margem.</p>
           <ul class="tab-feature-list">
-            <li>Precificação justa e segura: saiba o lucro de cada item vendido.</li>
-            <li>Redução de desperdícios invisíveis nas compras e no estoque.</li>
-            <li>A tranquilidade de saber exatamente para onde vai cada real.</li>
+            <li>GEO (Generative Engine Optimization): semântica e dados para ChatGPT, Gemini e Google.</li>
+            <li>Tráfego pago regional com filtros rigorosos para eliminar curiosos sem poder de compra.</li>
+            <li>Mídia orientada pelo DRE da empresa, evitando investir verba no escuro.</li>
           </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20proteger%20a%20margem%20e%20o%20caixa%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Proteger Minha Margem</a>
+          <div class="tab-action-group">
+            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20o%20tr%C3%A1fego%20e%20posicionamento%20de%20IA%20do%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">Ativar Tráfego & IA</a>
+            <a href="ativos-digitais-e-ia.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+          </div>
         </div>
         <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem e Custos" class="tab-media-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Inteligência de Dados e Tráfego" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
       <!-- Tab 3 -->
-      <div id="tab-atracao" class="tab-content">
+      <div id="tab-salao" class="tab-content">
         <div class="tab-info">
-          <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
-          <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
+          <h3>Tecnologia proprietária e atração de clientes para o ponto físico</h3>
+          <p>Transforme o seu espaço em um destino comentado. Implementamos ferramentas interativas de retenção de salão (como o Brat Experience) e estratégias para aquecer o movimento e elevar o ticket médio.</p>
           <ul class="tab-feature-list">
-            <li>Experiência interativa com o Brat Experience para surpreender e reter no salão.</li>
-            <li>Vídeos e fotos que valorizam a dedicação da sua casa.</li>
-            <li>Presença profissional no Google e redes para atrair os clientes certos.</li>
+            <li>Cronômetro interativo e dinâmicas de mesa que estimulam consumo e compartilhamento.</li>
+            <li>Campanhas coordenadas para equalizar movimento em dias tradicionalmente fracos.</li>
+            <li>Treinamento de atendimento para transformar visitantes ocasionais em clientes fiéis.</li>
           </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20saber%20como%20movimentar%20o%20sal%C3%A3o%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Movimentar Meu Salão</a>
+          <div class="tab-action-group">
+            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20de%20sal%C3%A3o%20da%20Ardor." class="btn" target="_blank" rel="noopener noreferrer">Movimentar Salão</a>
+            <a href="experiencia-de-salao.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+          </div>
         </div>
         <div class="tab-media-frame">
           <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resumo da Liderança e Laboratório -->
+  <section class="about-summary-section">
+    <div class="container">
+      <div class="about-summary-card reveal">
+        <span class="section-tag">Governança & Origem</span>
+        <h2>Engenharia de dados, psicologia corporativa e chão de loja real.</h2>
+        <p>
+          A Ardor Gestão foi estruturada a partir da convergência entre três áreas fundamentais: <strong>Psicologia Comportamental</strong>, <strong>Estratégia de Mercado</strong> e <strong>Tecnologia da Informação</strong>. Nossa direção executiva consolidou duas décadas de bagagem em multinacionais e no sistema financeiro, liderando diretamente mais de 1.000 profissionais e conduzindo projetos de redução de perdas financeiras na casa dos milhões.
+        </p>
+        <p>
+          Toda essa disciplina analítica foi posteriormente transportada para a economia física através da fundação do nosso próprio comércio físico — um laboratório permanente onde cada processo, indicador de margem e ferramenta tecnológica é exaustivamente testado antes de ser levado ao seu negócio.
+        </p>
+        <a href="sobre.html" class="link-subpage" style="display: inline-block; margin-top: 10px;">Conheça Nossa História e Metodologia Completa →</a>
       </div>
     </div>
   </section>
@@ -1045,10 +1194,10 @@
             <ul class="package-list">
               <li>Encontros práticos para desenho de rotinas e checklists da equipe.</li>
               <li>Revisão do cardápio e mix focando nos itens de maior rentabilidade.</li>
-              <li>Estruturação e organização das buscas locais no Google.</li>
+              <li>Estruturação e organização semântica para buscas e IAs.</li>
             </ul>
           </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Este Formato</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Formato</a>
         </div>
 
         <!-- Card 2 (Destaque) -->
@@ -1061,12 +1210,12 @@
             <ul class="package-list">
               <li>Consultoria completa de rotinas, treinamento de equipe e controle de margem.</li>
               <li>Instalação da tecnologia interativa <strong>Brat Experience</strong> no salão.</li>
-              <li>Otimização profissional do perfil comercial no Google e iFood.</li>
-              <li>Produção visual com atores para elevar o respeito à marca.</li>
-              <li>Tráfego pago regional no Instagram e Google para atrair novos clientes.</li>
+              <li>Posicionamento no Google Maps e otimização para assistentes de IA (GEO).</li>
+              <li>Produção visual estratégica para elevar a autoridade da marca.</li>
+              <li>Tráfego pago regional qualificado no Instagram e Google.</li>
             </ul>
           </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Acompanhamento</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Apoio</a>
         </div>
 
         <!-- Card 3 -->
@@ -1076,11 +1225,11 @@
             <div class="package-badge">O Braço Direito do Seu Negócio</div>
             <p class="package-desc">A Ardor ao seu lado mês a mês cuidando de números, equipe e crescimento contínuo.</p>
             <ul class="package-list">
-              <li>Reuniões mensais de avaliação financeira, margem e processos.</li>
-              <li>Suporte contínuo ao sistema e ferramentas do salão.</li>
-              <li>Gestão contínua de anúncios pagos para manter o salão aquecido.</li>
-              <li>Novas produções visuais mensais para fortalecimento da marca.</li>
-              <li>Acompanhamento de rotinas e apoio direto à liderança da loja.</li>
+              <li>Comitê mensal de avaliação financeira, margem e auditoria de processos.</li>
+              <li>Suporte contínuo ao sistema e ferramentas de salão.</li>
+              <li>Gestão contínua de anúncios pagos alinhados à margem real de venda.</li>
+              <li>Novas produções visuais periódicas para fortalecimento da marca.</li>
+              <li>Apoio direto e mentoria contínua para as lideranças da loja.</li>
             </ul>
           </div>
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conversar%20sobre%20a%20Parceria%20Estrat%C3%A9gica%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com o Consultor</a>
