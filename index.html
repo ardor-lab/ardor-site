@@ -25,7 +25,6 @@
   
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <!-- Pré-conexão otimizada para fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
@@ -94,92 +93,86 @@
     .delay-1 { transition-delay: 0.08s; }
     .delay-2 { transition-delay: 0.16s; }
 
-    /* Logo Flutuante */
-    .brand-floating {
-      position: fixed;
-      top: 14px;
-      left: max(24px, calc((100vw - 1080px) / 2 + 24px));
-      z-index: 2147483647;
+    /* --- Topo / Cabeçalho Estruturado --- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 2147483640;
+      background: rgba(248, 246, 242, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 88px;
+    }
+
+    .brand-logo-link {
       display: inline-flex;
       align-items: center;
-      height: 84px;
+      text-decoration: none;
       cursor: pointer;
-      user-select: none;
-      transform-origin: left center;
-      transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
-      will-change: opacity, transform;
-    }
-
-    .brand-floating.scrolled {
-      opacity: 0.35;
-      top: 10px;
-      transform: scale(0.80) translate3d(0, 0, 0);
-    }
-
-    .brand-floating:hover {
-      opacity: 1 !important;
-      transform: scale(0.84) translate3d(0, 0, 0);
     }
 
     .brand-logo-img {
-      height: 84px;
+      height: 76px;
       width: auto;
       display: block;
-      pointer-events: none;
-      filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
+      filter: drop-shadow(0 4px 12px rgba(187, 89, 40, 0.20));
+      transition: transform 0.2s ease;
     }
 
-    /* Topo / Menu */
-    .top-bar {
-      min-height: 100px;
-      padding: 16px 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
+    .brand-logo-link:hover .brand-logo-img {
+      transform: scale(1.02);
     }
 
-    .nav-links {
+    .nav-wrapper {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .nav-link {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 20px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
       transition: all 0.2s ease;
-      cursor: pointer;
+      display: inline-block;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
 
     .nav-link:hover {
       color: var(--terracotta);
+      border-color: var(--terracotta);
       background: var(--terracotta-soft);
     }
 
     .nav-link-cta {
-      border: 1.5px solid var(--terracotta);
-      color: var(--terracotta) !important;
-      background: #FFFFFF;
+      border: 1.5px solid var(--terracotta) !important;
+      color: #FFFFFF !important;
+      background: var(--terracotta) !important;
       font-weight: 700;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 4px 12px rgba(187, 89, 40, 0.3);
     }
 
     .nav-link-cta:hover {
-      background: var(--terracotta) !important;
-      color: #FFFFFF !important;
+      background: var(--terracotta-hover) !important;
       transform: translateY(-1px);
     }
 
-    /* Hero */
+    /* --- Hero --- */
     .hero {
-      padding: 55px 0 65px;
+      padding: 50px 0 60px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 44px;
@@ -310,7 +303,7 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* Manifesto Direto */
+    /* --- Manifesto Direto --- */
     .manifesto-section {
       padding: 50px 0;
       background: var(--card-bg);
@@ -353,7 +346,7 @@
       line-height: 1.65;
     }
 
-    /* Grade de Cômodos */
+    /* --- Grade de Cômodos Especializados --- */
     .rooms-section {
       padding: 85px 0;
       background: var(--bg);
@@ -461,7 +454,7 @@
       gap: 6px;
     }
 
-    /* Faixa de Origem / Sobre */
+    /* --- Faixa de Origem / Sobre --- */
     .origin-strip {
       padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
@@ -537,7 +530,7 @@
       letter-spacing: 0.6px;
     }
 
-    /* WhatsApp Flutuante */
+    /* --- WhatsApp Flutuante --- */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -566,7 +559,7 @@
       fill: #FFFFFF;
     }
 
-    /* Rodapé */
+    /* --- Rodapé --- */
     footer {
       padding: 45px 0;
       text-align: center;
@@ -602,34 +595,75 @@
       fill: currentColor;
     }
 
-    /* Responsivo Mobile */
+    /* ========================================================
+       REGRAS MOBILE CIRÚRGICAS PARA O CABEÇALHO E PÁGINA
+       ======================================================== */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
-      
-      .brand-floating { 
-        height: 46px; 
-        top: 14px; 
-        left: 14px; 
-      }
-      .brand-logo-img { height: 46px; }
-      
-      .top-bar { 
-        min-height: 72px; 
-        padding: 8px 0 8px 84px;
-      }
-      .nav-links { gap: 4px; }
-      .nav-link {
-        font-size: 0.72rem;
-        padding: 5px 8px;
+
+      /* Topo reorganizado em 2 linhas limpas */
+      .site-header {
+        padding: 8px 0 10px;
       }
 
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        min-height: auto;
+      }
+
+      .header-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .brand-logo-img {
+        height: 48px;
+      }
+
+      /* Barra de botões/cápsulas no celular */
+      .nav-wrapper {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-link {
+        font-size: 0.76rem;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 16px;
+        background: #FFFFFF;
+        border: 1px solid var(--border-dark);
+        color: var(--text-main);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        flex-shrink: 0;
+      }
+
+      .nav-link-cta {
+        padding: 7px 14px;
+        font-size: 0.78rem;
+        border-radius: 18px;
+      }
+
+      /* Hero e conteúdo mobile */
       .hero { 
         grid-template-columns: 1fr; 
         gap: 20px; 
-        padding: 16px 0 30px; 
+        padding: 20px 0 28px; 
       }
       .hero h1 { 
-        font-size: 1.72rem; 
+        font-size: 1.75rem; 
         line-height: 1.2;
       }
       .hero p {
@@ -648,13 +682,13 @@
       .manifesto-section { padding: 36px 0; }
       .manifesto-title { font-size: 1.35rem; }
 
-      .rooms-section { padding: 50px 0; }
-      .rooms-header { margin-bottom: 28px; }
-      .rooms-title { font-size: 1.55rem; }
+      .rooms-section { padding: 45px 0; }
+      .rooms-header { margin-bottom: 24px; }
+      .rooms-title { font-size: 1.5rem; }
       .rooms-grid { grid-template-columns: 1fr; gap: 18px; }
 
       .origin-strip { padding: 45px 0; }
-      .origin-grid { grid-template-columns: 1fr; gap: 28px; }
+      .origin-grid { grid-template-columns: 1fr; gap: 26px; }
       .origin-title { font-size: 1.45rem; }
 
       .whatsapp-float {
@@ -669,22 +703,30 @@
 </head>
 <body>
 
-  <!-- Logo Flutuante -->
-  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
-    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="84" fetchpriority="high">
-  </div>
+  <!-- Cabeçalho Estruturado e Responsivo -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Linha Superior: Logo e Botão de Ação -->
+        <div class="header-top-row">
+          <a href="index.html" class="brand-logo-link" title="Ardor Gestão">
+            <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="76" fetchpriority="high">
+          </a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
+        </div>
+
+        <!-- Linha Inferior / Menu de Navegação -->
+        <nav class="nav-wrapper">
+          <a href="operacao-e-margem.html" class="nav-link">Operação & Margem</a>
+          <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
+          <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
   <div class="container">
-    <header class="top-bar">
-      <nav class="nav-links">
-        <a href="operacao-e-margem.html" class="nav-link">Operação</a>
-        <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
-        <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
-      </nav>
-    </header>
-
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content reveal">
@@ -844,27 +886,6 @@
 
       reveals.forEach(el => observer.observe(el));
     });
-
-    (function() {
-      const logo = document.getElementById('ardorLogo');
-      if (logo) {
-        logo.addEventListener('click', function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      function onScroll() {
-        const pos = window.pageYOffset || document.documentElement.scrollTop || 0;
-        if (pos > 25) {
-          logo.classList.add('scrolled');
-        } else {
-          logo.classList.remove('scrolled');
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-    })();
   </script>
 
 </body>
