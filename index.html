@@ -128,7 +128,7 @@
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* --- Topo / Menu Desktop --- */
+    /* --- Topo / Menu Desktop Perfeito --- */
     .top-bar {
       min-height: 100px;
       padding: 16px 0;
@@ -176,7 +176,7 @@
       transform: translateY(-1px);
     }
 
-    /* Botão Hambúrguer Mobile (Escondido no Desktop) */
+    /* Botão Hambúrguer Minimalista Mobile */
     .mobile-menu-btn {
       display: none;
       background: #FFFFFF;
@@ -197,19 +197,26 @@
       background: var(--terracotta-soft);
     }
 
-    /* Gaveta de Navegação Mobile */
+    /* ========================================================
+       MODAL VIDRO FLUTUANTE (SHOWCASE / JANELA DE VIDRO)
+       ======================================================== */
     .mobile-drawer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(21, 19, 17, 0.6);
-      backdrop-filter: blur(6px);
+      background: rgba(21, 19, 17, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 2147483646;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
     }
 
     .mobile-drawer.is-open {
@@ -217,82 +224,133 @@
       pointer-events: auto;
     }
 
-    .mobile-drawer-content {
-      position: absolute;
-      top: 0;
-      right: -320px;
-      width: 82%;
-      max-width: 320px;
-      height: 100%;
-      background: var(--bg);
-      border-left: 1px solid var(--border);
-      padding: 30px 24px;
+    .mobile-glass-card {
+      width: 100%;
+      max-width: 335px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 48px rgba(35, 25, 18, 0.22), 0 1px 3px rgba(0, 0, 0, 0.05);
+      border-radius: 26px;
+      padding: 22px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      box-shadow: -8px 0 28px rgba(0,0,0,0.15);
+      gap: 16px;
+      transform: scale(0.92) translateY(12px);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .mobile-drawer.is-open .mobile-drawer-content {
-      transform: translateX(-320px);
+    .mobile-drawer.is-open .mobile-glass-card {
+      transform: scale(1) translateY(0);
     }
 
     .drawer-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(230, 225, 215, 0.6);
+    }
+
+    .drawer-header-info {
+      display: flex;
+      flex-direction: column;
     }
 
     .drawer-title {
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
+    }
+
+    .drawer-subtitle {
+      font-size: 0.70rem;
+      font-weight: 600;
       color: var(--terracotta);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
     }
 
     .drawer-close-btn {
-      background: transparent;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
       cursor: pointer;
-      line-height: 1;
-      padding: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .drawer-close-btn:hover {
+      background: var(--terracotta-soft);
+      color: var(--terracotta);
     }
 
     .drawer-nav {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 24px;
+      gap: 8px;
     }
 
     .drawer-link {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 14px 16px;
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      justify-content: space-between;
+      padding: 11px 14px;
+      background: rgba(248, 246, 242, 0.85);
+      border: 1px solid rgba(230, 225, 215, 0.8);
+      border-radius: 14px;
       text-decoration: none;
       color: var(--text-main);
       font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: var(--shadow-sm);
+      font-size: 0.86rem;
+      transition: all 0.2s ease;
     }
 
-    .drawer-link span {
+    .drawer-link-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-tag-num {
+      font-size: 0.68rem;
+      font-weight: 800;
       color: var(--terracotta);
+      background: var(--terracotta-soft);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .drawer-link:active {
+      transform: scale(0.98);
+      background: #FFFFFF;
+      border-color: var(--terracotta);
+    }
+
+    .drawer-arrow {
+      color: var(--terracotta);
+      font-size: 0.82rem;
+      font-weight: 900;
     }
 
     .drawer-footer {
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+      padding-top: 4px;
+    }
+
+    .drawer-btn-cta {
+      width: 100%;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
     }
 
     /* --- Hero --- */
@@ -721,12 +779,11 @@
     }
 
     /* ========================================================
-       MOBILE PERFEITO (GAVETA EXECUTIVA + BOTÃO DIAGNÓSTICO)
+       MOBILE CALIBRADO (VIDRO FLUTUANTE SHOWCASE)
        ======================================================== */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
-      /* Logo mantém posição e efeito no celular */
       .brand-floating { 
         height: 48px; 
         top: 14px; 
@@ -741,7 +798,6 @@
         height: 48px; 
       }
 
-      /* Barra de topo mobile: limpa, sem links encavalados */
       .top-bar { 
         min-height: 76px; 
         padding: 10px 0;
@@ -753,7 +809,7 @@
         display: none;
       }
 
-      /* Mostra o botão Hambúrguer */
+      /* Botão Hambúrguer Visível */
       .mobile-menu-btn {
         display: inline-flex;
         margin-left: 8px;
@@ -825,7 +881,7 @@
         <a href="sobre.html" class="nav-link">Sobre</a>
         <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
         
-        <!-- Botão Menu Hambúrguer (Apenas no Mobile) -->
+        <!-- Botão Menu Hambúrguer (Mobile) -->
         <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="7" x2="20" y2="7"></line>
@@ -966,32 +1022,54 @@
     </div>
   </section>
 
-  <!-- Gaveta Mobile de Navegação -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-content">
-      <div>
-        <div class="drawer-header">
-          <span class="drawer-title">Menu de Navegação</span>
-          <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar Menu">✕</button>
+  <!-- ========================================================
+       MODAL DE VIDRO (VITRINE / JANELA DE VIDRO ARQUITETÔNICA)
+       ======================================================== -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
+    <div class="mobile-glass-card">
+      <div class="drawer-header">
+        <div class="drawer-header-info">
+          <span class="drawer-title">Ecossistema Ardor</span>
+          <span class="drawer-subtitle">Arquitetura de Gestão</span>
         </div>
-        <nav class="drawer-nav">
-          <a href="operacao-e-margem.html" class="drawer-link">
-            Operação & Margem <span>→</span>
-          </a>
-          <a href="ativos-digitais-e-ia.html" class="drawer-link">
-            Tráfego & IA <span>→</span>
-          </a>
-          <a href="experiencia-de-salao.html" class="drawer-link">
-            Salão & Experiência <span>→</span>
-          </a>
-          <a href="sobre.html" class="drawer-link">
-            Sobre a Ardor <span>→</span>
-          </a>
-        </nav>
+        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar">✕</button>
       </div>
+
+      <nav class="drawer-nav">
+        <a href="operacao-e-margem.html" class="drawer-link">
+          <div class="drawer-link-left">
+            <span class="drawer-tag-num">01</span>
+            <span>Operação & Margem</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="ativos-digitais-e-ia.html" class="drawer-link">
+          <div class="drawer-link-left">
+            <span class="drawer-tag-num">02</span>
+            <span>Tráfego & IA Search</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="experiencia-de-salao.html" class="drawer-link">
+          <div class="drawer-link-left">
+            <span class="drawer-tag-num">03</span>
+            <span>Salão & Ativação</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="sobre.html" class="drawer-link">
+          <div class="drawer-link-left">
+            <span class="drawer-tag-num">04</span>
+            <span>Sobre a Ardor</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+      </nav>
+
       <div class="drawer-footer">
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20operacional." class="btn" style="width: 100%;" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="btn drawer-btn-cta" target="_blank" rel="noopener noreferrer">
           Solicitar Diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -1026,7 +1104,7 @@
 
       reveals.forEach(el => observer.observe(el));
 
-      // Lógica da Gaveta Mobile
+      // Lógica do Modal Vitrine de Vidro
       const openBtn = document.getElementById('openMenuBtn');
       const closeBtn = document.getElementById('closeMenuBtn');
       const drawer = document.getElementById('mobileDrawer');
