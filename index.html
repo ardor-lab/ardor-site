@@ -25,9 +25,11 @@
   
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
+  <!-- Pré-conexão otimizada para fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -62,7 +64,7 @@
       width: 100%;
       background-color: var(--bg);
       color: var(--text-main);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
       font-weight: 400;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -79,8 +81,8 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(16px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
       will-change: opacity, transform;
     }
 
@@ -89,10 +91,10 @@
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
 
-    /* --- Logo Flutuante --- */
+    /* Logo Flutuante */
     .brand-floating {
       position: fixed;
       top: 14px;
@@ -127,7 +129,7 @@
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* --- Topo / Menu --- */
+    /* Topo / Menu */
     .top-bar {
       min-height: 100px;
       padding: 16px 0;
@@ -175,7 +177,7 @@
       transform: translateY(-1px);
     }
 
-    /* --- Hero --- */
+    /* Hero */
     .hero {
       padding: 55px 0 65px;
       display: grid;
@@ -185,7 +187,7 @@
     }
 
     .hero-quote {
-      font-family: 'Merriweather', serif;
+      font-family: 'Merriweather', Georgia, serif;
       font-style: italic;
       font-size: 1rem;
       color: var(--text-muted);
@@ -230,7 +232,7 @@
       font-size: 0.92rem;
       letter-spacing: 0.3px;
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s ease;
       box-shadow: 0 6px 20px rgba(187, 89, 40, 0.35);
       border: none;
       cursor: pointer;
@@ -278,6 +280,7 @@
       object-fit: cover;
       border-radius: 12px;
       display: block;
+      background: #EAE6DE;
     }
 
     .proof-badge {
@@ -307,7 +310,7 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Manifesto Direto --- */
+    /* Manifesto Direto */
     .manifesto-section {
       padding: 50px 0;
       background: var(--card-bg);
@@ -350,7 +353,7 @@
       line-height: 1.65;
     }
 
-    /* --- Grade de Portas de Entrada (Os Cômodos do Site) --- */
+    /* Grade de Cômodos */
     .rooms-section {
       padding: 85px 0;
       background: var(--bg);
@@ -403,17 +406,19 @@
       width: 100%;
       overflow: hidden;
       position: relative;
+      background: #EAE6DE;
     }
 
     .room-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
+      display: block;
     }
 
     .room-card:hover .room-img {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     .room-body {
@@ -456,7 +461,7 @@
       gap: 6px;
     }
 
-    /* --- Faixa de Origem / Sobre Resumido --- */
+    /* Faixa de Origem / Sobre */
     .origin-strip {
       padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
@@ -532,7 +537,7 @@
       letter-spacing: 0.6px;
     }
 
-    /* --- WhatsApp Flutuante --- */
+    /* WhatsApp Flutuante */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -561,7 +566,7 @@
       fill: #FFFFFF;
     }
 
-    /* --- Rodapé --- */
+    /* Rodapé */
     footer {
       padding: 45px 0;
       text-align: center;
@@ -597,7 +602,7 @@
       fill: currentColor;
     }
 
-    /* --- Responsivo Mobile --- */
+    /* Responsivo Mobile */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
@@ -666,7 +671,7 @@
 
   <!-- Logo Flutuante -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
-    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="84" fetchpriority="high">
   </div>
 
   <div class="container">
@@ -694,7 +699,7 @@
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="assets/hero.jpg" alt="Operação e Produção Real" fetchpriority="high" loading="eager">
+          <img class="proof-img" src="assets/hero.jpg" alt="Operação e Produção Real" width="400" height="390" fetchpriority="high">
           <div class="proof-badge">Método comprovado em laboratório próprio</div>
         </div>
       </div>
@@ -727,7 +732,7 @@
         <!-- Cômodo 1 -->
         <a href="operacao-e-margem.html" class="room-card reveal">
           <div class="room-media">
-            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=700&q=80" alt="Equipe e Rotinas" class="room-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=480&q=75" alt="Equipe e Rotinas" class="room-img" loading="lazy" width="340" height="200">
           </div>
           <div class="room-body">
             <div>
@@ -742,7 +747,7 @@
         <!-- Cômodo 2 -->
         <a href="ativos-digitais-e-ia.html" class="room-card reveal delay-1">
           <div class="room-media">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Tecnologia e Dados" class="room-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=480&q=75" alt="Tecnologia e Dados" class="room-img" loading="lazy" width="340" height="200">
           </div>
           <div class="room-body">
             <div>
@@ -757,7 +762,7 @@
         <!-- Cômodo 3 -->
         <a href="experiencia-de-salao.html" class="room-card reveal delay-2">
           <div class="room-media">
-            <img src="assets/salao.jpg" alt="Experiência no Salão" class="room-img" loading="lazy">
+            <img src="assets/salao.jpg" alt="Experiência no Salão" class="room-img" loading="lazy" width="340" height="200">
           </div>
           <div class="room-body">
             <div>
@@ -835,7 +840,7 @@
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.08 });
 
       reveals.forEach(el => observer.observe(el));
     });
