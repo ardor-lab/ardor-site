@@ -193,12 +193,12 @@
     }
 
     .mobile-menu-btn:active {
-      transform: scale(0.95);
+      transform: scale(0.92);
       background: var(--terracotta-soft);
     }
 
     /* ========================================================
-       MODAL VIDRO FLUTUANTE (SHOWCASE / JANELA DE VIDRO)
+       MODAL VIDRO TRANSLÚCIDO COM EXPANSÃO/RECOLHIMENTO VIA ÂNCORA
        ======================================================== */
     .mobile-drawer {
       position: fixed;
@@ -206,16 +206,16 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(21, 19, 17, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(21, 19, 17, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 2147483646;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-end;
       padding: 16px;
     }
 
@@ -224,25 +224,30 @@
       pointer-events: auto;
     }
 
+    /* Cartão de Vidro Translúcido com Origem no Canto Superior Direito */
     .mobile-glass-card {
       width: 100%;
-      max-width: 335px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 20px 48px rgba(35, 25, 18, 0.22), 0 1px 3px rgba(0, 0, 0, 0.05);
-      border-radius: 26px;
-      padding: 22px 20px;
+      max-width: 320px;
+      margin-top: 64px; /* Desce suavemente do botão */
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 16px 40px rgba(35, 25, 18, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 20px 18px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      transform: scale(0.92) translateY(12px);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 14px;
+      transform-origin: top right;
+      transform: scale(0.2) translate3d(20px, -40px, 0);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
     }
 
     .mobile-drawer.is-open .mobile-glass-card {
-      transform: scale(1) translateY(0);
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 1;
     }
 
     .drawer-header {
@@ -250,7 +255,7 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(230, 225, 215, 0.6);
+      border-bottom: 1px solid rgba(230, 225, 215, 0.5);
     }
 
     .drawer-header-info {
@@ -259,36 +264,37 @@
     }
 
     .drawer-title {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 900;
       letter-spacing: -0.2px;
       color: var(--text-main);
     }
 
     .drawer-subtitle {
-      font-size: 0.70rem;
-      font-weight: 600;
+      font-size: 0.68rem;
+      font-weight: 700;
       color: var(--terracotta);
       letter-spacing: 0.4px;
       text-transform: uppercase;
     }
 
     .drawer-close-btn {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: all 0.2s ease;
     }
 
-    .drawer-close-btn:hover {
+    .drawer-close-btn:active {
+      transform: scale(0.9);
       background: var(--terracotta-soft);
       color: var(--terracotta);
     }
@@ -303,41 +309,27 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 11px 14px;
-      background: rgba(248, 246, 242, 0.85);
-      border: 1px solid rgba(230, 225, 215, 0.8);
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 14px;
       text-decoration: none;
       color: var(--text-main);
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       transition: all 0.2s ease;
-    }
-
-    .drawer-link-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .drawer-tag-num {
-      font-size: 0.68rem;
-      font-weight: 800;
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
-      padding: 2px 6px;
-      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(35, 25, 18, 0.02);
     }
 
     .drawer-link:active {
       transform: scale(0.98);
-      background: #FFFFFF;
+      background: rgba(255, 255, 255, 0.9);
       border-color: var(--terracotta);
     }
 
     .drawer-arrow {
       color: var(--terracotta);
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       font-weight: 900;
     }
 
@@ -779,11 +771,12 @@
     }
 
     /* ========================================================
-       MOBILE CALIBRADO (VIDRO FLUTUANTE SHOWCASE)
+       AJUSTES MOBILE DE PRECISÃO (ANIMAÇÃO CONECTADA AO BOTÃO)
        ======================================================== */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
+      /* Logo mantém posição e efeito no celular */
       .brand-floating { 
         height: 48px; 
         top: 14px; 
@@ -798,6 +791,7 @@
         height: 48px; 
       }
 
+      /* Barra de topo mobile */
       .top-bar { 
         min-height: 76px; 
         padding: 10px 0;
@@ -1023,7 +1017,7 @@
   </section>
 
   <!-- ========================================================
-       MODAL DE VIDRO (VITRINE / JANELA DE VIDRO ARQUITETÔNICA)
+       MODAL DE VIDRO TRANSLÚCIDO (SHOWCASE ORGÂNICO)
        ======================================================== -->
   <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
     <div class="mobile-glass-card">
@@ -1037,31 +1031,19 @@
 
       <nav class="drawer-nav">
         <a href="operacao-e-margem.html" class="drawer-link">
-          <div class="drawer-link-left">
-            <span class="drawer-tag-num">01</span>
-            <span>Operação & Margem</span>
-          </div>
+          <span>Operação & Margem</span>
           <span class="drawer-arrow">→</span>
         </a>
         <a href="ativos-digitais-e-ia.html" class="drawer-link">
-          <div class="drawer-link-left">
-            <span class="drawer-tag-num">02</span>
-            <span>Tráfego & IA Search</span>
-          </div>
+          <span>Tráfego & IA Search</span>
           <span class="drawer-arrow">→</span>
         </a>
         <a href="experiencia-de-salao.html" class="drawer-link">
-          <div class="drawer-link-left">
-            <span class="drawer-tag-num">03</span>
-            <span>Salão & Ativação</span>
-          </div>
+          <span>Salão & Ativação</span>
           <span class="drawer-arrow">→</span>
         </a>
         <a href="sobre.html" class="drawer-link">
-          <div class="drawer-link-left">
-            <span class="drawer-tag-num">04</span>
-            <span>Sobre a Ardor</span>
-          </div>
+          <span>Sobre a Ardor</span>
           <span class="drawer-arrow">→</span>
         </a>
       </nav>
@@ -1104,7 +1086,7 @@
 
       reveals.forEach(el => observer.observe(el));
 
-      // Lógica do Modal Vitrine de Vidro
+      // Lógica do Modal Translúcido ancorado no botão
       const openBtn = document.getElementById('openMenuBtn');
       const closeBtn = document.getElementById('closeMenuBtn');
       const drawer = document.getElementById('mobileDrawer');
