@@ -21,9 +21,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ardor | Consultoria Operacional, Margem e Governança Comercial</title>
+  <title>Ardor | Governança Operacional e Crescimento Comercial</title>
   
-  <!-- Favicon Oficial em Formato Quadrado -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +64,7 @@
       color: var(--text-main);
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -78,11 +77,10 @@
       padding: 0 24px;
     }
 
-    /* --- Scroll Reveal Fluido --- */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
@@ -91,10 +89,10 @@
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: 0.12s; }
-    .delay-2 { transition-delay: 0.22s; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
 
-    /* --- Logótipo Flutuante --- */
+    /* --- Logo Flutuante --- */
     .brand-floating {
       position: fixed;
       top: 14px;
@@ -102,7 +100,7 @@
       z-index: 2147483647;
       display: inline-flex;
       align-items: center;
-      height: 88px;
+      height: 84px;
       cursor: pointer;
       user-select: none;
       transform-origin: left center;
@@ -122,16 +120,16 @@
     }
 
     .brand-logo-img {
-      height: 88px;
+      height: 84px;
       width: auto;
       display: block;
       pointer-events: none;
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* --- Barra Superior --- */
+    /* --- Topo / Menu --- */
     .top-bar {
-      min-height: 105px;
+      min-height: 100px;
       padding: 16px 0;
       display: flex;
       justify-content: flex-end;
@@ -141,7 +139,7 @@
 
     .nav-links {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -152,8 +150,8 @@
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 24px;
+      padding: 8px 14px;
+      border-radius: 20px;
       transition: all 0.2s ease;
       cursor: pointer;
     }
@@ -177,34 +175,33 @@
       transform: translateY(-1px);
     }
 
-    /* --- Bloco Hero --- */
+    /* --- Hero --- */
     .hero {
-      padding: 60px 0 70px;
+      padding: 55px 0 65px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      gap: 44px;
       align-items: center;
-      position: relative;
     }
 
     .hero-quote {
       font-family: 'Merriweather', serif;
       font-style: italic;
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       border-left: 3px solid var(--terracotta);
-      padding: 8px 0 8px 16px;
+      padding: 6px 0 6px 14px;
       background: linear-gradient(90deg, rgba(187, 89, 40, 0.08), transparent);
       border-radius: 0 8px 8px 0;
     }
 
     .hero h1 {
-      font-size: 2.85rem;
-      line-height: 1.14;
+      font-size: 2.75rem;
+      line-height: 1.15;
       font-weight: 900;
-      letter-spacing: -0.9px;
-      margin-bottom: 20px;
+      letter-spacing: -0.8px;
+      margin-bottom: 18px;
     }
 
     .hero h1 span.highlight {
@@ -212,10 +209,10 @@
     }
 
     .hero p {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-muted);
-      margin-bottom: 34px;
-      max-width: 540px;
+      margin-bottom: 30px;
+      max-width: 520px;
     }
 
     .btn {
@@ -226,15 +223,15 @@
       gap: 10px;
       background: var(--terracotta);
       color: #FFFFFF;
-      padding: 17px 36px;
+      padding: 16px 32px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       letter-spacing: 0.3px;
       overflow: hidden;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 6px 22px rgba(187, 89, 40, 0.35);
+      box-shadow: 0 6px 20px rgba(187, 89, 40, 0.35);
       border: none;
       cursor: pointer;
     }
@@ -258,48 +255,47 @@
     .btn:hover {
       background: var(--terracotta-hover);
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(187, 89, 40, 0.45);
+      box-shadow: 0 10px 26px rgba(187, 89, 40, 0.45);
     }
 
     .proof-frame {
       position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 12px;
+      border-radius: 18px;
+      padding: 10px;
       box-shadow: var(--shadow-xl);
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
 
     .proof-frame:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
     .proof-img {
       width: 100%;
-      height: 405px;
+      height: 390px;
       object-fit: cover;
-      border-radius: 14px;
+      border-radius: 12px;
       display: block;
     }
 
     .proof-badge {
       position: absolute;
-      bottom: 24px;
-      right: 24px;
+      bottom: 22px;
+      right: 22px;
       background: rgba(21, 19, 17, 0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
       color: #FFFFFF;
-      padding: 10px 18px;
+      padding: 8px 16px;
       border-radius: 30px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       border: 1px solid rgba(255, 255, 255, 0.16);
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
     .proof-badge::before {
@@ -311,482 +307,232 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Manifesto Anti-Agência --- */
+    /* --- Manifesto Direto --- */
     .manifesto-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: var(--card-bg);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
     .manifesto-box {
-      max-width: 860px;
+      max-width: 820px;
       margin: 0 auto;
       text-align: center;
-    }
-
-    .manifesto-tag {
-      display: inline-block;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
-      padding: 4px 14px;
-      border-radius: 4px;
-      margin-bottom: 18px;
-    }
-
-    .manifesto-title {
-      font-size: 1.95rem;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      line-height: 1.25;
-      margin-bottom: 18px;
-    }
-
-    .manifesto-text {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 24px;
-    }
-
-    /* --- Métricas Rápidas --- */
-    .metrics-bar {
-      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
-      color: #FFFFFF;
-      padding: 50px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .metric-card {
-      border-left: 2.5px solid var(--terracotta);
-      padding-left: 18px;
-    }
-
-    .metric-number {
-      font-size: 2.3rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 6px;
-      letter-spacing: -0.6px;
-    }
-
-    .metric-number span {
-      color: var(--amber-gold);
-    }
-
-    .metric-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-light-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      line-height: 1.4;
-    }
-
-    /* --- Soluções Aplicadas (Abas) --- */
-    .interactive-section {
-      padding: 95px 0;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-header-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 34px;
-      flex-wrap: wrap;
-      gap: 16px;
     }
 
     .section-tag {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 1.3px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--amber-gold);
       background: var(--amber-soft);
       padding: 4px 12px;
       border-radius: 4px;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: 2.1rem;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      margin-bottom: 6px;
-    }
-
-    .section-desc {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-    }
-
-    .tabs-nav-wrapper {
-      background: #EDE8DE;
-      padding: 7px;
-      border-radius: 14px;
-      display: inline-flex;
-      gap: 8px;
-      margin-bottom: 34px;
-      border: 1px solid var(--border-dark);
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
-      max-width: 100%;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .tab-btn {
-      background: transparent;
-      border: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      padding: 13px 24px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .tab-btn:hover {
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.65);
-    }
-
-    .tab-btn.active {
-      background: #FFFFFF !important;
-      color: var(--terracotta) !important;
-      box-shadow: 0 4px 16px rgba(45, 35, 25, 0.09);
-      font-weight: 800;
-    }
-
-    .tab-btn.active::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--terracotta);
-    }
-
-    .tab-content {
-      display: none;
-      animation: fadeInTab 0.35s ease forwards;
-    }
-
-    .tab-content.active {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 40px;
-      align-items: center;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 38px 34px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    @keyframes fadeInTab {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .tab-info h3 {
-      font-size: 1.55rem;
-      font-weight: 900;
       margin-bottom: 14px;
-      line-height: 1.28;
     }
 
-    .tab-info p {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
-    .tab-feature-list {
-      list-style: none;
-      margin-bottom: 28px;
-    }
-
-    .tab-feature-list li {
-      position: relative;
-      padding-left: 26px;
-      margin-bottom: 12px;
-      font-size: 0.90rem;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .tab-feature-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--terracotta);
-      font-weight: 900;
-      font-size: 0.95rem;
-    }
-
-    .tab-action-group {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .link-subpage {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--terracotta);
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid var(--terracotta);
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-
-    .link-subpage:hover {
-      background: var(--terracotta);
-      color: #FFFFFF;
-    }
-
-    .tab-media-frame {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-md);
-      height: 325px;
-      background: #EAE6DE;
-    }
-
-    .tab-media-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* --- Bloco Institucional / Sobre Resumido --- */
-    .about-summary-section {
-      padding: 85px 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-summary-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 48px 40px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .about-summary-card h2 {
+    .manifesto-title {
       font-size: 1.85rem;
       font-weight: 900;
       letter-spacing: -0.5px;
-      margin-bottom: 18px;
-    }
-
-    .about-summary-card p {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 20px;
-    }
-
-    /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
-    .packages-section {
-      padding: 95px 0;
-      background: linear-gradient(180deg, #F2EFE8 0%, #E9E3D8 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-
-    .carousel-controls {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .carousel-arrow {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      border: 1px solid var(--border-dark);
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .carousel-arrow:hover {
-      background: var(--terracotta);
-      color: #FFFFFF;
-      border-color: var(--terracotta);
-    }
-
-    .carousel-track {
-      display: flex;
-      overflow-x: auto;
-      gap: 24px;
-      padding: 20px 4px 30px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: thin;
-      scrollbar-color: var(--terracotta) transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .carousel-track::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .carousel-track::-webkit-scrollbar-thumb {
-      background: rgba(187, 89, 40, 0.4);
-      border-radius: 4px;
-    }
-
-    .package-card {
-      flex: 0 0 340px;
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 38px 28px 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      scroll-snap-align: start;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .package-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-xl);
-      border-color: rgba(187, 89, 40, 0.35);
-    }
-
-    .package-card.featured {
-      border: 2px solid var(--terracotta);
-      box-shadow: 0 16px 36px var(--terracotta-glow);
-    }
-
-    .package-card.featured:hover {
-      box-shadow: 0 22px 50px rgba(187, 89, 40, 0.32);
-    }
-
-    .featured-tag {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--terracotta);
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      padding: 5px 18px;
-      border-radius: 30px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(187, 89, 40, 0.35);
-    }
-
-    .package-title {
-      font-size: 1.35rem;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .package-badge {
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: var(--terracotta);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      line-height: 1.25;
       margin-bottom: 14px;
     }
 
-    .package-desc {
-      font-size: 0.88rem;
+    .manifesto-text {
+      font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 22px;
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
-    .package-list {
-      list-style: none;
-      margin-bottom: 28px;
+    /* --- Grade de Portas de Entrada (Os Cômodos do Site) --- */
+    .rooms-section {
+      padding: 85px 0;
+      background: var(--bg);
     }
 
-    .package-list li {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      position: relative;
-      padding-left: 20px;
-      line-height: 1.5;
+    .rooms-header {
+      margin-bottom: 45px;
+      text-align: left;
     }
 
-    .package-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--terracotta);
+    .rooms-title {
+      font-size: 2.1rem;
       font-weight: 900;
-      font-size: 0.88rem;
+      letter-spacing: -0.6px;
+      margin-bottom: 8px;
     }
 
-    .btn-package {
+    .rooms-desc {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .room-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .room-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--terracotta);
+    }
+
+    .room-media {
+      height: 200px;
       width: 100%;
-      text-align: center;
-      padding: 13px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .room-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .room-card:hover .room-img {
+      transform: scale(1.05);
+    }
+
+    .room-body {
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .room-number {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .room-title {
+      font-size: 1.28rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .room-snippet {
       font-size: 0.88rem;
-      border-radius: 6px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
     }
 
-    .btn-outline {
-      background: transparent;
+    .room-link-text {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* --- Faixa de Origem / Sobre Resumido --- */
+    .origin-strip {
+      padding: 70px 0;
+      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .origin-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .origin-text {
+      font-size: 0.94rem;
+      color: var(--text-light-muted);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .btn-light {
+      background: #FFFFFF;
       color: var(--text-main);
-      border: 1.5px solid var(--border-dark);
-      box-shadow: none;
+      padding: 13px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
     }
 
-    .btn-outline:hover {
+    .btn-light:hover {
       background: var(--terracotta);
       color: #FFFFFF;
-      border-color: var(--terracotta);
-      transform: translateY(-2px);
     }
 
-    /* --- Botão Flutuante do WhatsApp --- */
+    .origin-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .origin-stat-card {
+      border-left: 2px solid var(--terracotta);
+      padding-left: 14px;
+    }
+
+    .origin-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--amber-gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .origin-stat-lbl {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-light-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* --- WhatsApp Flutuante --- */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -794,37 +540,32 @@
       z-index: 2147483640;
       background: #25D366;
       color: #FFFFFF;
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
       text-decoration: none;
       transition: all 0.25s ease;
-      overflow: hidden;
-      padding: 0;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.08) translateY(-3px);
-      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+      transform: scale(1.08) translateY(-2px);
     }
 
     .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       fill: #FFFFFF;
-      display: block;
-      margin: auto;
     }
 
     /* --- Rodapé --- */
     footer {
-      padding: 50px 0 60px;
+      padding: 45px 0;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       background: #FAF8F5;
     }
@@ -832,35 +573,27 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 14px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
     .social-icon-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--terracotta);
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.85rem;
-      padding: 10px 22px;
+      font-size: 0.82rem;
+      padding: 8px 18px;
       border: 1.5px solid var(--terracotta);
-      border-radius: 30px;
+      border-radius: 24px;
       background: #FFFFFF;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease;
-    }
-
-    .social-icon-btn:hover {
-      background: rgba(187, 89, 40, 0.08);
-      transform: translateY(-2px);
     }
 
     .social-icon-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       fill: currentColor;
     }
 
@@ -869,134 +602,69 @@
       .container { padding: 0 16px; }
       
       .brand-floating { 
-        height: 48px; 
+        height: 46px; 
         top: 14px; 
         left: 14px; 
       }
-      .brand-logo-img { 
-        height: 48px; 
-      }
+      .brand-logo-img { height: 46px; }
+      
       .top-bar { 
-        min-height: 76px; 
-        padding: 10px 0 10px 90px;
+        min-height: 72px; 
+        padding: 8px 0 8px 84px;
       }
-      .nav-links {
-        gap: 4px;
-      }
+      .nav-links { gap: 4px; }
       .nav-link {
         font-size: 0.72rem;
-        padding: 6px 10px;
+        padding: 5px 8px;
       }
 
       .hero { 
         grid-template-columns: 1fr; 
-        gap: 24px; 
-        padding: 18px 0 32px; 
+        gap: 20px; 
+        padding: 16px 0 30px; 
       }
       .hero h1 { 
-        font-size: 1.78rem; 
-        line-height: 1.20;
+        font-size: 1.72rem; 
+        line-height: 1.2;
       }
       .hero p {
-        font-size: 0.94rem;
-        margin-bottom: 24px;
-      }
-
-      .manifesto-section {
-        padding: 45px 0;
-      }
-      .manifesto-title {
-        font-size: 1.45rem;
+        font-size: 0.92rem;
+        margin-bottom: 22px;
       }
 
       .btn {
         width: 100%;
-        padding: 14px 22px;
-        font-size: 0.88rem;
+        padding: 13px 20px;
+        font-size: 0.86rem;
       }
 
-      .metrics-bar {
-        padding: 32px 0;
-      }
-      .metrics-grid { 
-        grid-template-columns: 1fr 1fr; 
-        gap: 18px 14px; 
-      }
-      .metric-number {
-        font-size: 1.75rem;
-      }
-      .metric-label {
-        font-size: 0.72rem;
-      }
+      .proof-img { height: 260px; }
 
-      .interactive-section {
-        padding: 55px 0;
-      }
-      .section-title {
-        font-size: 1.55rem;
-      }
-      .tabs-nav-wrapper {
-        padding: 4px;
-        margin-bottom: 20px;
-        gap: 4px;
-      }
-      .tab-btn {
-        padding: 9px 13px;
-        font-size: 0.76rem;
-      }
-      .tab-content.active { 
-        grid-template-columns: 1fr; 
-        padding: 22px 16px; 
-        gap: 22px;
-      }
-      .tab-info h3 {
-        font-size: 1.25rem;
-      }
-      .tab-action-group {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .link-subpage {
-        text-align: center;
-      }
-      .tab-media-frame { 
-        height: 200px; 
-      }
+      .manifesto-section { padding: 36px 0; }
+      .manifesto-title { font-size: 1.35rem; }
 
-      .about-summary-section {
-        padding: 55px 0;
-      }
-      .about-summary-card {
-        padding: 30px 20px;
-      }
+      .rooms-section { padding: 50px 0; }
+      .rooms-header { margin-bottom: 28px; }
+      .rooms-title { font-size: 1.55rem; }
+      .rooms-grid { grid-template-columns: 1fr; gap: 18px; }
 
-      .packages-section {
-        padding: 55px 0;
-      }
-      .package-card { 
-        flex: 0 0 86%; 
-        padding: 30px 20px 22px; 
-      }
-      .carousel-controls { 
-        display: none; 
-      }
+      .origin-strip { padding: 45px 0; }
+      .origin-grid { grid-template-columns: 1fr; gap: 28px; }
+      .origin-title { font-size: 1.45rem; }
 
       .whatsapp-float {
-        bottom: 18px;
-        right: 18px;
-        width: 52px;
-        height: 52px;
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
       }
-      .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
-      }
+      .whatsapp-float svg { width: 26px; height: 26px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logótipo Flutuante -->
+  <!-- Logo Flutuante -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
     <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
@@ -1004,11 +672,11 @@
   <div class="container">
     <header class="top-bar">
       <nav class="nav-links">
-        <a href="sobre.html" class="nav-link">Sobre</a>
-        <a href="operacao-e-margem.html" class="nav-link">Operação & Margem</a>
+        <a href="operacao-e-margem.html" class="nav-link">Operação</a>
         <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
         <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20o%20diagn%C3%B3stico%20operacional%20da%20minha%20empresa." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
       </nav>
     </header>
 
@@ -1017,8 +685,8 @@
       <div class="hero-content reveal">
         <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
         <h1>O seu negócio merece dar <span class="highlight">lucro real</span>. E você merece paz para liderar.</h1>
-        <p>Não somos uma agência de marketing de palco. Estruturamos processos de chão de loja, auditamos perdas de margem e posicionamos sua empresa onde as IAs e clientes decidem a compra hoje — tudo validado na rotina da nossa própria operação comercial.</p>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20solicitar%20um%20diagn%C3%B3stico%20operacional%20para%20o%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">
+        <p>A Ardor estrutura rotinas de equipe, audita perdas invisíveis de margem e posiciona sua marca nas buscas de Inteligência Artificial com métodos testados na nossa própria operação comercial.</p>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20operacional." class="btn" target="_blank" rel="noopener noreferrer">
           Solicitar Diagnóstico Operacional
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1026,213 +694,117 @@
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="assets/hero.jpg" alt="Método e Governança em Comércio Real" fetchpriority="high" loading="eager">
-          <div class="proof-badge">Método testado em laboratório comercial próprio</div>
+          <img class="proof-img" src="assets/hero.jpg" alt="Operação e Produção Real" fetchpriority="high" loading="eager">
+          <div class="proof-badge">Método comprovado em laboratório próprio</div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Manifesto Anti-Agência -->
+  <!-- Manifesto Direto -->
   <section class="manifesto-section">
     <div class="container">
       <div class="manifesto-box reveal">
-        <span class="manifesto-tag">Por Que Somos Diferentes</span>
+        <span class="section-tag">Posicionamento</span>
         <h2 class="manifesto-title">Comércio físico não sobrevive de curtidas ou promessas de agência.</h2>
         <p class="manifesto-text">
-          A maioria das agências tradicionais se orgulha de métricas de vaidade: visualizações vazias e postagens prontas de calendário. Elas nunca precisaram fechar um caixa sob pressão, gerenciar uma escala de equipe no balcão ou recalcular o custo por quilo de insumos para fechar o mês no azul.
-        </p>
-        <p class="manifesto-text">
-          A Ardor Gestão foi construída a partir de duas décadas de governança corporativa, análise de risco e tecnologia da informação — consolidadas na prática diária de uma operação física real. Criamos métodos onde a rotina falha, estancamos perdas onde o dinheiro escapa e colocamos a sua empresa como referência geográfica indiscutível.
+          Agências tradicionais vendem visualizações vazias e postagens prontas de calendário. Elas nunca precisaram bater metas de CMV, coordenar escalas de equipe sob pressão ou fechar um caixa no azul. A Ardor une governança executiva, análise de dados e experiência de balcão para gerar resultado financeiro concreto.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Métricas Rápidas -->
-  <section class="metrics-bar">
+  <!-- Os Três Cômodos Especializados -->
+  <section class="rooms-section">
     <div class="container">
-      <div class="metrics-grid">
-        <div class="metric-card reveal">
-          <div class="metric-number">100<span>%</span></div>
-          <div class="metric-label">Método Testado no Balcão</div>
-        </div>
-        <div class="metric-card reveal delay-1">
-          <div class="metric-number">GEO<span>+</span></div>
-          <div class="metric-label">Otimização para IAs e Busca</div>
-        </div>
-        <div class="metric-card reveal delay-2">
-          <div class="metric-number">Curva <span>ABC</span></div>
-          <div class="metric-label">Engenharia de Mix e Margem</div>
-        </div>
-        <div class="metric-card reveal">
-          <div class="metric-number">360<span>°</span></div>
-          <div class="metric-label">Rotina, Equipe e Salão Cheio</div>
-        </div>
+      <div class="rooms-header reveal">
+        <span class="section-tag">Pilares Especializados</span>
+        <h2 class="rooms-title">O Que Precisa Ser Estruturado na Sua Empresa?</h2>
+        <p class="rooms-desc">Selecione a área prioritária para conhecer o método aplicado em detalhes.</p>
+      </div>
+
+      <div class="rooms-grid">
+        <!-- Cômodo 1 -->
+        <a href="operacao-e-margem.html" class="room-card reveal">
+          <div class="room-media">
+            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=700&q=80" alt="Equipe e Rotinas" class="room-img" loading="lazy">
+          </div>
+          <div class="room-body">
+            <div>
+              <span class="room-number">Pilar 01</span>
+              <h3 class="room-title">Operação & Margem</h3>
+              <p class="room-snippet">Fichas técnicas precisas, controle rígido de CMV, manuais anti-erro e alinhamento de equipe para que sua empresa funcione sem depender da sua presença contínua.</p>
+            </div>
+            <span class="room-link-text">Ver detalhes deste pilar →</span>
+          </div>
+        </a>
+
+        <!-- Cômodo 2 -->
+        <a href="ativos-digitais-e-ia.html" class="room-card reveal delay-1">
+          <div class="room-media">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Tecnologia e Dados" class="room-img" loading="lazy">
+          </div>
+          <div class="room-body">
+            <div>
+              <span class="room-number">Pilar 02</span>
+              <h3 class="room-title">Tráfego Pago & IA Search</h3>
+              <p class="room-snippet">Otimização semântica (GEO) para sua empresa ser indicada no ChatGPT, Gemini e Google, somada a campanhas de tráfego calibradas pela margem real do seu produto.</p>
+            </div>
+            <span class="room-link-text">Ver detalhes deste pilar →</span>
+          </div>
+        </a>
+
+        <!-- Cômodo 3 -->
+        <a href="experiencia-de-salao.html" class="room-card reveal delay-2">
+          <div class="room-media">
+            <img src="assets/salao.jpg" alt="Experiência no Salão" class="room-img" loading="lazy">
+          </div>
+          <div class="room-body">
+            <div>
+              <span class="room-number">Pilar 03</span>
+              <h3 class="room-title">Experiência & Salão Cheio</h3>
+              <p class="room-snippet">Tecnologia interativa com gamificação no ponto físico, estratégias para dias de movimento baixo e treinamento de atendimento para fidelização contínua.</p>
+            </div>
+            <span class="room-link-text">Ver detalhes deste pilar →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Soluções Aplicadas com Abas em Cápsula -->
-  <section class="interactive-section" id="solucoes">
+  <!-- Faixa de Origem / Sobre -->
+  <section class="origin-strip">
     <div class="container">
-      <div class="section-header-wrap reveal">
+      <div class="origin-grid reveal">
         <div>
-          <span class="section-tag">Pilares de Atuação</span>
-          <h2 class="section-title">As Três Frentes de Intervenção da Ardor</h2>
-          <p class="section-desc">Entenda onde atuamos para profissionalizar a sua empresa de ponta a ponta.</p>
+          <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Origem & Autoridade</span>
+          <h2 class="origin-title">Disciplina corporativa aliada à rotina de quem empreende no comércio.</h2>
+          <p class="origin-text">
+            Nossa liderança reúne formação multidisciplinar em Psicologia, Marketing e TI, com passagens por multinacionais e pelo sistema financeiro, onde gerenciou risco de milhões e liderou mais de 1.000 profissionais. Esse rigor foi transportado para um negócio físico próprio, consolidando uma consultoria que entende o peso da folha de pagamento e o valor do lucro real.
+          </p>
+          <a href="sobre.html" class="btn-light">
+            Conhecer Nossa História
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-      </div>
 
-      <div class="tabs-nav-wrapper reveal delay-1">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">1. Operação & Margem</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-ia-trafego')">2. Tráfego & SEO para IA</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">3. Salão & Ativação</button>
-      </div>
-
-      <!-- Tab 1 -->
-      <div id="tab-operacao" class="tab-content active">
-        <div class="tab-info">
-          <h3>Rotinas autônomas, manuais de equipe e controle rigoroso de CMV</h3>
-          <p>O empresário não pode passar o dia apagando incêndios operacionais. Desenhamos processos simples de abertura, turno e fechamento, alinhamos a equipe intermediária e auditamos fichas técnicas para proteger o caixa contra desperdícios.</p>
-          <ul class="tab-feature-list">
-            <li>Engenharia de cardápio e mix com foco em margem líquida real (Curva ABC).</li>
-            <li>Rotinas visuais anti-erro no balcão e retaguarda da loja.</li>
-            <li>Autonomia de lideranças para o negócio manter o padrão sem a sua vigília contínua.</li>
-          </ul>
-          <div class="tab-action-group">
-            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20a%20opera%C3%A7%C3%A3o%20e%20margem%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Organizar Operação</a>
-            <a href="operacao-e-margem.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+        <div class="origin-stats">
+          <div class="origin-stat-card">
+            <div class="origin-stat-num">+1.000</div>
+            <div class="origin-stat-lbl">Profissionais Liderados na Carreira</div>
           </div>
-        </div>
-        <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Operação e Equipe" class="tab-media-img" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Tab 2 -->
-      <div id="tab-ia-trafego" class="tab-content">
-        <div class="tab-info">
-          <h3>Sua empresa indicada por Inteligências Artificiais e tráfego com retorno real</h3>
-          <p>O consumidor moderno não pesquisa como há 10 anos: ele pergunta para as IAs onde ir e quem é referência. Estruturamos os dados do seu comércio para ser resposta prioritária em motores generativos e geramos tráfego pago focado em margem.</p>
-          <ul class="tab-feature-list">
-            <li>GEO (Generative Engine Optimization): semântica e dados para ChatGPT, Gemini e Google.</li>
-            <li>Tráfego pago regional com filtros rigorosos para eliminar curiosos sem poder de compra.</li>
-            <li>Mídia orientada pelo DRE da empresa, evitando investir verba no escuro.</li>
-          </ul>
-          <div class="tab-action-group">
-            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20o%20tr%C3%A1fego%20e%20posicionamento%20de%20IA%20do%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">Ativar Tráfego & IA</a>
-            <a href="ativos-digitais-e-ia.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+          <div class="origin-stat-card">
+            <div class="origin-stat-num">100%</div>
+            <div class="origin-stat-lbl">Método Comprovado no Balcão</div>
           </div>
-        </div>
-        <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Inteligência de Dados e Tráfego" class="tab-media-img" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Tab 3 -->
-      <div id="tab-salao" class="tab-content">
-        <div class="tab-info">
-          <h3>Tecnologia proprietária e atração de clientes para o ponto físico</h3>
-          <p>Transforme o seu espaço em um destino comentado. Implementamos ferramentas interativas de retenção de salão (como o Brat Experience) e estratégias para aquecer o movimento e elevar o ticket médio.</p>
-          <ul class="tab-feature-list">
-            <li>Cronômetro interativo e dinâmicas de mesa que estimulam consumo e compartilhamento.</li>
-            <li>Campanhas coordenadas para equalizar movimento em dias tradicionalmente fracos.</li>
-            <li>Treinamento de atendimento para transformar visitantes ocasionais em clientes fiéis.</li>
-          </ul>
-          <div class="tab-action-group">
-            <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20de%20sal%C3%A3o%20da%20Ardor." class="btn" target="_blank" rel="noopener noreferrer">Movimentar Salão</a>
-            <a href="experiencia-de-salao.html" class="link-subpage">Ver Detalhes do Pilar →</a>
+          <div class="origin-stat-card">
+            <div class="origin-stat-num">GEO</div>
+            <div class="origin-stat-lbl">Arquitetura de Dados para IAs</div>
           </div>
-        </div>
-        <div class="tab-media-frame">
-          <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resumo da Liderança e Laboratório -->
-  <section class="about-summary-section">
-    <div class="container">
-      <div class="about-summary-card reveal">
-        <span class="section-tag">Governança & Origem</span>
-        <h2>Engenharia de dados, psicologia corporativa e chão de loja real.</h2>
-        <p>
-          A Ardor Gestão foi estruturada a partir da convergência entre três áreas fundamentais: <strong>Psicologia Comportamental</strong>, <strong>Estratégia de Mercado</strong> e <strong>Tecnologia da Informação</strong>. Nossa direção executiva consolidou duas décadas de bagagem em multinacionais e no sistema financeiro, liderando diretamente mais de 1.000 profissionais e conduzindo projetos de redução de perdas financeiras na casa dos milhões.
-        </p>
-        <p>
-          Toda essa disciplina analítica foi posteriormente transportada para a economia física através da fundação do nosso próprio comércio físico — um laboratório permanente onde cada processo, indicador de margem e ferramenta tecnológica é exaustivamente testado antes de ser levado ao seu negócio.
-        </p>
-        <a href="sobre.html" class="link-subpage" style="display: inline-block; margin-top: 10px;">Conheça Nossa História e Metodologia Completa →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Programas de Acompanhamento (Carrossel Horizontal Deslizante) -->
-  <section class="packages-section">
-    <div class="container">
-      <div class="section-header-wrap reveal">
-        <div>
-          <span class="section-tag">Formatos de Apoio</span>
-          <h2 class="section-title">Como Podemos Caminhar Juntos</h2>
-          <p class="section-desc">Escolha o nível de acompanhamento ideal para o momento da sua empresa.</p>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-arrow" onclick="scrollPackages(-360)" aria-label="Anterior">←</button>
-          <button class="carousel-arrow" onclick="scrollPackages(360)" aria-label="Seguinte">→</button>
-        </div>
-      </div>
-
-      <div class="carousel-track" id="packagesTrack">
-        <!-- Card 1 -->
-        <div class="package-card">
-          <div>
-            <h3 class="package-title">Estruturação & Paz</h3>
-            <div class="package-badge">Rotina & Caixa Seguro</div>
-            <p class="package-desc">Para organizar a casa, estancar desperdícios e colocar os processos diários da equipe nos trilhos.</p>
-            <ul class="package-list">
-              <li>Encontros práticos para desenho de rotinas e checklists da equipe.</li>
-              <li>Revisão do cardápio e mix focando nos itens de maior rentabilidade.</li>
-              <li>Estruturação e organização semântica para buscas e IAs.</li>
-            </ul>
+          <div class="origin-stat-card">
+            <div class="origin-stat-num">DRE</div>
+            <div class="origin-stat-lbl">Gestão Focada em Margem Líquida</div>
           </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Formato</a>
-        </div>
-
-        <!-- Card 2 (Destaque) -->
-        <div class="package-card featured">
-          <div class="featured-tag">Mais Escolhido</div>
-          <div>
-            <h3 class="package-title">Maturidade & Salão Cheio</h3>
-            <div class="package-badge">Organização & Tração</div>
-            <p class="package-desc">O apoio completo para manter a casa arrumada, custos protegidos e clientes encantados no salão.</p>
-            <ul class="package-list">
-              <li>Consultoria completa de rotinas, treinamento de equipe e controle de margem.</li>
-              <li>Instalação da tecnologia interativa <strong>Brat Experience</strong> no salão.</li>
-              <li>Posicionamento no Google Maps e otimização para assistentes de IA (GEO).</li>
-              <li>Produção visual estratégica para elevar a autoridade da marca.</li>
-              <li>Tráfego pago regional qualificado no Instagram e Google.</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Apoio</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="package-card">
-          <div>
-            <h3 class="package-title">Parceria Estratégica 360°</h3>
-            <div class="package-badge">O Braço Direito do Seu Negócio</div>
-            <p class="package-desc">A Ardor ao seu lado mês a mês cuidando de números, equipe e crescimento contínuo.</p>
-            <ul class="package-list">
-              <li>Comitê mensal de avaliação financeira, margem e auditoria de processos.</li>
-              <li>Suporte contínuo ao sistema e ferramentas de salão.</li>
-              <li>Gestão contínua de anúncios pagos alinhados à margem real de venda.</li>
-              <li>Novas produções visuais periódicas para fortalecimento da marca.</li>
-              <li>Apoio direto e mentoria contínua para as lideranças da loja.</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conversar%20sobre%20a%20Parceria%20Estrat%C3%A9gica%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com o Consultor</a>
         </div>
       </div>
     </div>
@@ -1249,35 +821,12 @@
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           @ardorgestao
         </a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="social-icon-btn" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          (11) 96669-9449
-        </a>
       </div>
       <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
     </div>
   </footer>
 
   <script>
-    function switchTab(evt, tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(c => c.classList.remove('active'));
-
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-
-      const target = document.getElementById(tabId);
-      if (target) target.classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-
-    function scrollPackages(distance) {
-      const track = document.getElementById('packagesTrack');
-      if (track) {
-        track.scrollBy({ left: distance, behavior: 'smooth' });
-      }
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -1286,7 +835,7 @@
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.1 });
 
       reveals.forEach(el => observer.observe(el));
     });
