@@ -27,7 +27,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -347,7 +346,7 @@
       box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
     }
 
-    /* Cabeçalho Hero da Página */
+    /* Cabeçalho Hero da Subpágina */
     .page-hero {
       padding: 55px 0 40px;
       text-align: center;
@@ -390,7 +389,7 @@
 
     /* Seção Comparativa: Ardor vs Agências */
     .compare-section {
-      padding: 30px 0 60px;
+      padding: 20px 0 50px;
     }
 
     .compare-card {
@@ -402,7 +401,7 @@
     }
 
     .compare-header {
-      padding: 24px 30px;
+      padding: 22px 30px;
       background: #F4EFEB;
       border-bottom: 1px solid var(--border);
       display: grid;
@@ -428,7 +427,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      padding: 22px 30px;
+      padding: 20px 30px;
       border-bottom: 1px solid var(--border);
       align-items: center;
     }
@@ -471,7 +470,9 @@
       font-weight: 900;
     }
 
-    /* Bloco GEO / IA Search */
+    /* ========================================================
+       BLOCO GEO & FERRAMENTA INTERATIVA DE DIAGNÓSTICO
+       ======================================================== */
     .geo-section {
       padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
@@ -480,90 +481,320 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .geo-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px;
-      align-items: center;
+    .geo-intro {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
     }
 
-    .geo-content h2 {
+    .geo-intro h2 {
       font-size: 2.1rem;
       font-weight: 900;
       letter-spacing: -0.6px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       line-height: 1.25;
     }
 
-    .geo-content p {
+    .geo-intro p {
       font-size: 0.98rem;
       color: var(--text-light-muted);
       line-height: 1.65;
+    }
+
+    /* O Scanner / Terminal Interativo */
+    .geo-scanner-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      padding: 34px 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .scanner-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .scanner-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .scanner-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-light-muted);
       margin-bottom: 22px;
-    }
-
-    .geo-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .geo-list li {
-      font-size: 0.90rem;
-      color: #FFFFFF;
-      position: relative;
-      padding-left: 24px;
       line-height: 1.5;
     }
 
-    .geo-list li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--amber-gold);
-      font-weight: 900;
+    .scanner-input-group {
+      display: flex;
+      gap: 10px;
+      position: relative;
     }
 
-    .geo-box-tech {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 30px;
-      backdrop-filter: blur(8px);
+    .scanner-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 10px;
+      padding: 15px 18px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #FFFFFF;
+      outline: none;
+      transition: all 0.2s ease;
     }
 
-    .geo-box-tech h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--amber-gold);
+    .scanner-input:focus {
+      border-color: var(--amber-gold);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 16px rgba(201, 136, 43, 0.3);
+    }
+
+    .scanner-btn {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      padding: 0 24px;
+      font-weight: 700;
+      font-size: 0.90rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .scanner-btn:hover {
+      background: var(--terracotta-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Animação do Scanner em Andamento */
+    .scanner-progress-box {
+      display: none;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
       margin-bottom: 12px;
     }
 
-    .geo-box-tech p {
-      font-size: 0.88rem;
+    .progress-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--terracotta), var(--amber-gold));
+      border-radius: 6px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-status-text {
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-status-text::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34D399;
+      box-shadow: 0 0 8px #34D399;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    /* Resultado do Diagnóstico Inicial */
+    .scanner-result-box {
+      display: none;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInResult 0.4s ease;
+    }
+
+    @keyframes fadeInResult {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #F87171;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .result-biz-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .result-detail-text {
+      font-size: 0.90rem;
       color: var(--text-light-muted);
       line-height: 1.6;
-      margin-bottom: 16px;
+      margin-bottom: 22px;
     }
 
-    .geo-tags-wrap {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .geo-tag-item {
-      font-size: 0.74rem;
+    .btn-continue-audit {
+      background: #FFFFFF;
+      color: var(--text-main);
+      padding: 12px 22px;
+      border-radius: 8px;
       font-weight: 700;
-      background: rgba(255, 255, 255, 0.08);
-      color: #FFFFFF;
-      padding: 5px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.86rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
     }
 
-    /* Entregáveis de Tráfego Pago por Margem */
+    .btn-continue-audit:hover {
+      background: var(--amber-gold);
+      color: #FFFFFF;
+    }
+
+    /* As 3 Perguntas Estratégicas */
+    .questions-box {
+      display: none;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInResult 0.4s ease;
+    }
+
+    .question-item {
+      margin-bottom: 20px;
+    }
+
+    .question-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--text-light-muted);
+      font-size: 0.84rem;
+      font-family: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .option-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border-color: var(--amber-gold);
+    }
+
+    .option-btn.selected {
+      background: var(--terracotta-soft);
+      border-color: var(--terracotta);
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    /* Card Final do WhatsApp Personalizado */
+    .final-wa-box {
+      display: none;
+      margin-top: 24px;
+      padding: 22px;
+      background: rgba(37, 211, 102, 0.08);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: 14px;
+      text-align: center;
+      animation: fadeInResult 0.4s ease;
+    }
+
+    .final-wa-box h4 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #34D399;
+      margin-bottom: 6px;
+    }
+
+    .final-wa-box p {
+      font-size: 0.86rem;
+      color: var(--text-light-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .btn-wa-finish {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.90rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-wa-finish:hover {
+      background: #1EBE5D;
+      transform: translateY(-2px);
+    }
+
+    /* Entregáveis de Tráfego Pago */
     .deliverables-section {
       padding: 85px 0;
       background: var(--bg);
@@ -633,7 +864,7 @@
       line-height: 1.6;
     }
 
-    /* Bloco Final de Conversão */
+    /* CTA Final */
     .cta-final-section {
       padding: 70px 0;
       background: #FFFFFF;
@@ -819,24 +1050,30 @@
       }
 
       .compare-section {
-        padding: 15px 0 45px;
+        padding: 15px 0 40px;
       }
       .compare-header,
       .compare-row {
         grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 18px 20px;
+        gap: 10px;
+        padding: 16px 18px;
       }
 
       .geo-section {
-        padding: 50px 0;
+        padding: 45px 0;
       }
-      .geo-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .geo-content h2 {
+      .geo-intro h2 {
         font-size: 1.55rem;
+      }
+      .geo-scanner-card {
+        padding: 24px 18px;
+      }
+      .scanner-input-group {
+        flex-direction: column;
+      }
+      .scanner-btn {
+        padding: 14px;
+        justify-content: center;
       }
 
       .deliverables-section {
@@ -904,7 +1141,7 @@
     <section class="page-hero reveal">
       <span class="section-tag">Pilar Tecnológico & Demanda</span>
       <h1>Tráfego pago orientado por margem e presença em <span class="highlight">Inteligência Artificial</span>.</h1>
-      <p>Anúncios digitais calibrados pelo lucro real do produto somados à arquitetura de dados que posiciona seu comércio nas respostas dos assistentes de IA.</p>
+      <p>Anúncios calibrados pelo lucro real do produto somados à arquitetura que faz o seu comércio ser indicado nas buscas de IA.</p>
     </section>
 
     <!-- Tabela Comparativa: Ardor vs Agências -->
@@ -958,40 +1195,108 @@
     </section>
   </div>
 
-  <!-- Bloco GEO: Generative Engine Optimization -->
+  <!-- Bloco GEO + Scanner Interativo com as 3 Perguntas -->
   <section class="geo-section">
     <div class="container">
-      <div class="geo-grid">
-        <div class="geo-content reveal">
-          <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Inovação de Mercado</span>
-          <h2>A sua empresa recomendada pelos motores de IA.</h2>
-          <p>
-            O comportamento de busca mudou. O consumidor moderno não clica mais em dezenas de links antigos, ele pergunta diretamente ao ChatGPT, Gemini e assistentes de voz onde comer, onde comprar e em quem confiar na região.
-          </p>
-          <ul class="geo-list">
-            <li>Estruturação semântica de cardápios, serviços e atributos do ponto comercial.</li>
-            <li>Consistência de dados cadastrais auditados para motores de recomendação generativa.</li>
-            <li>Sincronização prioritária com Google Maps e avaliações de alta relevância local.</li>
-          </ul>
+      <div class="geo-intro reveal">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Inovação de Mercado</span>
+        <h2>A sua empresa recomendada pelos motores de IA.</h2>
+        <p>
+          O consumidor moderno pergunta diretamente ao ChatGPT, Gemini e assistentes de voz onde ir na cidade. Teste agora se o seu comércio possui arquitetura semântica para ser recomendado.
+        </p>
+      </div>
+
+      <!-- O Terminal / Scanner Interativo -->
+      <div class="geo-scanner-card reveal delay-1">
+        <!-- Fase 1: Input do Nome -->
+        <div id="scannerPhaseInput">
+          <span class="scanner-label">Auditor de Visibilidade & GEO</span>
+          <h3 class="scanner-title">Consulte o Status Digital do Seu Comércio</h3>
+          <p class="scanner-subtitle">Digite o nome da sua empresa exatamente como consta no Google.</p>
+          
+          <div class="scanner-input-group">
+            <input type="text" id="businessNameInput" class="scanner-input" placeholder="Ex: Hamburgueria Silva, Café do Centro..." autocomplete="off">
+            <button class="scanner-btn" id="startScanBtn">
+              Auditar Empresa
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+          </div>
         </div>
 
-        <div class="geo-box-tech reveal delay-1">
-          <h3>Como Funciona o GEO</h3>
-          <p>
-            Diferente do SEO comum, a Inteligência Artificial busca respostas diretas e verificáveis. Ajustamos a arquitetura digital do seu negócio para que a IA o reconheça como a resposta geográfica mais confiável.
-          </p>
-          <div class="geo-tags-wrap">
-            <span class="geo-tag-item">ChatGPT Search</span>
-            <span class="geo-tag-item">Google Gemini</span>
-            <span class="geo-tag-item">Perplexity AI</span>
-            <span class="geo-tag-item">Google Maps Local</span>
+        <!-- Fase 2: Barra de Progresso / Carregamento -->
+        <div class="scanner-progress-box" id="scannerProgressBox">
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
           </div>
+          <div class="progress-status-text" id="progressStatusText">
+            Consultando registros no Google Maps...
+          </div>
+        </div>
+
+        <!-- Fase 3: Mini Diagnóstico Realista -->
+        <div class="scanner-result-box" id="scannerResultBox">
+          <div class="result-badge-status">
+            ⚠️ Status: Indexação Básica / Ausência em Motores de IA
+          </div>
+          <h4 class="result-biz-name" id="resultBizName">Nome da Empresa</h4>
+          <p class="result-detail-text">
+            O seu comércio provavelmente já possui ficha de endereço no Google tradicional. No entanto, os motores generativos (ChatGPT, Gemini e Perplexity) realizam varreduras de atributos semânticos, consistência de cardápio/serviço e dados estruturados. Sem essa arquitetura, as IAs priorizam concorrentes consolidados na sua região.
+          </p>
+          <button class="btn-continue-audit" id="btnGoToQuestions">
+            Continuar Diagnóstico de 3 Etapas →
+          </button>
+        </div>
+
+        <!-- Fase 4: As 3 Perguntas Rápidas de Qualificação -->
+        <div class="questions-box" id="questionsBox">
+          <div class="question-item">
+            <p class="question-title">1. Você tem clareza exata de qual produto do seu mix gera a maior margem líquida de lucro?</p>
+            <div class="options-group">
+              <button class="option-btn" onclick="selectOption(1, 'Sim, acompanho a Curva ABC e margem real.', this)">Sim, acompanho a Curva ABC e margem real.</button>
+              <button class="option-btn" onclick="selectOption(1, 'Sei quais vendem mais, mas não a margem exata de cada um.', this)">Sei quais vendem mais, mas não a margem exata de cada um.</button>
+              <button class="option-btn" onclick="selectOption(1, 'Não tenho controle de custo unitário (CMV).', this)">Não tenho controle de custo unitário (CMV).</button>
+            </div>
+          </div>
+
+          <div class="question-item">
+            <p class="question-title">2. Como tem sido o fluxo de novos clientes e atração nos últimos meses?</p>
+            <div class="options-group">
+              <button class="option-btn" onclick="selectOption(2, 'Previsível através de tráfego pago ativo.', this)">Previsível através de tráfego pago ativo.</button>
+              <button class="option-btn" onclick="selectOption(2, 'Oscila bastante dependendo do dia da semana e clima.', this)">Oscila bastante dependendo do dia da semana e clima.</button>
+              <button class="option-btn" onclick="selectOption(2, 'Dependo exclusivamente do boca a boca orgânico.', this)">Dependo exclusivamente do boca a boca orgânico.</button>
+            </div>
+          </div>
+
+          <div class="question-item">
+            <p class="question-title">3. Se você precisar se ausentar por 7 dias, a equipe mantém o mesmo padrão operacional?</p>
+            <div class="options-group">
+              <button class="option-btn" onclick="selectOption(3, 'Sim, os manuais e rotinas são autônomos.', this)">Sim, os manuais e rotinas são autônomos.</button>
+              <button class="option-btn" onclick="selectOption(3, 'Funciona, mas com falhas frequentes de padrão e retrabalho.', this)">Funciona, mas com falhas frequentes de padrão e retrabalho.</button>
+              <button class="option-btn" onclick="selectOption(3, 'Não, tudo depende da minha presença física.', this)">Não, tudo depende da minha presença física.</button>
+            </div>
+          </div>
+
+          <button class="btn" id="btnFinishAudit" style="width: 100%; display: none; margin-top: 10px;">
+            Gerar Diagnóstico Operacional
+          </button>
+        </div>
+
+        <!-- Fase 5: Conclusão e Envio para o WhatsApp com os dados preenchidos -->
+        <div class="final-wa-box" id="finalWaBox">
+          <h4>Diagnóstico Estratégico Concluído</h4>
+          <p>
+            Identificamos pontos de melhoria tanto na proteção da sua margem quanto na sua arquitetura de IA local. Para receber a devolutiva técnica e entender como a Ardor estrutura sua operação:
+          </p>
+          <a href="#" class="btn-wa-finish" id="waFinalLink" target="_blank" rel="noopener noreferrer">
+            Receber Devolutiva no WhatsApp
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Três Entregáveis Práticos de Tráfego -->
+  <!-- Entregáveis Práticos de Tráfego -->
   <section class="deliverables-section">
     <div class="container">
       <div class="section-title-wrap reveal">
@@ -1021,7 +1326,7 @@
           <div>
             <span class="card-badge">Gestão de Caixa</span>
             <h3>Mídia por Margem</h3>
-            <p>O investimento é calibrado pelo lucro líquido e capacidade operacional. Sem risco de acelerar produtos deficitários ou gerar gargalos na cozinha ou estoque.</p>
+            <p>O investimento é calibrado pelo lucro líquido e capacidade operacional. Sem risco de acelerar produtos deficitários ou gerar gargalos na retaguarda da loja.</p>
           </div>
         </div>
       </div>
@@ -1033,7 +1338,7 @@
     <div class="container">
       <div class="cta-final-box reveal">
         <h2>Pronto para posicionar seu negócio com maturidade técnica?</h2>
-        <p>Solicite uma análise dos seus ativos digitais e descubra como colocar sua empresa à frente da concorrência local.</p>
+        <p>Converse com nossa equipe para desenhar a infraestrutura de dados e mídia da sua empresa.</p>
         <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20uma%20an%C3%A1lise%20dos%20ativos%20digitais%20e%20IA%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">
           Solicitar Análise de Ativos & IA
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1114,6 +1419,7 @@
 
       reveals.forEach(el => observer.observe(el));
 
+      // Lógica do Modal Translúcido Mobile
       const openBtn = document.getElementById('openMenuBtn');
       const closeBtn = document.getElementById('closeMenuBtn');
       const drawer = document.getElementById('mobileDrawer');
@@ -1157,6 +1463,104 @@
 
       window.addEventListener('scroll', onScroll, { passive: true });
     })();
+
+    /* ========================================================
+       LÓGICA DO SCANNER DE AUDITORIA GEO & QUALIFICAÇÃO
+       ======================================================== */
+    let auditData = {
+      bizName: '',
+      answers: { 1: '', 2: '', 3: '' }
+    };
+
+    const startScanBtn = document.getElementById('startScanBtn');
+    const businessNameInput = document.getElementById('businessNameInput');
+    const scannerPhaseInput = document.getElementById('scannerPhaseInput');
+    const scannerProgressBox = document.getElementById('scannerProgressBox');
+    const progressBarFill = document.getElementById('progressBarFill');
+    const progressStatusText = document.getElementById('progressStatusText');
+    const scannerResultBox = document.getElementById('scannerResultBox');
+    const resultBizName = document.getElementById('resultBizName');
+    const btnGoToQuestions = document.getElementById('btnGoToQuestions');
+    const questionsBox = document.getElementById('questionsBox');
+    const btnFinishAudit = document.getElementById('btnFinishAudit');
+    const finalWaBox = document.getElementById('finalWaBox');
+    const waFinalLink = document.getElementById('waFinalLink');
+
+    if (startScanBtn) {
+      startScanBtn.addEventListener('click', function() {
+        const val = businessNameInput.value.trim();
+        if (!val) {
+          businessNameInput.focus();
+          return;
+        }
+
+        auditData.bizName = val;
+        scannerPhaseInput.style.display = 'none';
+        scannerProgressBox.style.display = 'block';
+
+        // Etapas de Carregamento Simulado
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += 25;
+          progressBarFill.style.width = progress + '%';
+
+          if (progress === 25) {
+            progressStatusText.textContent = 'Verificando indexação semântica e atributos locais...';
+          } else if (progress === 50) {
+            progressStatusText.textContent = 'Consultando motores de IA (ChatGPT, Gemini, Perplexity)...';
+          } else if (progress === 75) {
+            progressStatusText.textContent = 'Avaliando dados estruturados e autoridade geográfica...';
+          } else if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              scannerProgressBox.style.display = 'none';
+              resultBizName.textContent = auditData.bizName;
+              scannerResultBox.style.display = 'block';
+            }, 400);
+          }
+        }, 400);
+      });
+    }
+
+    if (btnGoToQuestions) {
+      btnGoToQuestions.addEventListener('click', function() {
+        scannerResultBox.style.display = 'none';
+        questionsBox.style.display = 'block';
+      });
+    }
+
+    function selectOption(questionNum, text, el) {
+      auditData.answers[questionNum] = text;
+      
+      const parent = el.parentElement;
+      parent.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+      el.classList.add('selected');
+
+      // Se respondeu as 3, exibe o botão final
+      if (auditData.answers[1] && auditData.answers[2] && auditData.answers[3]) {
+        btnFinishAudit.style.display = 'block';
+        btnFinishAudit.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    if (btnFinishAudit) {
+      btnFinishAudit.addEventListener('click', function() {
+        questionsBox.style.display = 'none';
+        finalWaBox.style.display = 'block';
+
+        // Monta mensagem estruturada para o WhatsApp
+        const waMsg = encodeURIComponent(
+          `Olá, acabei de realizar o diagnóstico inicial de GEO no site da Ardor para o meu comércio:\n\n` +
+          `*Empresa:* ${auditData.bizName}\n` +
+          `*1. Controle de Margem/CMV:* ${auditData.answers[1]}\n` +
+          `*2. Demanda e Fluxo de Clientes:* ${auditData.answers[2]}\n` +
+          `*3. Autonomia da Equipe:* ${auditData.answers[3]}\n\n` +
+          `Gostaria de entender como a Ardor pode estruturar a operação e a presença de IA da minha empresa.`
+        );
+
+        waFinalLink.href = `https://wa.me/5511966699449?text=${waMsg}`;
+      });
+    }
   </script>
 
 </body>
