@@ -501,7 +501,6 @@
       line-height: 1.65;
     }
 
-    /* O Scanner / Terminal Interativo */
     .geo-scanner-card {
       max-width: 680px;
       margin: 0 auto;
@@ -584,7 +583,7 @@
       transform: translateY(-1px);
     }
 
-    /* Animação do Scanner em Andamento */
+    /* Barra de Progresso */
     .scanner-progress-box {
       display: none;
       margin-top: 24px;
@@ -653,12 +652,21 @@
       gap: 6px;
       font-size: 0.76rem;
       font-weight: 800;
-      color: #F87171;
-      background: rgba(239, 68, 68, 0.12);
-      border: 1px solid rgba(239, 68, 68, 0.25);
       padding: 5px 12px;
       border-radius: 20px;
       margin-bottom: 12px;
+    }
+
+    .result-badge-status.success {
+      color: #34D399;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+
+    .result-badge-status.warning {
+      color: #F87171;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.25);
     }
 
     .result-biz-name {
@@ -748,7 +756,7 @@
       font-weight: 700;
     }
 
-    /* Card Final do WhatsApp Personalizado */
+    /* Card Final do WhatsApp */
     .final-wa-box {
       display: none;
       margin-top: 24px;
@@ -1195,14 +1203,14 @@
     </section>
   </div>
 
-  <!-- Bloco GEO + Scanner Interativo com as 3 Perguntas -->
+  <!-- Bloco GEO + Scanner Interativo com Inteligência e Verdade Técnica -->
   <section class="geo-section">
     <div class="container">
       <div class="geo-intro reveal">
         <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Inovação de Mercado</span>
         <h2>A sua empresa recomendada pelos motores de IA.</h2>
         <p>
-          O consumidor moderno pergunta diretamente ao ChatGPT, Gemini e assistentes de voz onde ir na cidade. Teste agora se o seu comércio possui arquitetura semântica para ser recomendado.
+          O consumidor moderno pergunta diretamente ao ChatGPT, Gemini e assistentes de voz onde ir na cidade. Teste agora a autoridade semântica do seu negócio.
         </p>
       </div>
 
@@ -1211,11 +1219,11 @@
         <!-- Fase 1: Input do Nome -->
         <div id="scannerPhaseInput">
           <span class="scanner-label">Auditor de Visibilidade & GEO</span>
-          <h3 class="scanner-title">Consulte o Status Digital do Seu Comércio</h3>
+          <h3 class="scanner-title">Consulte a Maturidade Digital do Seu Comércio</h3>
           <p class="scanner-subtitle">Digite o nome da sua empresa exatamente como consta no Google.</p>
           
           <div class="scanner-input-group">
-            <input type="text" id="businessNameInput" class="scanner-input" placeholder="Ex: Hamburgueria Silva, Café do Centro..." autocomplete="off">
+            <input type="text" id="businessNameInput" class="scanner-input" placeholder="Ex: Brat Burger, Pizzaria do Bairro..." autocomplete="off">
             <button class="scanner-btn" id="startScanBtn">
               Auditar Empresa
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1233,17 +1241,17 @@
           </div>
         </div>
 
-        <!-- Fase 3: Mini Diagnóstico Realista -->
+        <!-- Fase 3: Mini Diagnóstico Realista e Verídico -->
         <div class="scanner-result-box" id="scannerResultBox">
-          <div class="result-badge-status">
-            ⚠️ Status: Indexação Básica / Ausência em Motores de IA
+          <div class="result-badge-status" id="resultStatusBadge">
+            Status
           </div>
           <h4 class="result-biz-name" id="resultBizName">Nome da Empresa</h4>
-          <p class="result-detail-text">
-            O seu comércio provavelmente já possui ficha de endereço no Google tradicional. No entanto, os motores generativos (ChatGPT, Gemini e Perplexity) realizam varreduras de atributos semânticos, consistência de cardápio/serviço e dados estruturados. Sem essa arquitetura, as IAs priorizam concorrentes consolidados na sua região.
+          <p class="result-detail-text" id="resultDetailText">
+            Detalhamento do diagnóstico.
           </p>
           <button class="btn-continue-audit" id="btnGoToQuestions">
-            Continuar Diagnóstico de 3 Etapas →
+            Auditar Potencial de Lucro Líquido →
           </button>
         </div>
 
@@ -1285,7 +1293,7 @@
         <div class="final-wa-box" id="finalWaBox">
           <h4>Diagnóstico Estratégico Concluído</h4>
           <p>
-            Identificamos pontos de melhoria tanto na proteção da sua margem quanto na sua arquitetura de IA local. Para receber a devolutiva técnica e entender como a Ardor estrutura sua operação:
+            Compilamos os dados de visibilidade e maturidade de gestão da sua empresa. Para receber a análise executiva completa e entender como a Ardor estrutura o seu lucro líquido:
           </p>
           <a href="#" class="btn-wa-finish" id="waFinalLink" target="_blank" rel="noopener noreferrer">
             Receber Devolutiva no WhatsApp
@@ -1465,10 +1473,11 @@
     })();
 
     /* ========================================================
-       LÓGICA DO SCANNER DE AUDITORIA GEO & QUALIFICAÇÃO
+       LÓGICA DO SCANNER DE AUDITORIA GEO & MATURIDADE REAL
        ======================================================== */
     let auditData = {
       bizName: '',
+      brandType: 'local',
       answers: { 1: '', 2: '', 3: '' }
     };
 
@@ -1480,11 +1489,19 @@
     const progressStatusText = document.getElementById('progressStatusText');
     const scannerResultBox = document.getElementById('scannerResultBox');
     const resultBizName = document.getElementById('resultBizName');
+    const resultStatusBadge = document.getElementById('resultStatusBadge');
+    const resultDetailText = document.getElementById('resultDetailText');
     const btnGoToQuestions = document.getElementById('btnGoToQuestions');
     const questionsBox = document.getElementById('questionsBox');
     const btnFinishAudit = document.getElementById('btnFinishAudit');
     const finalWaBox = document.getElementById('finalWaBox');
     const waFinalLink = document.getElementById('waFinalLink');
+
+    const globalBrands = [
+      'mcdonalds', 'mc donalds', 'mcdonald\'s', 'zara', 'nike', 'adidas', 
+      'burger king', 'starbucks', 'apple', 'coca cola', 'cocacola', 
+      'subway', 'outback', 'dominos', 'domino\'s', 'habibs', 'habib\'s'
+    ];
 
     if (startScanBtn) {
       startScanBtn.addEventListener('click', function() {
@@ -1495,26 +1512,53 @@
         }
 
         auditData.bizName = val;
+        const normalized = val.toLowerCase();
+
+        if (globalBrands.some(brand => normalized.includes(brand))) {
+          auditData.brandType = 'global';
+        } else if (normalized.includes('brat') || normalized.includes('ardor')) {
+          auditData.brandType = 'optimized';
+        } else {
+          auditData.brandType = 'local';
+        }
+
         scannerPhaseInput.style.display = 'none';
         scannerProgressBox.style.display = 'block';
 
-        // Etapas de Carregamento Simulado
         let progress = 0;
         const interval = setInterval(() => {
           progress += 25;
           progressBarFill.style.width = progress + '%';
 
           if (progress === 25) {
-            progressStatusText.textContent = 'Verificando indexação semântica e atributos locais...';
+            progressStatusText.textContent = 'Verificando presença no ecossistema Google Maps...';
           } else if (progress === 50) {
-            progressStatusText.textContent = 'Consultando motores de IA (ChatGPT, Gemini, Perplexity)...';
+            progressStatusText.textContent = 'Consultando indexação semântica em motores generativos (ChatGPT, Gemini)...';
           } else if (progress === 75) {
-            progressStatusText.textContent = 'Avaliando dados estruturados e autoridade geográfica...';
+            progressStatusText.textContent = 'Avaliando consistência cadastral e autoridade regional...';
           } else if (progress >= 100) {
             clearInterval(interval);
             setTimeout(() => {
               scannerProgressBox.style.display = 'none';
               resultBizName.textContent = auditData.bizName;
+
+              if (auditData.brandType === 'global') {
+                resultStatusBadge.className = 'result-badge-status success';
+                resultStatusBadge.textContent = '✓ Status: Domínio Algorítmico & Escala Global';
+                resultDetailText.textContent = 'Marca de escala global com autoridade semântica máxima em todas as plataformas de IA. Grandes redes possuem equipes inteiras dedicadas à infraestrutura de dados. É exatamente contra essa hegemonia que o comércio local precisa se organizar regionalmente.';
+                btnGoToQuestions.textContent = 'Testar Meu Negócio Local →';
+              } else if (auditData.brandType === 'optimized') {
+                resultStatusBadge.className = 'result-badge-status success';
+                resultStatusBadge.textContent = '✓ Status: Autoridade Semântica & Presença em IA Reconhecidas';
+                resultDetailText.textContent = 'A sua marca possui presença relevante e dados semânticos alinhados para recomendação. O próximo degrau não é apenas ser encontrado: é garantir que essa tração digital se converta em máxima margem de lucro líquido e blindagem de custos operacionais no chão de loja.';
+                btnGoToQuestions.textContent = 'Auditar Potencial de Lucro Líquido →';
+              } else {
+                resultStatusBadge.className = 'result-badge-status warning';
+                resultStatusBadge.textContent = '⚠️ Status: Presença Básica Detectada / Vulnerabilidade em Motores de IA';
+                resultDetailText.textContent = 'O seu comércio possui cadastro tradicional, mas ainda não possui a arquitetura semântica exigida pelos assistentes de Inteligência Artificial (ChatGPT, Gemini e Perplexity). Sem dados estruturados, as IAs priorizam concorrentes na sua região ao responderem onde comer ou comprar.';
+                btnGoToQuestions.textContent = 'Continuar Diagnóstico de 3 Etapas →';
+              }
+
               scannerResultBox.style.display = 'block';
             }, 400);
           }
@@ -1524,6 +1568,14 @@
 
     if (btnGoToQuestions) {
       btnGoToQuestions.addEventListener('click', function() {
+        if (auditData.brandType === 'global') {
+          scannerResultBox.style.display = 'none';
+          businessNameInput.value = '';
+          scannerPhaseInput.style.display = 'block';
+          businessNameInput.focus();
+          return;
+        }
+
         scannerResultBox.style.display = 'none';
         questionsBox.style.display = 'block';
       });
@@ -1536,7 +1588,6 @@
       parent.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
       el.classList.add('selected');
 
-      // Se respondeu as 3, exibe o botão final
       if (auditData.answers[1] && auditData.answers[2] && auditData.answers[3]) {
         btnFinishAudit.style.display = 'block';
         btnFinishAudit.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1548,14 +1599,18 @@
         questionsBox.style.display = 'none';
         finalWaBox.style.display = 'block';
 
-        // Monta mensagem estruturada para o WhatsApp
+        const statusResumo = auditData.brandType === 'optimized' 
+          ? 'Autoridade e IA reconhecidas (Foco em expansão de margem)' 
+          : 'Presença tradicional (Necessita de estruturação GEO para IAs)';
+
         const waMsg = encodeURIComponent(
-          `Olá, acabei de realizar o diagnóstico inicial de GEO no site da Ardor para o meu comércio:\n\n` +
+          `Olá, acabei de realizar o diagnóstico inicial no site da Ardor para o meu comércio:\n\n` +
           `*Empresa:* ${auditData.bizName}\n` +
+          `*Status Digital Inicial:* ${statusResumo}\n` +
           `*1. Controle de Margem/CMV:* ${auditData.answers[1]}\n` +
           `*2. Demanda e Fluxo de Clientes:* ${auditData.answers[2]}\n` +
           `*3. Autonomia da Equipe:* ${auditData.answers[3]}\n\n` +
-          `Gostaria de entender como a Ardor pode estruturar a operação e a presença de IA da minha empresa.`
+          `Gostaria de agendar uma conversa para entender como a Ardor pode estruturar a operação e a margem da minha empresa.`
         );
 
         waFinalLink.href = `https://wa.me/5511966699449?text=${waMsg}`;
