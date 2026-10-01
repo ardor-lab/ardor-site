@@ -471,7 +471,7 @@
     }
 
     /* ========================================================
-       BLOCO GEO & FERRAMENTA INTERATIVA DE DIAGNÓSTICO
+       BLOCO GEO & SCANNER COM ALTURA FIXA E COMPACTAÇÃO
        ======================================================== */
     .geo-section {
       padding: 70px 0;
@@ -483,7 +483,7 @@
 
     .geo-intro {
       max-width: 760px;
-      margin: 0 auto 40px;
+      margin: 0 auto 36px;
       text-align: center;
     }
 
@@ -501,46 +501,51 @@
       line-height: 1.65;
     }
 
+    /* O Card do Scanner possui min-height para nunca saltar a tela */
     .geo-scanner-card {
-      max-width: 680px;
+      max-width: 660px;
+      min-height: 380px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 24px;
-      padding: 34px 28px;
+      padding: 30px 26px;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
     }
 
     .scanner-label {
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--amber-gold);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: block;
     }
 
     .scanner-title {
-      font-size: 1.35rem;
+      font-size: 1.28rem;
       font-weight: 900;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       line-height: 1.3;
     }
 
     .scanner-subtitle {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-light-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       line-height: 1.5;
     }
 
     .scanner-input-group {
       display: flex;
       gap: 10px;
-      position: relative;
     }
 
     .scanner-input {
@@ -548,8 +553,8 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 10px;
-      padding: 15px 18px;
-      font-size: 0.95rem;
+      padding: 14px 16px;
+      font-size: 0.92rem;
       font-family: inherit;
       color: #FFFFFF;
       outline: none;
@@ -567,9 +572,9 @@
       color: #FFFFFF;
       border: none;
       border-radius: 10px;
-      padding: 0 24px;
+      padding: 0 22px;
       font-weight: 700;
-      font-size: 0.90rem;
+      font-size: 0.88rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -580,20 +585,18 @@
 
     .scanner-btn:hover {
       background: var(--terracotta-hover);
-      transform: translateY(-1px);
     }
 
     /* Barra de Progresso */
     .scanner-progress-box {
       display: none;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 30px;
+      padding-top: 10px;
     }
 
     .progress-bar-container {
       width: 100%;
-      height: 8px;
+      height: 7px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 6px;
       overflow: hidden;
@@ -609,7 +612,7 @@
     }
 
     .progress-status-text {
-      font-size: 0.82rem;
+      font-size: 0.80rem;
       color: var(--text-light-muted);
       font-family: monospace;
       display: flex;
@@ -624,25 +627,17 @@
       border-radius: 50%;
       background: #34D399;
       box-shadow: 0 0 8px #34D399;
-      animation: pulse 1s infinite alternate;
-    }
-
-    @keyframes pulse {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
     }
 
     /* Resultado do Diagnóstico Inicial */
     .scanner-result-box {
       display: none;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInResult 0.4s ease;
+      margin-top: 10px;
+      animation: fadeInResult 0.35s ease;
     }
 
     @keyframes fadeInResult {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -650,11 +645,11 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 12px;
+      padding: 4px 10px;
+      border-radius: 16px;
+      margin-bottom: 10px;
     }
 
     .result-badge-status.success {
@@ -670,26 +665,26 @@
     }
 
     .result-biz-name {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 900;
       color: #FFFFFF;
       margin-bottom: 8px;
     }
 
     .result-detail-text {
-      font-size: 0.90rem;
+      font-size: 0.88rem;
       color: var(--text-light-muted);
       line-height: 1.6;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .btn-continue-audit {
       background: #FFFFFF;
       color: var(--text-main);
-      padding: 12px 22px;
+      padding: 12px 20px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       border: none;
       cursor: pointer;
       display: inline-flex;
@@ -703,44 +698,42 @@
       color: #FFFFFF;
     }
 
-    /* As 3 Perguntas Estratégicas */
+    /* As 3 Perguntas Compactas e Fluidas */
     .questions-box {
       display: none;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInResult 0.4s ease;
+      animation: fadeInResult 0.35s ease;
     }
 
     .question-item {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .question-title {
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: #FFFFFF;
-      margin-bottom: 10px;
-      line-height: 1.4;
+      margin-bottom: 6px;
+      line-height: 1.35;
     }
 
     .options-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 5px;
     }
 
     .option-btn {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
-      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 7px;
+      padding: 8px 12px;
       color: var(--text-light-muted);
-      font-size: 0.84rem;
+      font-size: 0.78rem;
       font-family: inherit;
       text-align: left;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
+      line-height: 1.3;
     }
 
     .option-btn:hover {
@@ -756,45 +749,51 @@
       font-weight: 700;
     }
 
-    /* Card Final do WhatsApp */
+    /* Card Final do WhatsApp (Sem encolher a tela bruscamente) */
     .final-wa-box {
       display: none;
-      margin-top: 24px;
-      padding: 22px;
-      background: rgba(37, 211, 102, 0.08);
+      margin-top: 10px;
+      padding: 26px 20px;
+      background: rgba(37, 211, 102, 0.06);
       border: 1px solid rgba(37, 211, 102, 0.25);
-      border-radius: 14px;
+      border-radius: 16px;
       text-align: center;
       animation: fadeInResult 0.4s ease;
     }
 
     .final-wa-box h4 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 900;
       color: #34D399;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .final-wa-box p {
       font-size: 0.86rem;
       color: var(--text-light-muted);
-      line-height: 1.5;
-      margin-bottom: 18px;
+      line-height: 1.55;
+      margin-bottom: 22px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn-wa-finish {
       background: #25D366;
       color: #FFFFFF;
-      padding: 14px 28px;
+      padding: 16px 32px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 800;
-      font-size: 0.90rem;
+      font-size: 0.94rem;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
       transition: all 0.2s ease;
+      width: 100%;
+      max-width: 380px;
     }
 
     .btn-wa-finish:hover {
@@ -1074,13 +1073,14 @@
         font-size: 1.55rem;
       }
       .geo-scanner-card {
-        padding: 24px 18px;
+        padding: 20px 16px;
+        min-height: 360px;
       }
       .scanner-input-group {
         flex-direction: column;
       }
       .scanner-btn {
-        padding: 14px;
+        padding: 13px;
         justify-content: center;
       }
 
@@ -1133,7 +1133,7 @@
         <a href="ativos-digitais-e-ia.html" class="nav-link active">Tráfego & IA</a>
         <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
         <a href="sobre.html" class="nav-link">Sobre</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Diagnóstico</a>
+        <a href="#scanner" class="nav-link nav-link-cta">Diagnóstico</a>
         
         <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -1203,8 +1203,8 @@
     </section>
   </div>
 
-  <!-- Bloco GEO + Scanner Interativo com Inteligência e Verdade Técnica -->
-  <section class="geo-section">
+  <!-- Bloco GEO + Scanner Interativo com Altura Estável -->
+  <section class="geo-section" id="scanner">
     <div class="container">
       <div class="geo-intro reveal">
         <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Inovação de Mercado</span>
@@ -1214,7 +1214,7 @@
         </p>
       </div>
 
-      <!-- O Terminal / Scanner Interativo -->
+      <!-- O Terminal / Scanner Interativo com Altura Minima Estabilizada -->
       <div class="geo-scanner-card reveal delay-1">
         <!-- Fase 1: Input do Nome -->
         <div id="scannerPhaseInput">
@@ -1255,45 +1255,45 @@
           </button>
         </div>
 
-        <!-- Fase 4: As 3 Perguntas Rápidas de Qualificação -->
+        <!-- Fase 4: As 3 Perguntas Compactas -->
         <div class="questions-box" id="questionsBox">
           <div class="question-item">
-            <p class="question-title">1. Você tem clareza exata de qual produto do seu mix gera a maior margem líquida de lucro?</p>
+            <p class="question-title">1. Clareza sobre o produto com maior margem líquida?</p>
             <div class="options-group">
-              <button class="option-btn" onclick="selectOption(1, 'Sim, acompanho a Curva ABC e margem real.', this)">Sim, acompanho a Curva ABC e margem real.</button>
-              <button class="option-btn" onclick="selectOption(1, 'Sei quais vendem mais, mas não a margem exata de cada um.', this)">Sei quais vendem mais, mas não a margem exata de cada um.</button>
+              <button class="option-btn" onclick="selectOption(1, 'Acompanho Curva ABC e margem real.', this)">Acompanho Curva ABC e margem real.</button>
+              <button class="option-btn" onclick="selectOption(1, 'Sei os mais vendidos, mas não a margem exata.', this)">Sei os mais vendidos, mas não a margem exata.</button>
               <button class="option-btn" onclick="selectOption(1, 'Não tenho controle de custo unitário (CMV).', this)">Não tenho controle de custo unitário (CMV).</button>
             </div>
           </div>
 
           <div class="question-item">
-            <p class="question-title">2. Como tem sido o fluxo de novos clientes e atração nos últimos meses?</p>
+            <p class="question-title">2. Fluxo e atração de novos clientes nos últimos meses?</p>
             <div class="options-group">
               <button class="option-btn" onclick="selectOption(2, 'Previsível através de tráfego pago ativo.', this)">Previsível através de tráfego pago ativo.</button>
-              <button class="option-btn" onclick="selectOption(2, 'Oscila bastante dependendo do dia da semana e clima.', this)">Oscila bastante dependendo do dia da semana e clima.</button>
-              <button class="option-btn" onclick="selectOption(2, 'Dependo exclusivamente do boca a boca orgânico.', this)">Dependo exclusivamente do boca a boca orgânico.</button>
+              <button class="option-btn" onclick="selectOption(2, 'Oscila bastante dependendo do clima e dia.', this)">Oscila bastante dependendo do clima e dia.</button>
+              <button class="option-btn" onclick="selectOption(2, 'Dependo exclusivamente do boca a boca.', this)">Dependo exclusivamente do boca a boca.</button>
             </div>
           </div>
 
           <div class="question-item">
-            <p class="question-title">3. Se você precisar se ausentar por 7 dias, a equipe mantém o mesmo padrão operacional?</p>
+            <p class="question-title">3. Se você se ausentar por 7 dias, a equipe mantém o padrão?</p>
             <div class="options-group">
-              <button class="option-btn" onclick="selectOption(3, 'Sim, os manuais e rotinas são autônomos.', this)">Sim, os manuais e rotinas são autônomos.</button>
-              <button class="option-btn" onclick="selectOption(3, 'Funciona, mas com falhas frequentes de padrão e retrabalho.', this)">Funciona, mas com falhas frequentes de padrão e retrabalho.</button>
-              <button class="option-btn" onclick="selectOption(3, 'Não, tudo depende da minha presença física.', this)">Não, tudo depende da minha presença física.</button>
+              <button class="option-btn" onclick="selectOption(3, 'Sim, manuais e rotinas são autônomos.', this)">Sim, manuais e rotinas são autônomos.</button>
+              <button class="option-btn" onclick="selectOption(3, 'Funciona com falhas de padrão e retrabalho.', this)">Funciona com falhas de padrão e retrabalho.</button>
+              <button class="option-btn" onclick="selectOption(3, 'Não, tudo depende da minha presença.', this)">Não, tudo depende da minha presença.</button>
             </div>
           </div>
 
-          <button class="btn" id="btnFinishAudit" style="width: 100%; display: none; margin-top: 10px;">
+          <button class="btn" id="btnFinishAudit" style="width: 100%; display: none; margin-top: 14px; padding: 13px;">
             Gerar Diagnóstico Operacional
           </button>
         </div>
 
-        <!-- Fase 5: Conclusão e Envio para o WhatsApp com os dados preenchidos -->
+        <!-- Fase 5: Conclusão e Envio para o WhatsApp -->
         <div class="final-wa-box" id="finalWaBox">
-          <h4>Diagnóstico Estratégico Concluído</h4>
+          <h4>Diagnóstico Estratégico Compilado</h4>
           <p>
-            Compilamos os dados de visibilidade e maturidade de gestão da sua empresa. Para receber a análise executiva completa e entender como a Ardor estrutura o seu lucro líquido:
+            Análise concluída com sucesso. Os dados de visibilidade de IA e maturidade operacional estão prontos para envio.
           </p>
           <a href="#" class="btn-wa-finish" id="waFinalLink" target="_blank" rel="noopener noreferrer">
             Receber Devolutiva no WhatsApp
@@ -1341,14 +1341,14 @@
     </div>
   </section>
 
-  <!-- CTA Final -->
+  <!-- CTA Final Direto para o WhatsApp -->
   <section class="cta-final-section">
     <div class="container">
       <div class="cta-final-box reveal">
         <h2>Pronto para posicionar seu negócio com maturidade técnica?</h2>
         <p>Converse com nossa equipe para desenhar a infraestrutura de dados e mídia da sua empresa.</p>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20uma%20an%C3%A1lise%20dos%20ativos%20digitais%20e%20IA%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">
-          Solicitar Análise de Ativos & IA
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20de%20tr%C3%A1fego%20e%20ativos%20digitais%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">
+          Conversar Diretamente no WhatsApp
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1390,8 +1390,8 @@
       </nav>
 
       <div class="drawer-footer">
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="btn drawer-btn-cta" target="_blank" rel="noopener noreferrer">
-          Solicitar Diagnóstico
+        <a href="#scanner" class="btn drawer-btn-cta" onclick="closeDrawer()">
+          Fazer Diagnóstico de IA
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1437,7 +1437,7 @@
         document.body.style.overflow = 'hidden';
       }
 
-      function closeDrawer() {
+      window.closeDrawer = function() {
         drawer.classList.remove('is-open');
         document.body.style.overflow = '';
       }
@@ -1473,7 +1473,7 @@
     })();
 
     /* ========================================================
-       LÓGICA DO SCANNER DE AUDITORIA GEO & MATURIDADE REAL
+       LÓGICA DO SCANNER SEM SALTO DE TELA E COM FLUXO SUAVE
        ======================================================== */
     let auditData = {
       bizName: '',
@@ -1545,12 +1545,12 @@
               if (auditData.brandType === 'global') {
                 resultStatusBadge.className = 'result-badge-status success';
                 resultStatusBadge.textContent = '✓ Status: Domínio Algorítmico & Escala Global';
-                resultDetailText.textContent = 'Marca de escala global com autoridade semântica máxima em todas as plataformas de IA. Grandes redes possuem equipes inteiras dedicadas à infraestrutura de dados. É exatamente contra essa hegemonia que o comércio local precisa se organizar regionalmente.';
+                resultDetailText.textContent = 'Marca de escala global com autoridade semântica máxima em todas as plataformas de IA. Grandes redes possuem departamentos inteiros para isso. É exatamente contra essa hegemonia que o comércio local precisa se organizar regionalmente.';
                 btnGoToQuestions.textContent = 'Testar Meu Negócio Local →';
               } else if (auditData.brandType === 'optimized') {
                 resultStatusBadge.className = 'result-badge-status success';
                 resultStatusBadge.textContent = '✓ Status: Autoridade Semântica & Presença em IA Reconhecidas';
-                resultDetailText.textContent = 'A sua marca possui presença relevante e dados semânticos alinhados para recomendação. O próximo degrau não é apenas ser encontrado: é garantir que essa tração digital se converta em máxima margem de lucro líquido e blindagem de custos operacionais no chão de loja.';
+                resultDetailText.textContent = 'A sua marca possui presença relevante e dados semânticos alinhados para recomendação. O próximo degrau não é apenas visibilidade: é garantir que essa tração digital se converta em máxima margem de lucro líquido e blindagem de custos operacionais no chão de loja.';
                 btnGoToQuestions.textContent = 'Auditar Potencial de Lucro Líquido →';
               } else {
                 resultStatusBadge.className = 'result-badge-status warning';
@@ -1560,9 +1560,9 @@
               }
 
               scannerResultBox.style.display = 'block';
-            }, 400);
+            }, 300);
           }
-        }, 400);
+        }, 350);
       });
     }
 
@@ -1590,7 +1590,6 @@
 
       if (auditData.answers[1] && auditData.answers[2] && auditData.answers[3]) {
         btnFinishAudit.style.display = 'block';
-        btnFinishAudit.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
 
