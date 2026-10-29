@@ -21,13 +21,13 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ardor | Governança Operacional e Crescimento Comercial</title>
+  <title>Ardor | Gestão, Rotina e Margem para Negócios Locais</title>
   
+  <!-- Favicon Oficial em Formato Quadrado -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -65,7 +65,7 @@
       color: var(--text-main);
       font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -78,9 +78,10 @@
       padding: 0 24px;
     }
 
+    /* --- Scroll Reveal Fluido --- */
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(20px);
       transition: opacity 0.4s ease-out, transform 0.4s ease-out;
       will-change: opacity, transform;
     }
@@ -93,7 +94,7 @@
     .delay-1 { transition-delay: 0.08s; }
     .delay-2 { transition-delay: 0.16s; }
 
-    /* Logotipo Flutuante Oficial */
+    /* --- Logótipo Flutuante Oficial --- */
     .brand-floating {
       position: fixed;
       top: 14px;
@@ -128,7 +129,7 @@
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* Topo / Menu Desktop */
+    /* --- Barra Superior --- */
     .top-bar {
       min-height: 100px;
       padding: 16px 0;
@@ -138,42 +139,23 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-links {
+    .nav-actions {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
-    }
-
-    .nav-link.active {
-      color: var(--terracotta);
-      font-weight: 700;
-      background: var(--terracotta-soft);
     }
 
     .nav-link-cta {
       border: 1.5px solid var(--terracotta);
       color: var(--terracotta) !important;
       background: #FFFFFF;
+      font-size: 0.86rem;
       font-weight: 700;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 24px;
       box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
     }
 
     .nav-link-cta:hover {
@@ -182,13 +164,13 @@
       transform: translateY(-1px);
     }
 
-    .mobile-menu-btn {
-      display: none;
+    .menu-trigger-btn {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       width: 44px;
       height: 44px;
       border-radius: 50%;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -197,21 +179,27 @@
       transition: all 0.2s ease;
     }
 
-    .mobile-menu-btn:active {
-      transform: scale(0.92);
+    .menu-trigger-btn:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
       background: var(--terracotta-soft);
+      transform: translateY(-1px);
     }
 
-    /* Modal Vidro Translúcido Mobile */
-    .mobile-drawer {
+    .menu-trigger-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* --- Modal Vidro Translúcido (Glassmorphism) --- */
+    .glass-drawer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(21, 19, 17, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(21, 19, 17, 0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 2147483646;
       opacity: 0;
       pointer-events: none;
@@ -219,25 +207,25 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
-      padding: 16px;
+      padding: 18px 24px;
     }
 
-    .mobile-drawer.is-open {
+    .glass-drawer.is-open {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .mobile-glass-card {
+    .glass-card {
       width: 100%;
-      max-width: 320px;
-      margin-top: 64px;
-      background: rgba(255, 255, 255, 0.72);
+      max-width: 330px;
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      box-shadow: 0 16px 40px rgba(35, 25, 18, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 20px 48px rgba(35, 25, 18, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.95);
       border-radius: 24px;
-      padding: 20px 18px;
+      padding: 22px 20px;
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -247,7 +235,7 @@
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
     }
 
-    .mobile-drawer.is-open .mobile-glass-card {
+    .glass-drawer.is-open .glass-card {
       transform: scale(1) translate3d(0, 0, 0);
       opacity: 1;
     }
@@ -257,7 +245,7 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(230, 225, 215, 0.5);
+      border-bottom: 1px solid rgba(230, 225, 215, 0.6);
     }
 
     .drawer-header-info {
@@ -266,7 +254,7 @@
     }
 
     .drawer-title {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       font-weight: 900;
       letter-spacing: -0.2px;
       color: var(--text-main);
@@ -274,15 +262,15 @@
 
     .drawer-subtitle {
       font-size: 0.68rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--terracotta);
-      letter-spacing: 0.4px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
     }
 
     .drawer-close-btn {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.04);
       border: 1px solid rgba(0, 0, 0, 0.05);
@@ -291,12 +279,11 @@
       justify-content: center;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.90rem;
       transition: all 0.2s ease;
     }
 
-    .drawer-close-btn:active {
-      transform: scale(0.9);
+    .drawer-close-btn:hover {
       background: var(--terracotta-soft);
       color: var(--terracotta);
     }
@@ -311,27 +298,33 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 14px;
-      background: rgba(255, 255, 255, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.60);
+      border: 1px solid rgba(255, 255, 255, 0.75);
       border-radius: 14px;
       text-decoration: none;
       color: var(--text-main);
       font-weight: 700;
       font-size: 0.88rem;
       transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(35, 25, 18, 0.02);
+      box-shadow: 0 2px 6px rgba(35, 25, 18, 0.02);
     }
 
-    .drawer-link:active {
-      transform: scale(0.98);
-      background: rgba(255, 255, 255, 0.9);
+    .drawer-link:hover {
+      background: rgba(255, 255, 255, 0.95);
       border-color: var(--terracotta);
+      transform: translateX(2px);
+    }
+
+    .drawer-link.active {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--terracotta);
+      color: var(--terracotta);
     }
 
     .drawer-arrow {
       color: var(--terracotta);
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-weight: 900;
     }
 
@@ -343,32 +336,45 @@
       width: 100%;
       padding: 13px 18px;
       font-size: 0.86rem;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
     }
 
-    /* Hero da Home */
+    /* --- Bloco Hero --- */
     .hero {
-      padding: 55px 0 35px;
+      padding: 60px 0 70px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 44px;
+      gap: 48px;
       align-items: center;
+      position: relative;
     }
 
-    .hero-quote {
+    .section-tag {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 1.3px;
       text-transform: uppercase;
       color: var(--amber-gold);
       background: var(--amber-soft);
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 4px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
+    }
+
+    .hero-quote {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      border-left: 3px solid var(--terracotta);
+      padding: 8px 0 8px 16px;
+      background: linear-gradient(90deg, rgba(187, 89, 40, 0.08), transparent);
+      border-radius: 0 8px 8px 0;
     }
 
     .hero h1 {
@@ -483,176 +489,407 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* O Case (Prova Social) */
-    .lab-case-section {
-      padding: 40px 0 65px;
-    }
-
-    .lab-case-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: var(--shadow-sm);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .lab-case-card div h3 {
-      font-size: 1.25rem;
-      font-weight: 900;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    .lab-case-card div p {
-      font-size: 0.90rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .stat-num { font-size: 2.4rem; font-weight: 900; color: var(--terracotta); line-height: 1; margin-bottom: 4px; }
-    .stat-lbl { font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-
-    /* Manifesto da Ardor */
-    .manifesto-section {
+    /* --- Métricas Rápidas --- */
+    .metrics-bar {
+      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
+      color: #FFFFFF;
       padding: 50px 0;
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
     }
 
-    .manifesto-box {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .manifesto-title {
-      font-size: 2.1rem;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-
-    .manifesto-text {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    /* Grade de Cômodos */
-    .rooms-section {
-      padding: 85px 0;
-      background: var(--bg);
-    }
-
-    .rooms-header {
-      margin-bottom: 45px;
-      text-align: left;
-    }
-
-    .rooms-title {
-      font-size: 2.1rem;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      margin-bottom: 8px;
-    }
-
-    .rooms-desc {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-    }
-
-    .rooms-grid {
+    .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
 
-    .room-card {
+    .metric-card {
+      border-left: 2.5px solid var(--terracotta);
+      padding-left: 18px;
+    }
+
+    .metric-number {
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.6px;
+    }
+
+    .metric-number span {
+      color: var(--amber-gold);
+    }
+
+    .metric-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1.4;
+    }
+
+    /* --- Soluções Aplicadas (Abas) --- */
+    .interactive-section {
+      padding: 95px 0;
       background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header-wrap {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .tabs-nav-wrapper {
+      background: #EDE8DE;
+      padding: 7px;
+      border-radius: 14px;
+      display: inline-flex;
+      gap: 8px;
+      margin-bottom: 34px;
+      border: 1px solid var(--border-dark);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding: 13px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .tab-btn.active {
+      background: #FFFFFF !important;
+      color: var(--terracotta) !important;
+      box-shadow: 0 4px 16px rgba(45, 35, 25, 0.09);
+      font-weight: 800;
+    }
+
+    .tab-btn.active::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--terracotta);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeInTab 0.35s ease forwards;
+    }
+
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 38px 34px;
       box-shadow: var(--shadow-sm);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      text-decoration: none;
-      color: inherit;
     }
 
-    .room-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--terracotta);
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .room-media {
-      height: 200px;
-      width: 100%;
-      overflow: hidden;
+    .tab-info h3 {
+      font-size: 1.55rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.28;
+    }
+
+    .tab-info p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .tab-feature-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .tab-feature-list li {
       position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+      font-size: 0.90rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .tab-feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .tab-media-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      height: 325px;
       background: #EAE6DE;
     }
 
-    .room-img {
+    .tab-media-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
       display: block;
     }
 
-    .room-card:hover .room-img {
-      transform: scale(1.04);
+    /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
+    .packages-section {
+      padding: 95px 0;
+      background: linear-gradient(180deg, #F2EFE8 0%, #E9E3D8 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
-    .room-body {
-      padding: 26px 24px;
+    .carousel-controls {
       display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
     }
 
-    .room-number {
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: var(--terracotta);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .room-title {
-      font-size: 1.28rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .room-snippet {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 20px;
-    }
-
-    .room-link-text {
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: var(--terracotta);
+    .carousel-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-dark);
+      color: var(--text-main);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
     }
 
-    /* Faixa Final CTA */
+    .carousel-arrow:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+    }
+
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      gap: 24px;
+      padding: 20px 4px 30px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--terracotta) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      background: rgba(187, 89, 40, 0.4);
+      border-radius: 4px;
+    }
+
+    .package-card {
+      flex: 0 0 340px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 38px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(187, 89, 40, 0.35);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 16px 36px var(--terracotta-glow);
+    }
+
+    .package-card.featured:hover {
+      box-shadow: 0 22px 50px rgba(187, 89, 40, 0.32);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      padding: 5px 18px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(187, 89, 40, 0.35);
+    }
+
+    .package-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .package-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+
+    .package-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .package-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .package-list li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.5;
+    }
+
+    .package-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+
+    .btn-package {
+      width: 100%;
+      text-align: center;
+      padding: 13px;
+      font-size: 0.88rem;
+      border-radius: 6px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-dark);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    /* --- Botão Flutuante do WhatsApp --- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2147483640;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+      display: block;
+      margin: auto;
+    }
+
+    /* --- CTA Final (Escuro) --- */
     .origin-strip {
       padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
@@ -698,38 +935,36 @@
       color: #FFFFFF;
     }
 
-    /* Rodapé Blindado */
+    /* --- Rodapé --- */
     footer {
-      position: relative;
-      padding: 45px 0 85px; 
+      padding: 50px 0 60px;
       text-align: center;
       font-size: 0.85rem;
       color: var(--text-muted);
       background: #FAF8F5;
-      clear: both;
-      width: 100%;
-      z-index: 10;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
     }
 
     .social-icon-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       color: var(--terracotta);
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.82rem;
-      padding: 8px 18px;
+      font-size: 0.85rem;
+      padding: 10px 22px;
       border: 1.5px solid var(--terracotta);
-      border-radius: 24px;
+      border-radius: 30px;
       background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
     }
 
@@ -739,44 +974,16 @@
     }
 
     .social-icon-btn svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       fill: currentColor;
     }
 
-    /* WhatsApp Flutuante (Seguro) */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 2147483640;
-      background: #25D366;
-      color: #FFFFFF;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.08) translateY(-2px);
-    }
-
-    .whatsapp-float svg {
-      width: 34px;
-      height: 34px;
-      fill: #FFFFFF;
-    }
-
-    /* Responsivo Mobile */
+    /* --- Responsivo Mobile --- */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
+      /* Topo e Logo no Mobile corrigidos */
       .brand-floating { 
         height: 48px; 
         top: 14px; 
@@ -797,60 +1004,52 @@
 
       .nav-links .nav-link:not(.nav-link-cta) { display: none; }
       .mobile-menu-btn { display: inline-flex; margin-left: 8px; }
-      .nav-link-cta { font-size: 0.76rem; padding: 8px 14px; border-radius: 20px; }
+      .nav-link-cta { font-size: 0.76rem; padding: 8px 14px; }
 
-      .hero { grid-template-columns: 1fr; gap: 20px; padding: 16px 0 30px; }
-      .hero h1 { font-size: 1.72rem; line-height: 1.2; }
-      .hero p { font-size: 0.92rem; margin-bottom: 22px; }
-      .btn { width: 100%; padding: 13px 20px; font-size: 0.86rem; }
+      .hero { grid-template-columns: 1fr; gap: 24px; padding: 18px 0 32px; }
+      .hero h1 { font-size: 1.78rem; line-height: 1.20; }
+      .hero p { font-size: 0.94rem; margin-bottom: 24px; }
 
-      .proof-img { height: 260px; }
+      .btn { width: 100%; padding: 14px 22px; font-size: 0.88rem; }
 
-      .lab-case-card { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
+      .metrics-bar { padding: 32px 0; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 18px 14px; }
+      .metric-number { font-size: 1.75rem; }
+      .metric-label { font-size: 0.72rem; }
 
-      .manifesto-section { padding: 40px 0; }
-      .manifesto-title { font-size: 1.45rem; }
+      .interactive-section { padding: 55px 0; }
+      .section-title { font-size: 1.55rem; }
+      .tabs-nav-wrapper { padding: 4px; margin-bottom: 20px; gap: 4px; }
+      .tab-btn { padding: 9px 15px; font-size: 0.78rem; }
+      .tab-content.active { grid-template-columns: 1fr; padding: 22px 16px; gap: 22px; }
+      .tab-info h3 { font-size: 1.25rem; }
+      .tab-feature-list li { font-size: 0.84rem; padding-left: 20px; }
+      .tab-media-frame { height: 200px; }
 
-      .rooms-section { padding: 50px 0; }
-      .rooms-header { margin-bottom: 28px; }
-      .rooms-title { font-size: 1.55rem; }
-      .rooms-grid { grid-template-columns: 1fr; gap: 18px; }
+      .packages-section { padding: 55px 0; }
+      .package-card { flex: 0 0 86%; padding: 30px 20px 22px; }
+      .carousel-controls { display: none; }
 
-      .origin-strip { padding: 50px 0; }
-      .origin-title { font-size: 1.55rem; }
-      .btn-light { width: 100%; justify-content: center; }
-
-      footer { padding: 40px 0 95px; } 
-
-      .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 54px;
-        height: 54px;
-      }
-      .whatsapp-float svg { width: 30px; height: 30px; }
+      .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logotipo Flutuante Oficial -->
+  <!-- Logótipo Flutuante Oficial -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao início">
-    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="84" fetchpriority="high">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
 
   <div class="container">
     <header class="top-bar">
       <nav class="nav-links">
-        <a href="index.html" class="nav-link active">Início</a>
-        <a href="operacao-e-margem.html" class="nav-link">Operação</a>
-        <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
-        <a href="experiencia-de-salao.html" class="nav-link">Salão</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
         <div class="nav-actions">
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Auditoria Rápida</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Solicitar Auditoria</a>
           
-          <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir Menu">
+          <!-- Botão Menu (3 Tracinhos) -->
+          <button class="menu-trigger-btn" id="openMenuBtn" aria-label="Abrir Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="4" y1="7" x2="20" y2="7"></line>
               <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -864,7 +1063,7 @@
     <!-- Section Hero (Topo) -->
     <section class="hero">
       <div class="hero-content reveal">
-        <span class="hero-quote">[ FOCO EM MARGEM LÍQUIDA E SALÃO CHEIO ]</span>
+        <span class="section-tag">FOCO EM MARGEM LÍQUIDA E SALÃO CHEIO</span>
         <h1>Seu comércio não sobrevive de curtidas. Ele precisa de <span class="highlight">lucro no caixa</span>.</h1>
         <p>Enquanto agências tradicionais vendem métricas de vaidade, a Ardor aplica engenharia de tráfego baseada no seu CMV e arquitetura de Inteligência Artificial para atrair o cliente certo para a sua porta.</p>
         <a href="ativos-digitais-e-ia.html#scanner" class="btn">
@@ -875,113 +1074,182 @@
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="assets/hero.jpg" alt="Operação e Produção Real" width="400" height="390" fetchpriority="high">
-          <div class="proof-badge">Método comprovado no balcão</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- O Case (Skin in the Game) -->
-    <section class="lab-case-section reveal delay-2">
-      <div class="lab-case-card">
-        <div>
-          <div class="stat-num">+51%</div>
-          <div class="stat-lbl">Faturamento Mensal</div>
-        </div>
-        <div>
-          <h3>O Método Comprovado no Próprio Balcão</h3>
-          <p>Não vendemos teoria. Aplicamos a arquitetura de gestão da Ardor em nosso próprio restaurante laboratório. O resultado? Crescimento de +51% no faturamento mensal em pleno mês de eleições e feriados prolongados, apenas combinando mídia hiperlocal, funil de reservas e controle de CMV.</p>
+          <img class="proof-img" src="assets/hero.jpg" alt="Vivência e Aplicação Real no Comércio" fetchpriority="high" loading="eager">
+          <div class="proof-badge">Método validado no balcão e no fluxo de caixa</div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Manifesto / O Inimigo Comum -->
+  <!-- Bloco Prova Social (O Case do Laboratório) -->
+  <section class="lab-case-section">
+    <div class="container">
+      <div class="lab-case-card reveal">
+        <span class="lab-case-tag">Case Real de Laboratório Próprio</span>
+        <h2 class="lab-case-title">O Método Comprovado no Próprio Balcão</h2>
+        <p class="lab-case-text">
+          Não vendemos teoria. Aplicamos a arquitetura de gestão da Ardor em nosso próprio restaurante laboratório. O resultado? Crescimento de +51% no faturamento mensal em pleno mês de eleições e feriados prolongados, apenas combinando mídia hiperlocal, funil de reservas e controle de CMV.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Manifesto / O Inimigo Comum -->
   <section class="manifesto-section">
     <div class="container">
       <div class="manifesto-box reveal">
-        <h2 class="manifesto-title">O fim das campanhas que dão prejuízo.</h2>
-        <p class="manifesto-text">Fazer anúncios sem conhecer a Curva ABC e a margem de contribuição de cada prato é a receita para o colapso. Nós conectamos a tração digital à saúde operacional da sua cozinha e do seu salão.</p>
+        <h2>O fim das campanhas que dão prejuízo.</h2>
+        <p>Fazer anúncios sem conhecer a Curva ABC e a margem de contribuição de cada prato é a receita para o colapso. Nós conectamos a tração digital à saúde operacional da sua cozinha e do seu salão.</p>
       </div>
     </div>
   </section>
 
-  <!-- Os Três Cômodos Especializados -->
-  <section class="rooms-section">
+  <!-- Os 3 Cômodos (Pilares de Atuação) -->
+  <section class="interactive-section" id="solucoes">
     <div class="container">
-      <div class="rooms-header reveal">
-        <span class="hero-quote" style="margin-bottom: 10px;">Pilares de Atuação</span>
-        <h2 class="rooms-title">Como estruturamos a sua empresa?</h2>
-        <p class="rooms-desc">Selecione a área prioritária para conhecer o método aplicado em detalhes.</p>
+      <div class="section-header-wrap reveal">
+        <div>
+          <span class="section-tag">Pilares de Atuação</span>
+          <h2 class="section-title">Como Ajudamos Seu Comércio a Prosperar</h2>
+          <p class="section-desc">Cuidado prático nas três frentes mais importantes da sua empresa.</p>
+        </div>
       </div>
 
-      <div class="rooms-grid">
-        <a href="operacao-e-margem.html" class="room-card reveal">
-          <div class="room-media">
-            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=480&q=75" alt="Equipe e Rotinas" class="room-img" loading="lazy" width="340" height="200">
-          </div>
-          <div class="room-body">
-            <div>
-              <span class="room-number">Módulo 01</span>
-              <h3 class="room-title">Operação & Margem</h3>
-              <p class="room-snippet">Fichas técnicas precisas, controle rígido de CMV, manuais anti-erro e alinhamento de equipe para autonomia operacional.</p>
-            </div>
-            <span class="room-link-text">Ver detalhes deste pilar →</span>
-          </div>
-        </a>
+      <div class="tabs-nav-wrapper reveal delay-1">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação & Margem</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-ia')">Tráfego & IA Search</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">Experiência & Salão</button>
+      </div>
 
-        <a href="ativos-digitais-e-ia.html" class="room-card reveal delay-1">
-          <div class="room-media">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=480&q=75" alt="Tecnologia e Dados" class="room-img" loading="lazy" width="340" height="200">
-          </div>
-          <div class="room-body">
-            <div>
-              <span class="room-number">Módulo 02</span>
-              <h3 class="room-title">Tráfego Pago & IA Search</h3>
-              <p class="room-snippet">Otimização semântica para motores de IA e campanhas de anúncios agressivas no raio local calibradas pelo DRE.</p>
-            </div>
-            <span class="room-link-text">Ver detalhes deste pilar →</span>
-          </div>
-        </a>
+      <!-- Tab 1: Operação & Margem -->
+      <div id="tab-operacao" class="tab-content active">
+        <div class="tab-info">
+          <h3>Processos claros para a sua equipe trabalhar com orgulho</h3>
+          <p>Uma empresa madura não depende do dono apagando incêndios a cada minuto. Estruturamos rotinas práticas para que sua equipe atenda com o mesmo padrão e cuidado que você sempre teve.</p>
+          <ul class="tab-feature-list">
+            <li>Rotinas visuais e simples: cada colaborador sabe exatamente o que fazer.</li>
+            <li>Menos estresse com retrabalho e mais harmonia no dia a dia da equipe.</li>
+            <li>Liberdade para você pensar no futuro do negócio com tranquilidade.</li>
+          </ul>
+          <a href="operacao-e-margem.html" class="btn">Acessar Operação & Margem</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Equipe e Rotina" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
 
-        <a href="experiencia-de-salao.html" class="room-card reveal delay-2">
-          <div class="room-media">
-            <img src="assets/salao.jpg" alt="Experiência no Salão" class="room-img" loading="lazy" width="340" height="200">
-          </div>
-          <div class="room-body">
-            <div>
-              <span class="room-number">Módulo 03</span>
-              <h3 class="room-title">Salão & Ativação</h3>
-              <p class="room-snippet">Tecnologia interativa com gamificação no ponto físico e retenção focada em trazer o cliente de volta no meio da semana.</p>
-            </div>
-            <span class="room-link-text">Ver detalhes deste pilar →</span>
-          </div>
-        </a>
+      <!-- Tab 2: Tráfego & IA Search -->
+      <div id="tab-ia" class="tab-content">
+        <div class="tab-info">
+          <h3>Anúncios por margem real e presença em motores de IA</h3>
+          <p>Tráfego pago que protege o seu caixa e arquitetura de dados semânticos para garantir que seu comércio seja recomendado pelas buscas de Inteligência Artificial.</p>
+          <ul class="tab-feature-list">
+            <li>Anúncios hiperlocais filtrados pelo raio geográfico mais qualificado.</li>
+            <li>Campanhas calibradas pela Curva ABC, impulsionando itens de lucro real.</li>
+            <li>Otimização para motores generativos (ChatGPT, Gemini e Google Maps).</li>
+          </ul>
+          <a href="ativos-digitais-e-ia.html" class="btn">Acessar Tráfego & IA Search</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem e Custos" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Tab 3: Experiência & Salão -->
+      <div id="tab-salao" class="tab-content">
+        <div class="tab-info">
+          <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
+          <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
+          <ul class="tab-feature-list">
+            <li>Experiência interativa com o Brat Experience para surpreender e reter no salão.</li>
+            <li>Vídeos e fotos que valorizam a dedicação da sua casa.</li>
+            <li>Presença profissional no Google e redes para atrair os clientes certos.</li>
+          </ul>
+          <a href="experiencia-de-salao.html" class="btn">Acessar Salão & Ativação</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Final -->
-  <section class="origin-strip">
-    <div class="container reveal">
-      <h2 class="origin-title">Pronto para estancar perdas e encher o salão?</h2>
-      <p class="origin-text">
-        Solicite agora mesmo o diagnóstico estrutural do seu comércio diretamente pelo nosso WhatsApp comercial.
-      </p>
-      <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20e%20diagn%C3%B3stico%20para%20a%20minha%20empresa." class="btn-light" target="_blank" rel="noopener noreferrer">
-        Falar com Consultor
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+  <!-- Programas de Acompanhamento (Carrossel Horizontal Deslizante) -->
+  <section class="packages-section">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <div>
+          <span class="section-tag">Formatos de Apoio</span>
+          <h2 class="section-title">Como Podemos Caminhar Juntos</h2>
+          <p class="section-desc">Escolha o nível de acompanhamento ideal para o momento da sua empresa.</p>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" onclick="scrollPackages(-360)" aria-label="Anterior">←</button>
+          <button class="carousel-arrow" onclick="scrollPackages(360)" aria-label="Seguinte">→</button>
+        </div>
+      </div>
+
+      <div class="carousel-track" id="packagesTrack">
+        <!-- Card 1 -->
+        <div class="package-card">
+          <div>
+            <h3 class="package-title">Estruturação & Paz</h3>
+            <div class="package-badge">Rotina & Caixa Seguro</div>
+            <p class="package-desc">Para organizar a casa, estancar desperdícios e colocar os processos diários da equipe nos trilhos.</p>
+            <ul class="package-list">
+              <li>Encontros práticos para desenho de rotinas e checklists da equipe.</li>
+              <li>Revisão do cardápio e mix focando nos itens de maior rentabilidade.</li>
+              <li>Estruturação e organização das buscas locais no Google.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Este Formato</a>
+        </div>
+
+        <!-- Card 2 (Destaque) -->
+        <div class="package-card featured">
+          <div class="featured-tag">Mais Escolhido</div>
+          <div>
+            <h3 class="package-title">Maturidade & Salão Cheio</h3>
+            <div class="package-badge">Organização & Tração</div>
+            <p class="package-desc">O apoio completo para manter a casa arrumada, custos protegidos e clientes encantados no salão.</p>
+            <ul class="package-list">
+              <li>Consultoria completa de rotinas, treinamento de equipe e controle de margem.</li>
+              <li>Instalação da tecnologia interativa <strong>Brat Experience</strong> no salão.</li>
+              <li>Otimização profissional do perfil comercial no Google e iFood.</li>
+              <li>Produção visual com atores para elevar o respeito à marca.</li>
+              <li>Tráfego pago regional no Instagram e Google para atrair novos clientes.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Acompanhamento</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="package-card">
+          <div>
+            <h3 class="package-title">Parceria Estratégica 360°</h3>
+            <div class="package-badge">O Braço Direito do Seu Negócio</div>
+            <p class="package-desc">A Ardor ao seu lado mês a mês cuidando de números, equipe e crescimento contínuo.</p>
+            <ul class="package-list">
+              <li>Reuniões mensais de avaliação financeira, margem e processos.</li>
+              <li>Suporte contínuo ao sistema e ferramentas do salão.</li>
+              <li>Gestão contínua de anúncios pagos para manter o salão aquecido.</li>
+              <li>Novas produções visuais mensais para fortalecimento da marca.</li>
+              <li>Acompanhamento de rotinas e apoio direto à liderança da loja.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conversar%20sobre%20a%20Parceria%20Estrat%C3%A9gica%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com o Consultor</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Modal Vidro Translúcido Mobile -->
-  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
-    <div class="mobile-glass-card">
+  <!-- Modal Vidro Translúcido (Glassmorphism) -->
+  <div class="glass-drawer" id="elevatorDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
+    <div class="glass-card">
       <div class="drawer-header">
         <div class="drawer-header-info">
           <span class="drawer-title">Ecossistema Ardor</span>
-          <span class="drawer-subtitle">Módulos de Gestão</span>
+          <span class="drawer-subtitle">Arquitetura de Gestão</span>
         </div>
         <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar">✕</button>
       </div>
@@ -1010,21 +1278,32 @@
       </nav>
 
       <div class="drawer-footer">
-        <a href="ativos-digitais-e-ia.html#scanner" class="btn drawer-btn-cta">
-          Fazer Diagnóstico
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="btn drawer-btn-cta" target="_blank" rel="noopener noreferrer">
+          Solicitar Auditoria
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- INICIO DO BOTAO WHATSAPP FIXO -->
-  <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
-  <!-- FIM DO BOTAO WHATSAPP -->
+  <!-- CTA Final -->
+  <section class="origin-strip">
+    <div class="container reveal">
+      <h2 class="origin-title">Pronto para estancar perdas e encher o salão?</h2>
+      <p class="origin-text">
+        Solicite agora mesmo o diagnóstico estrutural do seu comércio diretamente pelo nosso WhatsApp comercial.
+      </p>
+      <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20e%20diagn%C3%B3stico%20para%20a%20minha%20empresa." class="btn-light" target="_blank" rel="noopener noreferrer">
+        Falar com Consultor
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
 
-  <!-- INICIO DO RODAPE LIMPO -->
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- Rodapé -->
   <footer>
     <div class="container">
       <div class="social-links">
@@ -1036,9 +1315,30 @@
       <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
     </div>
   </footer>
-  <!-- FIM DO RODAPE -->
 
   <script>
+    // Alternância de Abas
+    function switchTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    // Scroll Suave Carrossel
+    function scrollPackages(distance) {
+      const track = document.getElementById('packagesTrack');
+      if (track) {
+        track.scrollBy({ left: distance, behavior: 'smooth' });
+      }
+    }
+
+    // Scroll Reveal
     document.addEventListener('DOMContentLoaded', function() {
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -1047,13 +1347,14 @@
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.08 });
+      }, { threshold: 0.10 });
 
       reveals.forEach(el => observer.observe(el));
 
+      // Lógica do Modal Translúcido (Glassmorphism)
       const openBtn = document.getElementById('openMenuBtn');
       const closeBtn = document.getElementById('closeMenuBtn');
-      const drawer = document.getElementById('mobileDrawer');
+      const drawer = document.getElementById('elevatorDrawer');
 
       function openDrawer() {
         drawer.classList.add('is-open');
@@ -1074,6 +1375,7 @@
       }
     });
 
+    // Logotipo Flutuante
     (function() {
       const logo = document.getElementById('ardorLogo');
       if (logo) {
