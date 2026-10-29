@@ -21,7 +21,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ardor | Gestão, Rotina e Margem para Negócios Locais</title>
+  <title>Ardor | Governança Operacional e Crescimento Comercial</title>
   
   <!-- Favicon Oficial em Formato Quadrado -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -489,51 +489,82 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Métricas Rápidas --- */
-    .metrics-bar {
+    /* --- Bloco Prova Social (O Case do Laboratório) CORRIGIDO --- */
+    .lab-case-section {
+      padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
       color: #FFFFFF;
-      padding: 50px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .lab-case-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 40px 36px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
+      display: block;
     }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .metric-card {
-      border-left: 2.5px solid var(--terracotta);
-      padding-left: 18px;
-    }
-
-    .metric-number {
-      font-size: 2.3rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 6px;
-      letter-spacing: -0.6px;
-    }
-
-    .metric-number span {
-      color: var(--amber-gold);
-    }
-
-    .metric-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-light-muted);
+    .lab-case-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      line-height: 1.4;
+      color: #34D399;
+      background: rgba(52, 211, 153, 0.12);
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+    .lab-case-title {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+    .lab-case-text {
+      font-size: 1.05rem;
+      color: var(--text-light-muted);
+      line-height: 1.75;
     }
 
-    /* --- Soluções Aplicadas (Abas) --- */
+    /* --- Bloco Manifesto / Inimigo Comum CORRIGIDO --- */
+    .manifesto-section {
+      padding: 75px 0;
+      background: var(--bg);
+    }
+    .manifesto-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 44px 40px;
+      border-left: 4px solid var(--terracotta);
+      box-shadow: var(--shadow-md);
+      margin: 0 auto;
+    }
+    .manifesto-box h2 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .manifesto-box p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* --- Pilares (Os 3 Cômodos) --- */
     .interactive-section {
-      padding: 95px 0;
+      padding: 85px 0 95px;
       background: #FFFFFF;
       border-bottom: 1px solid var(--border);
     }
@@ -983,39 +1014,57 @@
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
-      /* Topo e Logo no Mobile corrigidos */
       .brand-floating { 
         height: 48px; 
         top: 14px; 
-        left: 16px; 
+        left: 14px; 
       }
       .brand-logo-img { 
         height: 48px; 
       }
       .top-bar { 
         min-height: 76px; 
-        padding: 10px 0;
+        padding: 12px 0 12px 80px; 
         justify-content: flex-end;
       }
       .nav-actions {
         gap: 8px;
-        margin-left: auto;
+      }
+      .nav-link-cta {
+        font-size: 0.76rem;
+        padding: 8px 14px;
       }
 
-      .nav-links .nav-link:not(.nav-link-cta) { display: none; }
-      .mobile-menu-btn { display: inline-flex; margin-left: 8px; }
-      .nav-link-cta { font-size: 0.76rem; padding: 8px 14px; }
+      .hero { 
+        grid-template-columns: 1fr; 
+        gap: 24px; 
+        padding: 18px 0 32px; 
+      }
+      .hero h1 { 
+        font-size: 1.78rem; 
+        line-height: 1.20;
+      }
+      .hero p {
+        font-size: 0.94rem;
+        margin-bottom: 24px;
+      }
 
-      .hero { grid-template-columns: 1fr; gap: 24px; padding: 18px 0 32px; }
-      .hero h1 { font-size: 1.78rem; line-height: 1.20; }
-      .hero p { font-size: 0.94rem; margin-bottom: 24px; }
+      .btn {
+        width: 100%;
+        padding: 14px 22px;
+        font-size: 0.88rem;
+      }
 
-      .btn { width: 100%; padding: 14px 22px; font-size: 0.88rem; }
-
-      .metrics-bar { padding: 32px 0; }
-      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 18px 14px; }
-      .metric-number { font-size: 1.75rem; }
-      .metric-label { font-size: 0.72rem; }
+      /* Correções Mobile para Case e Manifesto */
+      .lab-case-section { padding: 45px 0; }
+      .lab-case-card { padding: 26px 20px; display: block; }
+      .lab-case-title { font-size: 1.55rem; }
+      .lab-case-text { font-size: 0.95rem; }
+      
+      .manifesto-section { padding: 45px 0; }
+      .manifesto-box { padding: 26px 20px; }
+      .manifesto-box h2 { font-size: 1.45rem; }
+      .manifesto-box p { font-size: 0.95rem; }
 
       .interactive-section { padding: 55px 0; }
       .section-title { font-size: 1.55rem; }
@@ -1044,20 +1093,18 @@
 
   <div class="container">
     <header class="top-bar">
-      <nav class="nav-links">
-        <div class="nav-actions">
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Solicitar Auditoria</a>
-          
-          <!-- Botão Menu (3 Tracinhos) -->
-          <button class="menu-trigger-btn" id="openMenuBtn" aria-label="Abrir Menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="4" y1="7" x2="20" y2="7"></line>
-              <line x1="4" y1="12" x2="20" y2="12"></line>
-              <line x1="4" y1="17" x2="20" y2="17"></line>
-            </svg>
-          </button>
-        </div>
-      </nav>
+      <div class="nav-actions">
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Solicitar Auditoria</a>
+        
+        <!-- Botão Menu (3 Tracinhos) -->
+        <button class="menu-trigger-btn" id="openMenuBtn" aria-label="Abrir Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
     </header>
 
     <!-- Section Hero (Topo) -->
@@ -1104,24 +1151,24 @@
     </div>
   </section>
 
-  <!-- Os 3 Cômodos (Pilares de Atuação) -->
+  <!-- Soluções Aplicadas com Abas em Cápsula -->
   <section class="interactive-section" id="solucoes">
     <div class="container">
       <div class="section-header-wrap reveal">
         <div>
-          <span class="section-tag">Pilares de Atuação</span>
+          <span class="section-tag">Nossos Pilares</span>
           <h2 class="section-title">Como Ajudamos Seu Comércio a Prosperar</h2>
           <p class="section-desc">Cuidado prático nas três frentes mais importantes da sua empresa.</p>
         </div>
       </div>
 
       <div class="tabs-nav-wrapper reveal delay-1">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação & Margem</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-ia')">Tráfego & IA Search</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">Experiência & Salão</button>
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Rotina & Equipe</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-margem')">Proteção de Margem</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Salão & Clientes</button>
       </div>
 
-      <!-- Tab 1: Operação & Margem -->
+      <!-- Tab 1 -->
       <div id="tab-operacao" class="tab-content active">
         <div class="tab-info">
           <h3>Processos claros para a sua equipe trabalhar com orgulho</h3>
@@ -1131,32 +1178,32 @@
             <li>Menos estresse com retrabalho e mais harmonia no dia a dia da equipe.</li>
             <li>Liberdade para você pensar no futuro do negócio com tranquilidade.</li>
           </ul>
-          <a href="operacao-e-margem.html" class="btn">Acessar Operação & Margem</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20a%20rotina%20e%20equipe%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Organizar Minha Equipe</a>
         </div>
         <div class="tab-media-frame">
           <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Equipe e Rotina" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
-      <!-- Tab 2: Tráfego & IA Search -->
-      <div id="tab-ia" class="tab-content">
+      <!-- Tab 2 -->
+      <div id="tab-margem" class="tab-content">
         <div class="tab-info">
-          <h3>Anúncios por margem real e presença em motores de IA</h3>
-          <p>Tráfego pago que protege o seu caixa e arquitetura de dados semânticos para garantir que seu comércio seja recomendado pelas buscas de Inteligência Artificial.</p>
+          <h3>Cuidado com o dinheiro suado que entra no seu caixa</h3>
+          <p>Ver o comércio com movimento e a conta apertada no fim do mês desanima qualquer um. Analisamos custo por custo para garantir que a sua energia diária se transforme em sobra financeira real.</p>
           <ul class="tab-feature-list">
-            <li>Anúncios hiperlocais filtrados pelo raio geográfico mais qualificado.</li>
-            <li>Campanhas calibradas pela Curva ABC, impulsionando itens de lucro real.</li>
-            <li>Otimização para motores generativos (ChatGPT, Gemini e Google Maps).</li>
+            <li>Precificação justa e segura: saiba o lucro de cada item vendido.</li>
+            <li>Redução de desperdícios invisíveis nas compras e no estoque.</li>
+            <li>A tranquilidade de saber exatamente para onde vai cada real.</li>
           </ul>
-          <a href="ativos-digitais-e-ia.html" class="btn">Acessar Tráfego & IA Search</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20proteger%20a%20margem%20e%20o%20caixa%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Proteger Minha Margem</a>
         </div>
         <div class="tab-media-frame">
           <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem e Custos" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
-      <!-- Tab 3: Experiência & Salão -->
-      <div id="tab-salao" class="tab-content">
+      <!-- Tab 3 -->
+      <div id="tab-atracao" class="tab-content">
         <div class="tab-info">
           <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
           <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
@@ -1165,7 +1212,7 @@
             <li>Vídeos e fotos que valorizam a dedicação da sua casa.</li>
             <li>Presença profissional no Google e redes para atrair os clientes certos.</li>
           </ul>
-          <a href="experiencia-de-salao.html" class="btn">Acessar Salão & Ativação</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20saber%20como%20movimentar%20o%20sal%C3%A3o%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Movimentar Meu Salão</a>
         </div>
         <div class="tab-media-frame">
           <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
@@ -1286,7 +1333,7 @@
     </div>
   </div>
 
-  <!-- CTA Final -->
+  <!-- Faixa Final CTA (Bloco Escuro) -->
   <section class="origin-strip">
     <div class="container reveal">
       <h2 class="origin-title">Pronto para estancar perdas e encher o salão?</h2>
@@ -1357,6 +1404,7 @@
       const drawer = document.getElementById('elevatorDrawer');
 
       function openDrawer() {
+        drawer.classList.is-open = true; // Fix
         drawer.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
