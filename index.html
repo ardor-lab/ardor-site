@@ -520,7 +520,7 @@
       display: block;
     }
 
-    /* --- Programas de Acompanhamento --- */
+    /* --- Programas de Acompanhamento (Carrossel Horizontal) --- */
     .packages-section {
       padding: 95px 0;
       background: linear-gradient(180deg, #F2EFE8 0%, #E9E3D8 100%);
@@ -768,41 +768,131 @@
       fill: currentColor;
     }
 
-    /* --- Responsivo Mobile Cirúrgico --- */
+    /* --- Responsivo Mobile Cirúrgico (Correção do Topo e Botões) --- */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
-      .brand-floating { height: 48px; top: 14px; left: 14px; }
-      .brand-logo-img { height: 48px; }
-      .top-bar { min-height: 76px; padding: 12px 0 12px 110px; justify-content: flex-end; }
-      .nav-links { gap: 6px; }
-      .nav-link { font-size: 0.74rem; padding: 7px 11px; white-space: nowrap; }
-      .hero { grid-template-columns: 1fr; gap: 24px; padding: 18px 0 32px; }
-      .hero h1 { font-size: 1.78rem; line-height: 1.20; }
-      .hero p { font-size: 0.94rem; margin-bottom: 24px; }
-      .btn { width: 100%; padding: 14px 22px; font-size: 0.88rem; }
-      .metrics-bar { padding: 32px 0; }
-      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 18px 14px; }
-      .metric-number { font-size: 1.75rem; }
-      .metric-label { font-size: 0.72rem; }
-      .interactive-section { padding: 55px 0; }
-      .section-title { font-size: 1.55rem; }
-      .tabs-nav-wrapper { padding: 4px; margin-bottom: 20px; gap: 4px; }
-      .tab-btn { padding: 9px 15px; font-size: 0.78rem; }
-      .tab-content.active { grid-template-columns: 1fr; padding: 22px 16px; gap: 22px; }
-      .tab-info h3 { font-size: 1.25rem; }
-      .tab-feature-list li { font-size: 0.84rem; padding-left: 20px; }
-      .tab-media-frame { height: 200px; }
-      .packages-section { padding: 55px 0; }
-      .package-card { flex: 0 0 86%; padding: 30px 20px 22px; }
-      .carousel-controls { display: none; }
-      .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
-      .whatsapp-float svg { width: 28px; height: 28px; }
+      
+      /* Topo e Logo no Mobile */
+      .brand-floating { 
+        height: 48px; 
+        top: 14px; 
+        left: 14px; 
+      }
+      .brand-logo-img { 
+        height: 48px; 
+      }
+      .top-bar { 
+        min-height: 76px; 
+        padding: 12px 0 12px 110px; /* Garante que os links nunca fiquem sob o logo */
+        justify-content: flex-end;
+      }
+      .nav-links {
+        gap: 6px;
+      }
+      .nav-link {
+        font-size: 0.74rem;
+        padding: 7px 11px;
+        white-space: nowrap;
+      }
+
+      /* Hero e Títulos */
+      .hero { 
+        grid-template-columns: 1fr; 
+        gap: 24px; 
+        padding: 18px 0 32px; 
+      }
+      .hero h1 { 
+        font-size: 1.78rem; 
+        line-height: 1.20;
+      }
+      .hero p {
+        font-size: 0.94rem;
+        margin-bottom: 24px;
+      }
+
+      /* Botões proporcionais e harmônicos */
+      .btn {
+        width: 100%;
+        padding: 14px 22px;
+        font-size: 0.88rem;
+      }
+
+      /* Métricas em 2 colunas proporcionais */
+      .metrics-bar {
+        padding: 32px 0;
+      }
+      .metrics-grid { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 18px 14px; 
+      }
+      .metric-number {
+        font-size: 1.75rem;
+      }
+      .metric-label {
+        font-size: 0.72rem;
+      }
+
+      /* Abas Interativas no Mobile */
+      .interactive-section {
+        padding: 55px 0;
+      }
+      .section-title {
+        font-size: 1.55rem;
+      }
+      .tabs-nav-wrapper {
+        padding: 4px;
+        margin-bottom: 20px;
+        gap: 4px;
+      }
+      .tab-btn {
+        padding: 9px 15px;
+        font-size: 0.78rem;
+      }
+      .tab-content.active { 
+        grid-template-columns: 1fr; 
+        padding: 22px 16px; 
+        gap: 22px;
+      }
+      .tab-info h3 {
+        font-size: 1.25rem;
+      }
+      .tab-feature-list li {
+        font-size: 0.84rem;
+        padding-left: 20px;
+      }
+      .tab-media-frame { 
+        height: 200px; 
+      }
+
+      /* Carrossel de Pacotes no Mobile */
+      .packages-section {
+        padding: 55px 0;
+      }
+      .package-card { 
+        flex: 0 0 86%; 
+        padding: 30px 20px 22px; 
+      }
+      .carousel-controls { 
+        display: none; 
+      }
+
+      /* Botão do WhatsApp no Celular */
+      .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 52px;
+        height: 52px;
+      }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logótipo Flutuante -->
+  <!-- Logótipo Flutuante (Carregamento Prioritário) -->
   <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
     <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
@@ -811,26 +901,26 @@
     <header class="top-bar">
       <nav class="nav-links">
         <a href="#solucoes" class="nav-link">Nossos Pilares</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20escalar%20minha%20opera%C3%A7%C3%A3o." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Falar com Consultor</a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
       </nav>
     </header>
 
-    <!-- NOVO HOOK DE VENDAS (HERO) -->
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-content reveal">
-        <p class="hero-quote">“Método 100% validado em nossa própria operação física.”</p>
-        <h1>Encha o salão. Blinde a margem. <span class="highlight">Liberte-se do balcão.</span></h1>
-        <p>Aplicamos no seu comércio a mesma engenharia de processos, criação de sites e tráfego local que elevou o faturamento da nossa própria loja em 51%. Sem teorias, apenas chão de loja validado.</p>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20replicar%20esse%20resultado%20na%20minha%20empresa." class="btn" target="_blank" rel="noopener noreferrer">
-          Quero o Mesmo Resultado
+        <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
+        <h1>O seu negócio merece dar <span class="highlight">lucro real</span>. E você merece paz para liderar.</h1>
+        <p>Quem vive do próprio comércio conhece a dedicação que a rotina exige. A Ardor organiza sua operação, alinha sua equipe e protege sua margem com métodos testados no dia a dia da nossa própria empresa física.</p>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20o%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">
+          Quero Organizar Meu Comércio
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
       <div class="hero-media reveal delay-1">
         <div class="proof-frame">
-          <img class="proof-img" src="assets/hero.jpg" alt="Aplicação Real no Comércio" fetchpriority="high" loading="eager">
-          <div class="proof-badge">Resultado: +51% de faturamento em 30 dias</div>
+          <img class="proof-img" src="assets/hero.jpg" alt="Vivência e Aplicação Real no Comércio" fetchpriority="high" loading="eager">
+          <div class="proof-badge">Feito por quem vive o balcão e a gestão todos os dias</div>
         </div>
       </div>
     </section>
@@ -842,96 +932,95 @@
       <div class="metrics-grid">
         <div class="metric-card reveal">
           <div class="metric-number">100<span>%</span></div>
-          <div class="metric-label">Método Validado e Testado</div>
+          <div class="metric-label">Método Testado no Balcão</div>
         </div>
         <div class="metric-card reveal delay-1">
-          <div class="metric-number">51<span>%</span></div>
-          <div class="metric-label">Crescimento Provado na Prática</div>
+          <div class="metric-number">Paz<span>&</span>Lucro</div>
+          <div class="metric-label">Finanças Claras e Organizadas</div>
         </div>
         <div class="metric-card reveal delay-2">
           <div class="metric-number">Curva <span>ABC</span></div>
-          <div class="metric-label">Auditoria e Engenharia de Mix</div>
+          <div class="metric-label">Engenharia de Mix e Margem</div>
         </div>
         <div class="metric-card reveal">
           <div class="metric-number">360<span>°</span></div>
-          <div class="metric-label">Tráfego, Site e Conversão</div>
+          <div class="metric-label">Rotina, Equipe e Salão Cheio</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABAS ESTRATÉGICAS ENXUGADAS -->
+  <!-- Soluções Aplicadas com Abas em Cápsula -->
   <section class="interactive-section" id="solucoes">
     <div class="container">
       <div class="section-header-wrap reveal">
         <div>
-          <span class="section-tag">A Máquina de Vendas</span>
-          <h2 class="section-title">Como Entregamos Resultados Reais</h2>
-          <p class="section-desc">Atuamos de forma cirúrgica nas 3 frentes que determinam o lucro do seu negócio físico.</p>
+          <span class="section-tag">Nossos Pilares</span>
+          <h2 class="section-title">Como Ajudamos Seu Comércio a Prosperar</h2>
+          <p class="section-desc">Cuidado prático nas três frentes mais importantes da sua empresa.</p>
         </div>
       </div>
 
       <div class="tabs-nav-wrapper reveal delay-1">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação & Margem</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Salão & Ativação</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sites')">Ecossistema & Sites</button>
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Rotina & Equipe</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-margem')">Proteção de Margem</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Salão & Clientes</button>
       </div>
 
       <!-- Tab 1 -->
       <div id="tab-operacao" class="tab-content active">
         <div class="tab-info">
-          <h3>Faturar alto com o caixa zerado não sustenta o seu negócio.</h3>
-          <p>O dono não pode passar a vida apagando incêndios. Arrumamos a casa para que cada venda deixe lucro real no bolso, estruturando a equipe para rodar no automático.</p>
+          <h3>Processos claros para a sua equipe trabalhar com orgulho</h3>
+          <p>Uma empresa madura não depende do dono apagando incêndios a cada minuto. Estruturamos rotinas práticas para que sua equipe atenda com o mesmo padrão e cuidado que você sempre teve.</p>
           <ul class="tab-feature-list">
-            <li><strong>Engenharia (Curva ABC):</strong> Destaque cirúrgico para produtos de alta margem.</li>
-            <li><strong>Rotinas Anti-Apagão:</strong> Checklists práticos para sua equipe ter autonomia.</li>
-            <li><strong>Auditoria CMV:</strong> Controle rigoroso de quebras, estoque e precificação justa.</li>
+            <li>Rotinas visuais e simples: cada colaborador sabe exatamente o que fazer.</li>
+            <li>Menos estresse com retrabalho e mais harmonia no dia a dia da equipe.</li>
+            <li>Liberdade para você pensar no futuro do negócio com tranquilidade.</li>
           </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20preciso%20blindar%20a%20margem%20e%20organizar%20a%20equipe." class="btn" target="_blank" rel="noopener noreferrer">Blindar Minha Margem</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20estruturar%20a%20rotina%20e%20equipe%20da%20minha%20loja." class="btn" target="_blank" rel="noopener noreferrer">Organizar Minha Equipe</a>
         </div>
         <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão e Margem" class="tab-media-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Equipe e Rotina" class="tab-media-img" loading="lazy">
         </div>
       </div>
 
       <!-- Tab 2 -->
+      <div id="tab-margem" class="tab-content">
+        <div class="tab-info">
+          <h3>Cuidado com o dinheiro suado que entra no seu caixa</h3>
+          <p>Ver o comércio com movimento e a conta apertada no fim do mês desanima qualquer um. Analisamos custo por custo para garantir que a sua energia diária se transforme em sobra financeira real.</p>
+          <ul class="tab-feature-list">
+            <li>Precificação justa e segura: saiba o lucro de cada item vendido.</li>
+            <li>Redução de desperdícios invisíveis nas compras e no estoque.</li>
+            <li>A tranquilidade de saber exatamente para onde vai cada real.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20proteger%20a%20margem%20e%20o%20caixa%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Proteger Minha Margem</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Margem e Custos" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
       <div id="tab-atracao" class="tab-content">
         <div class="tab-info">
-          <h3>O digital precisa encher suas mesas, não apenas gerar likes.</h3>
-          <p>Seu cliente está na internet, mas o seu lucro mais alto está no salão. Criamos campanhas magnéticas para tirar o cliente do sofá e gerar demanda previsível na sua porta.</p>
+          <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
+          <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
           <ul class="tab-feature-list">
-            <li><strong>Tráfego de Raio Curto:</strong> Anúncios na Meta e Google focados na sua região.</li>
-            <li><strong>Iscas de Alta Conversão:</strong> Ofertas estratégicas que lotam reservas e diminuem o CAC.</li>
-            <li><strong>Retenção no Ponto:</strong> Tecnologias e abordagens que encantam quem senta na mesa.</li>
+            <li>Experiência interativa com o Brat Experience para surpreender e reter no salão.</li>
+            <li>Vídeos e fotos que valorizam a dedicação da sua casa.</li>
+            <li>Presença profissional no Google e redes para atrair os clientes certos.</li>
           </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20atrair%20clientes%20pro%20meu%20sal%C3%A3o." class="btn" target="_blank" rel="noopener noreferrer">Lotar Meu Salão</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20saber%20como%20movimentar%20o%20sal%C3%A3o%20do%20meu%20com%C3%A9rcio." class="btn" target="_blank" rel="noopener noreferrer">Movimentar Meu Salão</a>
         </div>
         <div class="tab-media-frame">
           <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
         </div>
       </div>
-
-      <!-- Tab 3 (Novo) -->
-      <div id="tab-sites" class="tab-content">
-        <div class="tab-info">
-          <h3>O ativo silencioso responsável por explodir suas reservas.</h3>
-          <p>Um site não pode ser apenas um panfleto digital. Desenvolvemos plataformas de alta performance que convertem visitantes em clientes de mesa, sem depender de aplicativos de entrega.</p>
-          <ul class="tab-feature-list">
-            <li><strong>Design de Conversão:</strong> Layouts desenhados para fechar vendas em menos de 3 cliques.</li>
-            <li><strong>Buscas Locais:</strong> Domine o Google Maps e seja a primeira escolha na sua cidade.</li>
-            <li><strong>Velocidade e Autoridade:</strong> Infraestrutura premium que reflete a qualidade do seu salão.</li>
-          </ul>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20um%20site%20focado%20em%20alta%20convers%C3%A3o%20pro%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">Criar Meu Site Estratégico</a>
-        </div>
-        <div class="tab-media-frame">
-          <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="Desenvolvimento de Sites" class="tab-media-img" loading="lazy">
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Programas de Acompanhamento (Carrossel Horizontal) -->
+  <!-- Programas de Acompanhamento (Carrossel Horizontal Deslizante) -->
   <section class="packages-section">
     <div class="container">
       <div class="section-header-wrap reveal">
