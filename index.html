@@ -546,7 +546,7 @@
 
     /* Grade de Cômodos */
     .rooms-section {
-      padding: 85px 0;
+      padding: 85px 0 40px;
       background: var(--bg);
     }
 
@@ -652,7 +652,7 @@
       gap: 6px;
     }
 
-    /* Faixa Final CTA */
+    /* Faixa Final CTA (Bloco Escuro) */
     .origin-strip {
       padding: 70px 0;
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
@@ -698,7 +698,7 @@
       color: #FFFFFF;
     }
 
-    /* Rodapé Blindado */
+    /* Rodapé Blindado (Fundo Claro) com Margem para Botão Flutuante */
     footer {
       position: relative;
       padding: 45px 0 85px; 
@@ -715,7 +715,7 @@
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .social-icon-btn {
@@ -771,30 +771,18 @@
       width: 34px;
       height: 34px;
       fill: #FFFFFF;
+      display: block;
     }
 
     /* Responsivo Mobile */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       
-      .brand-floating { 
-        height: 48px; 
-        top: 14px; 
-        left: 16px; 
-      }
-      .brand-logo-img { 
-        height: 48px; 
-      }
-      .top-bar { 
-        min-height: 76px; 
-        padding: 10px 0;
-        justify-content: flex-end;
-      }
-      .nav-actions {
-        gap: 8px;
-        margin-left: auto;
-      }
+      .brand-floating { height: 48px; top: 14px; left: 16px; }
+      .brand-floating.scrolled { opacity: 0.35; top: 10px; transform: scale(0.82) translate3d(0, 0, 0); }
+      .brand-logo-img { height: 48px; }
 
+      .top-bar { min-height: 76px; padding: 10px 0; justify-content: flex-end; }
       .nav-links .nav-link:not(.nav-link-cta) { display: none; }
       .mobile-menu-btn { display: inline-flex; margin-left: 8px; }
       .nav-link-cta { font-size: 0.76rem; padding: 8px 14px; border-radius: 20px; }
@@ -820,7 +808,7 @@
       .origin-title { font-size: 1.55rem; }
       .btn-light { width: 100%; justify-content: center; }
 
-      footer { padding: 40px 0 95px; } 
+      footer { padding: 50px 0 95px; } 
 
       .whatsapp-float {
         bottom: 20px;
@@ -961,7 +949,7 @@
     </div>
   </section>
 
-  <!-- CTA Final -->
+  <!-- Faixa Final CTA (Bloco Escuro) -->
   <section class="origin-strip">
     <div class="container reveal">
       <h2 class="origin-title">Pronto para estancar perdas e encher o salão?</h2>
