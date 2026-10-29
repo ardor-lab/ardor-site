@@ -129,7 +129,7 @@
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* --- Barra Superior & Elevador Menu --- */
+    /* --- Barra Superior --- */
     .top-bar {
       min-height: 100px;
       padding: 16px 0;
@@ -164,7 +164,7 @@
       transform: translateY(-1px);
     }
 
-    .elevator-menu-btn {
+    .menu-trigger-btn {
       background: #FFFFFF;
       border: 1.5px solid var(--border);
       width: 44px;
@@ -179,19 +179,19 @@
       transition: all 0.2s ease;
     }
 
-    .elevator-menu-btn:hover {
+    .menu-trigger-btn:hover {
       border-color: var(--terracotta);
       color: var(--terracotta);
       background: var(--terracotta-soft);
       transform: translateY(-1px);
     }
 
-    .elevator-menu-btn:active {
+    .menu-trigger-btn:active {
       transform: scale(0.92);
     }
 
-    /* --- Painel Elevador (Vidro Translúcido / Glassmorphism) --- */
-    .elevator-drawer {
+    /* --- Modal Vidro Translúcido (Glassmorphism) --- */
+    .glass-drawer {
       position: fixed;
       top: 0;
       left: 0;
@@ -210,14 +210,14 @@
       padding: 18px 24px;
     }
 
-    .elevator-drawer.is-open {
+    .glass-drawer.is-open {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .elevator-glass-card {
+    .glass-card {
       width: 100%;
-      max-width: 340px;
+      max-width: 330px;
       margin-top: 60px;
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(24px) saturate(180%);
@@ -235,7 +235,7 @@
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
     }
 
-    .elevator-drawer.is-open .elevator-glass-card {
+    .glass-drawer.is-open .glass-card {
       transform: scale(1) translate3d(0, 0, 0);
       opacity: 1;
     }
@@ -294,53 +294,37 @@
       gap: 8px;
     }
 
-    .drawer-floor-link {
+    .drawer-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 11px 14px;
+      padding: 12px 16px;
       background: rgba(255, 255, 255, 0.60);
       border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 12px;
+      border-radius: 14px;
       text-decoration: none;
       color: var(--text-main);
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       transition: all 0.2s ease;
       box-shadow: 0 2px 6px rgba(35, 25, 18, 0.02);
     }
 
-    .drawer-floor-link:hover {
+    .drawer-link:hover {
       background: rgba(255, 255, 255, 0.95);
       border-color: var(--terracotta);
       transform: translateX(2px);
     }
 
-    .drawer-floor-link.active {
+    .drawer-link.active {
       background: rgba(255, 255, 255, 0.95);
       border-color: var(--terracotta);
       color: var(--terracotta);
     }
 
-    .floor-indicator {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .floor-num {
-      font-family: monospace;
-      font-size: 0.76rem;
-      font-weight: 800;
-      color: var(--amber-gold);
-      background: var(--amber-soft);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
     .drawer-arrow {
       color: var(--terracotta);
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-weight: 900;
     }
 
@@ -1075,8 +1059,8 @@
       <div class="nav-actions">
         <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
         
-        <!-- Botão Elevador (3 Tracinhos) para Desktop e Mobile -->
-        <button class="elevator-menu-btn" id="openMenuBtn" aria-label="Abrir Painel de Andares">
+        <!-- Botão Menu (3 Tracinhos) -->
+        <button class="menu-trigger-btn" id="openMenuBtn" aria-label="Abrir Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="7" x2="20" y2="7"></line>
             <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -1086,7 +1070,7 @@
       </div>
     </header>
 
-    <!-- Hero / Saguão Principal -->
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-content reveal">
         <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
@@ -1270,51 +1254,36 @@
     </div>
   </section>
 
-  <!-- Painel do Elevador (Modal Translúcido / Vidro) -->
-  <div class="elevator-drawer" id="elevatorDrawer" role="dialog" aria-modal="true" aria-label="Painel de Andares Ardor">
-    <div class="elevator-glass-card">
+  <!-- Modal Vidro Translúcido (Glassmorphism) -->
+  <div class="glass-drawer" id="elevatorDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
+    <div class="glass-card">
       <div class="drawer-header">
         <div class="drawer-header-info">
-          <span class="drawer-title">Edifício Ardor</span>
-          <span class="drawer-subtitle">Selecione o Andar</span>
+          <span class="drawer-title">Ecossistema Ardor</span>
+          <span class="drawer-subtitle">Arquitetura de Gestão</span>
         </div>
-        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar Painel">✕</button>
+        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar">✕</button>
       </div>
 
       <nav class="drawer-nav">
-        <a href="index.html" class="drawer-floor-link active">
-          <div class="floor-indicator">
-            <span class="floor-num">00</span>
-            <span>Saguão Principal (Início)</span>
-          </div>
+        <a href="index.html" class="drawer-link active">
+          <span>Página Inicial</span>
           <span class="drawer-arrow">✓</span>
         </a>
-        <a href="operacao-e-margem.html" class="drawer-floor-link">
-          <div class="floor-indicator">
-            <span class="floor-num">01</span>
-            <span>Operação & Margem</span>
-          </div>
+        <a href="operacao-e-margem.html" class="drawer-link">
+          <span>Operação & Margem</span>
           <span class="drawer-arrow">→</span>
         </a>
-        <a href="ativos-digitais-e-ia.html" class="drawer-floor-link">
-          <div class="floor-indicator">
-            <span class="floor-num">02</span>
-            <span>Tráfego & IA Search</span>
-          </div>
+        <a href="ativos-digitais-e-ia.html" class="drawer-link">
+          <span>Tráfego & IA Search</span>
           <span class="drawer-arrow">→</span>
         </a>
-        <a href="experiencia-de-salao.html" class="drawer-floor-link">
-          <div class="floor-indicator">
-            <span class="floor-num">03</span>
-            <span>Salão & Ativação</span>
-          </div>
+        <a href="experiencia-de-salao.html" class="drawer-link">
+          <span>Salão & Ativação</span>
           <span class="drawer-arrow">→</span>
         </a>
-        <a href="sobre.html" class="drawer-floor-link">
-          <div class="floor-indicator">
-            <span class="floor-num">04</span>
-            <span>Memorial & Sobre</span>
-          </div>
+        <a href="sobre.html" class="drawer-link">
+          <span>Sobre a Ardor</span>
           <span class="drawer-arrow">→</span>
         </a>
       </nav>
@@ -1383,7 +1352,7 @@
 
       reveals.forEach(el => observer.observe(el));
 
-      // Lógica do Elevador (Gaveta Translúcida)
+      // Lógica do Modal Translúcido (Glassmorphism)
       const openBtn = document.getElementById('openMenuBtn');
       const closeBtn = document.getElementById('closeMenuBtn');
       const drawer = document.getElementById('elevatorDrawer');
