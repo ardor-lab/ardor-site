@@ -464,3 +464,616 @@
 
     @keyframes fadeInTab {
       from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-info h3 {
+      font-size: 1.55rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.28;
+    }
+
+    .tab-info p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .tab-feature-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .tab-feature-list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+      font-size: 0.90rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .tab-feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .tab-media-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      height: 325px;
+      background: #EAE6DE;
+    }
+
+    .tab-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* --- Programas de Acompanhamento --- */
+    .packages-section {
+      padding: 95px 0;
+      background: linear-gradient(180deg, #F2EFE8 0%, #E9E3D8 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .carousel-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-dark);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .carousel-arrow:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+    }
+
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      gap: 24px;
+      padding: 20px 4px 30px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--terracotta) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      background: rgba(187, 89, 40, 0.4);
+      border-radius: 4px;
+    }
+
+    .package-card {
+      flex: 0 0 340px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 38px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(187, 89, 40, 0.35);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 16px 36px var(--terracotta-glow);
+    }
+
+    .package-card.featured:hover {
+      box-shadow: 0 22px 50px rgba(187, 89, 40, 0.32);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      padding: 5px 18px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(187, 89, 40, 0.35);
+    }
+
+    .package-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .package-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+
+    .package-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .package-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .package-list li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.5;
+    }
+
+    .package-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+
+    .btn-package {
+      width: 100%;
+      text-align: center;
+      padding: 13px;
+      font-size: 0.88rem;
+      border-radius: 6px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-dark);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    /* --- Botão Flutuante do WhatsApp --- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2147483640;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+      display: block;
+      margin: auto;
+    }
+
+    /* --- Rodapé --- */
+    footer {
+      padding: 50px 0 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #FAF8F5;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 30px;
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: rgba(187, 89, 40, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* --- Responsivo Mobile Cirúrgico --- */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .brand-floating { height: 48px; top: 14px; left: 14px; }
+      .brand-logo-img { height: 48px; }
+      .top-bar { min-height: 76px; padding: 12px 0 12px 110px; justify-content: flex-end; }
+      .nav-links { gap: 6px; }
+      .nav-link { font-size: 0.74rem; padding: 7px 11px; white-space: nowrap; }
+      .hero { grid-template-columns: 1fr; gap: 24px; padding: 18px 0 32px; }
+      .hero h1 { font-size: 1.78rem; line-height: 1.20; }
+      .hero p { font-size: 0.94rem; margin-bottom: 24px; }
+      .btn { width: 100%; padding: 14px 22px; font-size: 0.88rem; }
+      .metrics-bar { padding: 32px 0; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 18px 14px; }
+      .metric-number { font-size: 1.75rem; }
+      .metric-label { font-size: 0.72rem; }
+      .interactive-section { padding: 55px 0; }
+      .section-title { font-size: 1.55rem; }
+      .tabs-nav-wrapper { padding: 4px; margin-bottom: 20px; gap: 4px; }
+      .tab-btn { padding: 9px 15px; font-size: 0.78rem; }
+      .tab-content.active { grid-template-columns: 1fr; padding: 22px 16px; gap: 22px; }
+      .tab-info h3 { font-size: 1.25rem; }
+      .tab-feature-list li { font-size: 0.84rem; padding-left: 20px; }
+      .tab-media-frame { height: 200px; }
+      .packages-section { padding: 55px 0; }
+      .package-card { flex: 0 0 86%; padding: 30px 20px 22px; }
+      .carousel-controls { display: none; }
+      .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logótipo Flutuante -->
+  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
+  </div>
+
+  <div class="container">
+    <header class="top-bar">
+      <nav class="nav-links">
+        <a href="#solucoes" class="nav-link">Nossos Pilares</a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20escalar%20minha%20opera%C3%A7%C3%A3o." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Falar com Consultor</a>
+      </nav>
+    </header>
+
+    <!-- NOVO HOOK DE VENDAS (HERO) -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <p class="hero-quote">“Método 100% validado em nossa própria operação física.”</p>
+        <h1>Encha o salão. Blinde a margem. <span class="highlight">Liberte-se do balcão.</span></h1>
+        <p>Aplicamos no seu comércio a mesma engenharia de processos, criação de sites e tráfego local que elevou o faturamento da nossa própria loja em 51%. Sem teorias, apenas chão de loja validado.</p>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20replicar%20esse%20resultado%20na%20minha%20empresa." class="btn" target="_blank" rel="noopener noreferrer">
+          Quero o Mesmo Resultado
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-media reveal delay-1">
+        <div class="proof-frame">
+          <img class="proof-img" src="assets/hero.jpg" alt="Aplicação Real no Comércio" fetchpriority="high" loading="eager">
+          <div class="proof-badge">Resultado: +51% de faturamento em 30 dias</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Métricas Rápidas -->
+  <section class="metrics-bar">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card reveal">
+          <div class="metric-number">100<span>%</span></div>
+          <div class="metric-label">Método Validado e Testado</div>
+        </div>
+        <div class="metric-card reveal delay-1">
+          <div class="metric-number">51<span>%</span></div>
+          <div class="metric-label">Crescimento Provado na Prática</div>
+        </div>
+        <div class="metric-card reveal delay-2">
+          <div class="metric-number">Curva <span>ABC</span></div>
+          <div class="metric-label">Auditoria e Engenharia de Mix</div>
+        </div>
+        <div class="metric-card reveal">
+          <div class="metric-number">360<span>°</span></div>
+          <div class="metric-label">Tráfego, Site e Conversão</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABAS ESTRATÉGICAS ENXUGADAS -->
+  <section class="interactive-section" id="solucoes">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <div>
+          <span class="section-tag">A Máquina de Vendas</span>
+          <h2 class="section-title">Como Entregamos Resultados Reais</h2>
+          <p class="section-desc">Atuamos de forma cirúrgica nas 3 frentes que determinam o lucro do seu negócio físico.</p>
+        </div>
+      </div>
+
+      <div class="tabs-nav-wrapper reveal delay-1">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação & Margem</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-atracao')">Salão & Ativação</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sites')">Ecossistema & Sites</button>
+      </div>
+
+      <!-- Tab 1 -->
+      <div id="tab-operacao" class="tab-content active">
+        <div class="tab-info">
+          <h3>Faturar alto com o caixa zerado não sustenta o seu negócio.</h3>
+          <p>O dono não pode passar a vida apagando incêndios. Arrumamos a casa para que cada venda deixe lucro real no bolso, estruturando a equipe para rodar no automático.</p>
+          <ul class="tab-feature-list">
+            <li><strong>Engenharia (Curva ABC):</strong> Destaque cirúrgico para produtos de alta margem.</li>
+            <li><strong>Rotinas Anti-Apagão:</strong> Checklists práticos para sua equipe ter autonomia.</li>
+            <li><strong>Auditoria CMV:</strong> Controle rigoroso de quebras, estoque e precificação justa.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20preciso%20blindar%20a%20margem%20e%20organizar%20a%20equipe." class="btn" target="_blank" rel="noopener noreferrer">Blindar Minha Margem</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Gestão e Margem" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div id="tab-atracao" class="tab-content">
+        <div class="tab-info">
+          <h3>O digital precisa encher suas mesas, não apenas gerar likes.</h3>
+          <p>Seu cliente está na internet, mas o seu lucro mais alto está no salão. Criamos campanhas magnéticas para tirar o cliente do sofá e gerar demanda previsível na sua porta.</p>
+          <ul class="tab-feature-list">
+            <li><strong>Tráfego de Raio Curto:</strong> Anúncios na Meta e Google focados na sua região.</li>
+            <li><strong>Iscas de Alta Conversão:</strong> Ofertas estratégicas que lotam reservas e diminuem o CAC.</li>
+            <li><strong>Retenção no Ponto:</strong> Tecnologias e abordagens que encantam quem senta na mesa.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20atrair%20clientes%20pro%20meu%20sal%C3%A3o." class="btn" target="_blank" rel="noopener noreferrer">Lotar Meu Salão</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Tab 3 (Novo) -->
+      <div id="tab-sites" class="tab-content">
+        <div class="tab-info">
+          <h3>O ativo silencioso responsável por explodir suas reservas.</h3>
+          <p>Um site não pode ser apenas um panfleto digital. Desenvolvemos plataformas de alta performance que convertem visitantes em clientes de mesa, sem depender de aplicativos de entrega.</p>
+          <ul class="tab-feature-list">
+            <li><strong>Design de Conversão:</strong> Layouts desenhados para fechar vendas em menos de 3 cliques.</li>
+            <li><strong>Buscas Locais:</strong> Domine o Google Maps e seja a primeira escolha na sua cidade.</li>
+            <li><strong>Velocidade e Autoridade:</strong> Infraestrutura premium que reflete a qualidade do seu salão.</li>
+          </ul>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20um%20site%20focado%20em%20alta%20convers%C3%A3o%20pro%20meu%20neg%C3%B3cio." class="btn" target="_blank" rel="noopener noreferrer">Criar Meu Site Estratégico</a>
+        </div>
+        <div class="tab-media-frame">
+          <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="Desenvolvimento de Sites" class="tab-media-img" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Programas de Acompanhamento (Carrossel Horizontal) -->
+  <section class="packages-section">
+    <div class="container">
+      <div class="section-header-wrap reveal">
+        <div>
+          <span class="section-tag">Formatos de Apoio</span>
+          <h2 class="section-title">Como Podemos Caminhar Juntos</h2>
+          <p class="section-desc">Escolha o nível de acompanhamento ideal para o momento da sua empresa.</p>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" onclick="scrollPackages(-360)" aria-label="Anterior">←</button>
+          <button class="carousel-arrow" onclick="scrollPackages(360)" aria-label="Seguinte">→</button>
+        </div>
+      </div>
+
+      <div class="carousel-track" id="packagesTrack">
+        <!-- Card 1 -->
+        <div class="package-card">
+          <div>
+            <h3 class="package-title">Estruturação & Paz</h3>
+            <div class="package-badge">Rotina & Caixa Seguro</div>
+            <p class="package-desc">Para organizar a casa, estancar desperdícios e colocar os processos diários da equipe nos trilhos.</p>
+            <ul class="package-list">
+              <li>Encontros práticos para desenho de rotinas e checklists da equipe.</li>
+              <li>Revisão do cardápio e mix focando nos itens de maior rentabilidade.</li>
+              <li>Estruturação e organização das buscas locais no Google.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Este Formato</a>
+        </div>
+
+        <!-- Card 2 (Destaque) -->
+        <div class="package-card featured">
+          <div class="featured-tag">Mais Escolhido</div>
+          <div>
+            <h3 class="package-title">Maturidade & Salão Cheio</h3>
+            <div class="package-badge">Organização & Tração</div>
+            <p class="package-desc">O apoio completo para manter a casa arrumada, custos protegidos e clientes encantados no salão.</p>
+            <ul class="package-list">
+              <li>Consultoria completa de rotinas, treinamento de equipe e controle de margem.</li>
+              <li>Instalação da tecnologia interativa <strong>Brat Experience</strong> no salão.</li>
+              <li>Otimização profissional do perfil comercial no Google e iFood.</li>
+              <li>Produção visual com atores para elevar o respeito à marca.</li>
+              <li>Tráfego pago regional no Instagram e Google para atrair novos clientes.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Acompanhamento</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="package-card">
+          <div>
+            <h3 class="package-title">Parceria Estratégica 360°</h3>
+            <div class="package-badge">O Braço Direito do Seu Negócio</div>
+            <p class="package-desc">A Ardor ao seu lado mês a mês cuidando de números, equipe e crescimento contínuo.</p>
+            <ul class="package-list">
+              <li>Reuniões mensais de avaliação financeira, margem e processos.</li>
+              <li>Suporte contínuo ao sistema e ferramentas do salão.</li>
+              <li>Gestão contínua de anúncios pagos para manter o salão aquecido.</li>
+              <li>Novas produções visuais mensais para fortalecimento da marca.</li>
+              <li>Acompanhamento de rotinas e apoio direto à liderança da loja.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conversar%20sobre%20a%20Parceria%20Estrat%C3%A9gica%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com o Consultor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://instagram.com/ardorgestao" class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @ardorgestao
+        </a>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          (11) 96669-9449
+        </a>
+      </div>
+      <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    function scrollPackages(distance) {
+      const track = document.getElementById('packagesTrack');
+      if (track) {
+        track.scrollBy({ left: distance, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach(el => observer.observe(el));
+    });
+
+    (function() {
+      const logo = document.getElementById('ardorLogo');
+      if (logo) {
+        logo.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      function onScroll() {
+        const pos = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (pos > 25) {
+          logo.classList.add('scrolled');
+        } else {
+          logo.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
