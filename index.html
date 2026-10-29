@@ -783,7 +783,8 @@
       }
       .top-bar { 
         min-height: 76px; 
-        padding: 12px 0 12px 110px; /* Garante que os links nunca fiquem sob o logo */
+        /* Mantendo o respiro para não encavalar com o logo */
+        padding: 12px 0 12px 110px; 
         justify-content: flex-end;
       }
       .nav-links {
@@ -899,14 +900,17 @@
 
   <div class="container">
     <header class="top-bar">
+      <!-- MENU RESTAURADO AQUI -->
       <nav class="nav-links">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#ativos" class="nav-link">Ativos Digitais e IA</a>
         <a href="#solucoes" class="nav-link">Nossos Pilares</a>
         <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
       </nav>
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="sobre">
       <div class="hero-content reveal">
         <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
         <h1>O seu negócio merece dar <span class="highlight">lucro real</span>. E você merece paz para liderar.</h1>
@@ -1002,7 +1006,7 @@
       </div>
 
       <!-- Tab 3 -->
-      <div id="tab-atracao" class="tab-content">
+      <div id="tab-atracao" class="tab-content" id="ativos">
         <div class="tab-info">
           <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
           <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
