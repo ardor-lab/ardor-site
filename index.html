@@ -63,7 +63,7 @@
       width: 100%;
       background-color: var(--bg);
       color: var(--text-main);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
       font-weight: 400;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -81,8 +81,8 @@
     /* --- Scroll Reveal Fluido --- */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
       will-change: opacity, transform;
     }
 
@@ -91,10 +91,10 @@
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: 0.12s; }
-    .delay-2 { transition-delay: 0.22s; }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
 
-    /* --- Logótipo Flutuante --- */
+    /* --- Logótipo Flutuante Oficial --- */
     .brand-floating {
       position: fixed;
       top: 14px;
@@ -102,7 +102,7 @@
       z-index: 2147483647;
       display: inline-flex;
       align-items: center;
-      height: 88px;
+      height: 84px;
       cursor: pointer;
       user-select: none;
       transform-origin: left center;
@@ -122,16 +122,16 @@
     }
 
     .brand-logo-img {
-      height: 88px;
+      height: 84px;
       width: auto;
       display: block;
       pointer-events: none;
       filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
     }
 
-    /* --- Barra Superior --- */
+    /* --- Barra Superior & Elevador Menu --- */
     .top-bar {
-      min-height: 105px;
+      min-height: 100px;
       padding: 16px 0;
       display: flex;
       justify-content: flex-end;
@@ -139,34 +139,23 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-links {
+    .nav-actions {
       display: flex;
       gap: 12px;
       align-items: center;
-    }
-
-    .nav-link {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 9px 20px;
-      border-radius: 24px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
     }
 
     .nav-link-cta {
       border: 1.5px solid var(--terracotta);
       color: var(--terracotta) !important;
       background: #FFFFFF;
+      font-size: 0.86rem;
       font-weight: 700;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 24px;
       box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
     }
 
     .nav-link-cta:hover {
@@ -175,7 +164,199 @@
       transform: translateY(-1px);
     }
 
-    /* --- Bloco Hero (Estilo Showcase) --- */
+    .elevator-menu-btn {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .elevator-menu-btn:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+      transform: translateY(-1px);
+    }
+
+    .elevator-menu-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* --- Painel Elevador (Vidro Translúcido / Glassmorphism) --- */
+    .elevator-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(21, 19, 17, 0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 2147483646;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 18px 24px;
+    }
+
+    .elevator-drawer.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .elevator-glass-card {
+      width: 100%;
+      max-width: 340px;
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 20px 48px rgba(35, 25, 18, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transform-origin: top right;
+      transform: scale(0.2) translate3d(20px, -40px, 0);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+    }
+
+    .elevator-drawer.is-open .elevator-glass-card {
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(230, 225, 215, 0.6);
+    }
+
+    .drawer-header-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-title {
+      font-size: 0.94rem;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
+    }
+
+    .drawer-subtitle {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .drawer-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.90rem;
+      transition: all 0.2s ease;
+    }
+
+    .drawer-close-btn:hover {
+      background: var(--terracotta-soft);
+      color: var(--terracotta);
+    }
+
+    .drawer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .drawer-floor-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 14px;
+      background: rgba(255, 255, 255, 0.60);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.86rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(35, 25, 18, 0.02);
+    }
+
+    .drawer-floor-link:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--terracotta);
+      transform: translateX(2px);
+    }
+
+    .drawer-floor-link.active {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    .floor-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .floor-num {
+      font-family: monospace;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--amber-gold);
+      background: var(--amber-soft);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .drawer-arrow {
+      color: var(--terracotta);
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+
+    .drawer-footer {
+      padding-top: 4px;
+    }
+
+    .drawer-btn-cta {
+      width: 100%;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
+    }
+
+    /* --- Bloco Hero --- */
     .hero {
       padding: 60px 0 70px;
       display: grid;
@@ -216,7 +397,6 @@
       max-width: 540px;
     }
 
-    /* Botão com Iluminação e Reflexo */
     .btn {
       position: relative;
       display: inline-flex;
@@ -310,7 +490,7 @@
       box-shadow: 0 0 10px #34D399;
     }
 
-    /* --- Métricas Rápidas: Contraste Profundo --- */
+    /* --- Métricas Rápidas --- */
     .metrics-bar {
       background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
       color: #FFFFFF;
@@ -691,7 +871,7 @@
       transform: translateY(-2px);
     }
 
-    /* --- Botão Flutuante do WhatsApp (Apenas Ícone) --- */
+    /* --- Botão Flutuante do WhatsApp --- */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -772,34 +952,141 @@
     /* --- Responsivo Mobile --- */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
-      .brand-floating { height: 65px; left: 16px; }
-      .brand-logo-img { height: 65px; }
-      .hero { grid-template-columns: 1fr; gap: 24px; padding: 24px 0 35px; }
-      .hero h1 { font-size: 1.95rem; }
-      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .tab-content.active { grid-template-columns: 1fr; padding: 24px 18px; }
-      .tab-media-frame { height: 210px; }
-      .package-card { flex: 0 0 84%; padding: 28px 20px; }
-      .carousel-controls { display: none; }
+      
+      .brand-floating { 
+        height: 48px; 
+        top: 14px; 
+        left: 14px; 
+      }
+      .brand-logo-img { 
+        height: 48px; 
+      }
+      .top-bar { 
+        min-height: 76px; 
+        padding: 12px 0 12px 80px; 
+        justify-content: flex-end;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .nav-link-cta {
+        font-size: 0.76rem;
+        padding: 8px 14px;
+      }
+
+      .hero { 
+        grid-template-columns: 1fr; 
+        gap: 24px; 
+        padding: 18px 0 32px; 
+      }
+      .hero h1 { 
+        font-size: 1.78rem; 
+        line-height: 1.20;
+      }
+      .hero p {
+        font-size: 0.94rem;
+        margin-bottom: 24px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 14px 22px;
+        font-size: 0.88rem;
+      }
+
+      .metrics-bar {
+        padding: 32px 0;
+      }
+      .metrics-grid { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 18px 14px; 
+      }
+      .metric-number {
+        font-size: 1.75rem;
+      }
+      .metric-label {
+        font-size: 0.72rem;
+      }
+
+      .interactive-section {
+        padding: 55px 0;
+      }
+      .section-title {
+        font-size: 1.55rem;
+      }
+      .tabs-nav-wrapper {
+        padding: 4px;
+        margin-bottom: 20px;
+        gap: 4px;
+      }
+      .tab-btn {
+        padding: 9px 15px;
+        font-size: 0.78rem;
+      }
+      .tab-content.active { 
+        grid-template-columns: 1fr; 
+        padding: 22px 16px; 
+        gap: 22px;
+      }
+      .tab-info h3 {
+        font-size: 1.25rem;
+      }
+      .tab-feature-list li {
+        font-size: 0.84rem;
+        padding-left: 20px;
+      }
+      .tab-media-frame { 
+        height: 200px; 
+      }
+
+      .packages-section {
+        padding: 55px 0;
+      }
+      .package-card { 
+        flex: 0 0 86%; 
+        padding: 30px 20px 22px; 
+      }
+      .carousel-controls { 
+        display: none; 
+      }
+
+      .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 52px;
+        height: 52px;
+      }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logótipo Flutuante (Carregamento Prioritário) -->
-  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao topo">
+  <!-- Logótipo Flutuante Oficial -->
+  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao início">
     <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" fetchpriority="high" loading="eager">
   </div>
 
   <div class="container">
     <header class="top-bar">
-      <nav class="nav-links">
-        <a href="#solucoes" class="nav-link">Nossos Pilares</a>
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
-      </nav>
+      <div class="nav-actions">
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20com%C3%A9rcio." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Conversar com a Ardor</a>
+        
+        <!-- Botão Elevador (3 Tracinhos) para Desktop e Mobile -->
+        <button class="elevator-menu-btn" id="openMenuBtn" aria-label="Abrir Painel de Andares">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero / Saguão Principal -->
     <section class="hero">
       <div class="hero-content reveal">
         <p class="hero-quote">“Meu comércio tem movimento e potencial. O que falta é a casa organizada para eu ter paz no fim do mês.”</p>
@@ -983,7 +1270,65 @@
     </div>
   </section>
 
-  <!-- Botão Flutuante do WhatsApp (Apenas Ícone SVG Oficial) -->
+  <!-- Painel do Elevador (Modal Translúcido / Vidro) -->
+  <div class="elevator-drawer" id="elevatorDrawer" role="dialog" aria-modal="true" aria-label="Painel de Andares Ardor">
+    <div class="elevator-glass-card">
+      <div class="drawer-header">
+        <div class="drawer-header-info">
+          <span class="drawer-title">Edifício Ardor</span>
+          <span class="drawer-subtitle">Selecione o Andar</span>
+        </div>
+        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar Painel">✕</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="index.html" class="drawer-floor-link active">
+          <div class="floor-indicator">
+            <span class="floor-num">00</span>
+            <span>Saguão Principal (Início)</span>
+          </div>
+          <span class="drawer-arrow">✓</span>
+        </a>
+        <a href="operacao-e-margem.html" class="drawer-floor-link">
+          <div class="floor-indicator">
+            <span class="floor-num">01</span>
+            <span>Operação & Margem</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="ativos-digitais-e-ia.html" class="drawer-floor-link">
+          <div class="floor-indicator">
+            <span class="floor-num">02</span>
+            <span>Tráfego & IA Search</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="experiencia-de-salao.html" class="drawer-floor-link">
+          <div class="floor-indicator">
+            <span class="floor-num">03</span>
+            <span>Salão & Ativação</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="sobre.html" class="drawer-floor-link">
+          <div class="floor-indicator">
+            <span class="floor-num">04</span>
+            <span>Memorial & Sobre</span>
+          </div>
+          <span class="drawer-arrow">→</span>
+        </a>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20operacional." class="btn drawer-btn-cta" target="_blank" rel="noopener noreferrer">
+          Solicitar Diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante do WhatsApp -->
   <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 
   <!-- Rodapé -->
@@ -1004,6 +1349,7 @@
   </footer>
 
   <script>
+    // Alternância de Abas
     function switchTab(evt, tabId) {
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(c => c.classList.remove('active'));
@@ -1016,6 +1362,7 @@
       evt.currentTarget.classList.add('active');
     }
 
+    // Scroll Suave Carrossel
     function scrollPackages(distance) {
       const track = document.getElementById('packagesTrack');
       if (track) {
@@ -1023,6 +1370,7 @@
       }
     }
 
+    // Scroll Reveal
     document.addEventListener('DOMContentLoaded', function() {
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -1031,11 +1379,35 @@
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.10 });
 
       reveals.forEach(el => observer.observe(el));
+
+      // Lógica do Elevador (Gaveta Translúcida)
+      const openBtn = document.getElementById('openMenuBtn');
+      const closeBtn = document.getElementById('closeMenuBtn');
+      const drawer = document.getElementById('elevatorDrawer');
+
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (drawer) {
+        drawer.addEventListener('click', function(e) {
+          if (e.target === drawer) closeDrawer();
+        });
+      }
     });
 
+    // Logotipo Flutuante
     (function() {
       const logo = document.getElementById('ardorLogo');
       if (logo) {
