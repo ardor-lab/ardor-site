@@ -535,6 +535,33 @@
       color: var(--text-light-muted);
       line-height: 1.75;
     }
+    .lab-case-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .lab-metric-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1 1 220px;
+    }
+    .lab-metric-value {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: #34D399;
+    }
+    .lab-metric-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-light-muted);
+      line-height: 1.4;
+    }
 
     /* --- Bloco Manifesto / Inimigo Comum --- */
     .manifesto-section {
@@ -1085,7 +1112,7 @@
     <header class="top-bar">
       <nav class="nav-links">
         <div class="nav-actions">
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="nav-link-cta" target="_blank" rel="noopener noreferrer">Solicitar Auditoria</a>
+          <a href="ativos-digitais-e-ia.html#scanner" class="nav-link-cta">Fazer Diagnóstico</a>
           
           <!-- Botão Menu (3 Tracinhos) -->
           <button class="menu-trigger-btn" id="openMenuBtn" aria-label="Abrir Menu">
@@ -1102,11 +1129,11 @@
     <!-- Section Hero (Topo) -->
     <section class="hero">
       <div class="hero-content reveal">
-        <span class="section-tag">FOCO EM MARGEM LÍQUIDA E SALÃO CHEIO</span>
+        <span class="section-tag">OPERAÇÃO, MARGEM LÍQUIDA E LOJA CHEIA</span>
         <h1>Seu comércio não sobrevive de curtidas. Ele precisa de <span class="highlight">lucro no caixa</span>.</h1>
-        <p>Enquanto agências tradicionais vendem métricas de vaidade, a Ardor aplica engenharia de tráfego baseada no seu CMV e arquitetura de Inteligência Artificial para atrair o cliente certo para a sua porta.</p>
+        <p>Enquanto agências tradicionais vendem posts e métricas de vaidade, a Ardor une controle de CMV, padronização de equipe, tráfego hiperlocal e Inteligência Artificial para transformar movimento em lucro real.</p>
         <a href="ativos-digitais-e-ia.html#scanner" class="btn">
-          Testar Maturidade Digital do Meu Negócio →
+          Testar Maturidade Digital do Meu Negócio
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1127,8 +1154,18 @@
         <span class="lab-case-tag">Case Real de Laboratório Próprio</span>
         <h2 class="lab-case-title">O Método Comprovado no Próprio Balcão</h2>
         <p class="lab-case-text">
-          Não vendemos teoria. Aplicamos a arquitetura de gestão da Ardor em nosso próprio restaurante laboratório. O resultado? Crescimento de +51% no faturamento mensal em pleno mês de eleições e feriados prolongados, apenas combinando mídia hiperlocal, funil de reservas e controle de CMV.
+          Não vendemos teoria de gabinete. Testamos a metodologia da Ardor no nosso próprio laboratório comercial — uma operação física que saiu de um apartamento para o alto faturamento. Combinando controle rígido de CMV, funil de conversão e mídia hiperlocal, crescemos em pleno período de eleições e feriados prolongados.
         </p>
+        <div class="lab-case-metrics">
+          <div class="lab-metric-item">
+            <span class="lab-metric-value">+41%</span>
+            <span class="lab-metric-label">Faturamento semanal após ativação</span>
+          </div>
+          <div class="lab-metric-item">
+            <span class="lab-metric-value">+51%</span>
+            <span class="lab-metric-label">Crescimento mensal em mês de eleições e feriados</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1137,8 +1174,8 @@
   <section class="manifesto-section">
     <div class="container">
       <div class="manifesto-box reveal">
-        <h2>O fim das campanhas que dão prejuízo.</h2>
-        <p>Fazer anúncios sem conhecer a Curva ABC e a margem de contribuição de cada prato é a receita para o colapso. Nós conectamos a tração digital à saúde operacional da sua cozinha e do seu salão.</p>
+        <h2>O fim das campanhas que trazem movimento, mas não deixam dinheiro no caixa.</h2>
+        <p>Rodar anúncios sem conhecer a Curva ABC, o índice de perdas e a margem real de cada produto é a receita para trabalhar para o fornecedor. Tráfego pago não faz milagre sozinho: conectamos a atração digital à execução impecável no seu balcão.</p>
       </div>
     </div>
   </section>
@@ -1157,18 +1194,18 @@
       <div class="tabs-nav-wrapper reveal delay-1">
         <button class="tab-btn active" onclick="switchTab(event, 'tab-operacao')">Operação & Margem</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-ia')">Tráfego & IA Search</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">Experiência & Salão</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-salao')">Ponto Físico & Ativação</button>
       </div>
 
       <!-- Tab 1: Operação & Margem -->
       <div id="tab-operacao" class="tab-content active">
         <div class="tab-info">
-          <h3>Processos claros para a sua equipe trabalhar com orgulho</h3>
-          <p>Uma empresa madura não depende do dono apagando incêndios a cada minuto. Estruturamos rotinas práticas para que sua equipe atenda com o mesmo padrão e cuidado que você sempre teve.</p>
+          <h3>Estanque vazamentos de caixa e tire a operação das suas costas</h3>
+          <p>Uma loja lucrativa não depende do dono apagando incêndios o dia inteiro. Implantamos ferramentas visuais e controle real de custos para sua equipe executar com padrão.</p>
           <ul class="tab-feature-list">
-            <li>Rotinas visuais e simples: cada colaborador sabe exatamente o que fazer.</li>
-            <li>Menos estresse com retrabalho e mais harmonia no dia a dia da equipe.</li>
-            <li>Liberdade para você pensar no futuro do negócio com tranquilidade.</li>
+            <li>Controle prático de CMV e redução sistemática de perdas e desperdícios.</li>
+            <li>Engenharia de mix e Curva ABC focada nos produtos de maior rentabilidade.</li>
+            <li>Gestão visual de rotinas e checklists para absorver faltas sem retrabalho.</li>
           </ul>
           <a href="operacao-e-margem.html" class="btn">Acessar Operação & Margem</a>
         </div>
@@ -1184,7 +1221,7 @@
           <p>Tráfego pago que protege o seu caixa e arquitetura de dados semânticos para garantir que seu comércio seja recomendado pelas buscas de Inteligência Artificial.</p>
           <ul class="tab-feature-list">
             <li>Anúncios hiperlocais filtrados pelo raio geográfico mais qualificado.</li>
-            <li>Campanhas calibradas pela Curva ABC, impulsionando itens de lucro real.</li>
+            <li>Campanhas calibradas pela Curva ABC, impulsionando horários e itens de lucro real.</li>
             <li>Otimização para motores generativos (ChatGPT, Gemini e Google Maps).</li>
           </ul>
           <a href="ativos-digitais-e-ia.html" class="btn">Acessar Tráfego & IA Search</a>
@@ -1194,17 +1231,17 @@
         </div>
       </div>
 
-      <!-- Tab 3: Experiência & Salão -->
+      <!-- Tab 3: Ponto Físico & Ativação -->
       <div id="tab-salao" class="tab-content">
         <div class="tab-info">
-          <h3>Fazer a sua marca ser admirada e reconhecida na região</h3>
-          <p>O seu espaço merece ser a primeira opção dos clientes da sua cidade. Integramos presença digital refinada e ativações interativas para encantar quem senta nas suas mesas.</p>
+          <h3>Transforme presença digital em fluxo qualificado na sua porta</h3>
+          <p>Seu negócio físico precisa ser a primeira escolha da região. Unimos posicionamento visual de alto padrão, funis de conveniência e ativações no ponto de venda para elevar o ticket médio.</p>
           <ul class="tab-feature-list">
-            <li>Experiência interativa com o Brat Experience para surpreender e reter no salão.</li>
-            <li>Vídeos e fotos que valorizam a dedicação da sua casa.</li>
-            <li>Presença profissional no Google e redes para atrair os clientes certos.</li>
+            <li>Campanhas com motivo real de visita para ativar horários e dias de menor fluxo.</li>
+            <li>Produção audiovisual estratégica focada em autoridade e desejo imediato.</li>
+            <li>Ativações interativas exclusivas no ponto físico (como gamificação de salão para gastronomia).</li>
           </ul>
-          <a href="experiencia-de-salao.html" class="btn">Acessar Salão & Ativação</a>
+          <a href="experiencia-de-salao.html" class="btn">Acessar Ponto Físico & Ativação</a>
         </div>
         <div class="tab-media-frame">
           <img src="assets/salao.jpg" alt="Experiência de Salão" class="tab-media-img" loading="lazy">
@@ -1233,12 +1270,12 @@
         <div class="package-card">
           <div>
             <h3 class="package-title">Estruturação & Paz</h3>
-            <div class="package-badge">Rotina & Caixa Seguro</div>
-            <p class="package-desc">Para organizar a casa, estancar desperdícios e colocar os processos diários da equipe nos trilhos.</p>
+            <div class="package-badge">Implantação Pontual • Caixa & Rotina</div>
+            <p class="package-desc">Para estancar perdas financeiras, padronizar a operação da equipe e construir a fundação digital da loja.</p>
             <ul class="package-list">
-              <li>Encontros práticos para desenho de rotinas e checklists da equipe.</li>
-              <li>Revisão do cardápio e mix focando nos itens de maior rentabilidade.</li>
-              <li>Estruturação e organização das buscas locais no Google.</li>
+              <li>Ferramenta personalizada de controle de margem e perdas (CMV) com treinamento da liderança.</li>
+              <li>Engenharia de mix e Curva ABC para destacar itens de alto valor agregado.</li>
+              <li>Sistema de gestão visual de tarefas, checklists de equipe e estruturação do Google local.</li>
             </ul>
           </div>
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20entender%20o%20programa%20Estrutura%C3%A7%C3%A3o%20e%20Paz." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Conhecer Este Formato</a>
@@ -1248,32 +1285,30 @@
         <div class="package-card featured">
           <div class="featured-tag">Mais Escolhido</div>
           <div>
-            <h3 class="package-title">Maturidade & Salão Cheio</h3>
-            <div class="package-badge">Organização & Tração</div>
-            <p class="package-desc">O apoio completo para manter a casa arrumada, custos protegidos e clientes encantados no salão.</p>
+            <h3 class="package-title">Maturidade & Loja Cheia</h3>
+            <div class="package-badge">Gestão Mensal • Organização, IA & Tração</div>
+            <p class="package-desc">Toda a fundação operacional somada à máquina contínua de aquisição de clientes qualificados na sua região.</p>
             <ul class="package-list">
-              <li>Consultoria completa de rotinas, treinamento de equipe e controle de margem.</li>
-              <li>Instalação da tecnologia interativa <strong>Brat Experience</strong> no salão.</li>
-              <li>Otimização profissional do perfil comercial no Google e iFood.</li>
-              <li>Produção visual com atores para elevar o respeito à marca.</li>
-              <li>Tráfego pago regional no Instagram e Google para atrair novos clientes.</li>
+              <li>Toda a implantação operacional da frente Estruturação & Paz inclusa.</li>
+              <li>Gestão contínua de tráfego pago hiperlocal (Meta e Google) com otimização estratégica.</li>
+              <li>Orquestração semanal do Google Meu Negócio e arquitetura de dados para IAs (GEO).</li>
+              <li>Roteirização e produção cadenciada de vídeos de autoridade e artes sob demanda.</li>
             </ul>
           </div>
-          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Sal%C3%A3o%20Cheio%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Acompanhamento</a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20o%20Maturidade%20e%20Loja%20Cheia%20para%20minha%20loja." class="btn btn-package" target="_blank" rel="noopener noreferrer">Quero Este Acompanhamento</a>
         </div>
 
         <!-- Card 3 -->
         <div class="package-card">
           <div>
             <h3 class="package-title">Parceria Estratégica 360°</h3>
-            <div class="package-badge">O Braço Direito do Seu Negócio</div>
-            <p class="package-desc">A Ardor ao seu lado mês a mês cuidando de números, equipe e crescimento contínuo.</p>
+            <div class="package-badge">Co-gestão Mensal • Braço Direito</div>
+            <p class="package-desc">Atuação lado a lado com a diretoria para escalar faturamento, evoluir o mix e consolidar o lucro líquido.</p>
             <ul class="package-list">
-              <li>Reuniões mensais de avaliação financeira, margem e processos.</li>
-              <li>Suporte contínuo ao sistema e ferramentas do salão.</li>
-              <li>Gestão contínua de anúncios pagos para manter o salão aquecido.</li>
-              <li>Novas produções visuais mensais para fortalecimento da marca.</li>
-              <li>Acompanhamento de rotinas e apoio direto à liderança da loja.</li>
+              <li>Tudo das frentes Estruturação & Paz e Maturidade & Loja Cheia incluso.</li>
+              <li>Relatórios executivos mensais de DRE, margem e performance com apresentação estratégica.</li>
+              <li>Treinamentos modulares periódicos com a equipe focados em venda de valor e atendimento.</li>
+              <li>Captações audiovisuais recorrentes in loco e planejamento contínuo de evolução de mix.</li>
             </ul>
           </div>
           <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20conversar%20sobre%20a%20Parceria%20Estrat%C3%A9gica%20360." class="btn btn-outline btn-package" target="_blank" rel="noopener noreferrer">Falar com o Consultor</a>
@@ -1317,8 +1352,8 @@
       </nav>
 
       <div class="drawer-footer">
-        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20r%C3%A1pida%20com%20a%20Ardor." class="btn drawer-btn-cta" target="_blank" rel="noopener noreferrer">
-          Solicitar Auditoria
+        <a href="ativos-digitais-e-ia.html#scanner" class="btn drawer-btn-cta">
+          Fazer Diagnóstico
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1328,9 +1363,9 @@
   <!-- Faixa Final CTA (Bloco Escuro) -->
   <section class="origin-strip">
     <div class="container reveal">
-      <h2 class="origin-title">Pronto para estancar perdas e encher o salão?</h2>
+      <h2 class="origin-title">Pronto para estancar perdas e transformar movimento em lucro?</h2>
       <p class="origin-text">
-        Solicite agora mesmo o diagnóstico estrutural do seu comércio diretamente pelo nosso WhatsApp comercial.
+        Faça o diagnóstico rápido ou fale diretamente com nossa consultoria no WhatsApp para avaliar o momento da sua empresa.
       </p>
       <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20auditoria%20e%20diagn%C3%B3stico%20para%20a%20minha%20empresa." class="btn-light" target="_blank" rel="noopener noreferrer">
         Falar com Consultor
