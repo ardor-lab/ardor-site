@@ -872,6 +872,190 @@
       line-height: 1.6;
     }
 
+    /* Bloco de Investimento (Tráfego Pago) */
+    .pricing-section {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pricing-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .pricing-header h2 {
+      font-size: 2.05rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .pricing-header p {
+      font-size: 0.96rem;
+      color: var(--text-light-muted);
+      line-height: 1.6;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      padding: 34px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price-card.featured {
+      background: rgba(187, 89, 40, 0.09);
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+    }
+
+    .price-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #34D399;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 5px 12px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+
+    .price-card:not(.featured) .price-pill {
+      color: var(--amber-gold);
+      background: rgba(201, 136, 43, 0.14);
+      border-color: rgba(201, 136, 43, 0.3);
+    }
+
+    .price-card h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .price-value-wrap {
+      margin: 16px 0 20px;
+      padding: 16px 18px;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .price-prefix {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-light-muted);
+      margin-bottom: 4px;
+    }
+
+    .price-amount {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+
+    .price-amount span {
+      color: var(--amber-gold);
+    }
+
+    .price-subnote {
+      display: block;
+      font-size: 0.80rem;
+      color: var(--text-light-muted);
+      margin-top: 6px;
+    }
+
+    .price-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .price-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.88rem;
+      color: #E2DCD5;
+      line-height: 1.45;
+    }
+
+    .price-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #34D399;
+      font-weight: 900;
+    }
+
+    .price-scope-note {
+      font-size: 0.78rem;
+      color: var(--text-light-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid var(--amber-gold);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
+      line-height: 1.45;
+    }
+
+    .btn-light {
+      background: #FFFFFF;
+      color: var(--text-main);
+      padding: 15px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.90rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-light:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .pricing-footnote {
+      text-align: center;
+      font-size: 0.80rem;
+      color: var(--text-light-muted);
+      margin-top: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.55;
+    }
+
     /* CTA Final */
     .cta-final-section {
       padding: 70px 0;
@@ -1096,6 +1280,23 @@
         gap: 16px;
       }
 
+      .pricing-section {
+        padding: 55px 0;
+      }
+      .pricing-header h2 {
+        font-size: 1.55rem;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .price-card {
+        padding: 26px 20px;
+      }
+      .price-amount {
+        font-size: 1.65rem;
+      }
+
       .cta-final-section {
         padding: 50px 0;
       }
@@ -1132,7 +1333,7 @@
         <a href="index.html" class="nav-link">Início</a>
         <a href="operacao-e-margem.html" class="nav-link">Operação</a>
         <a href="ativos-digitais-e-ia.html" class="nav-link active">Tráfego & IA</a>
-        <a href="experiencia-de-salao.html" class="nav-link">Ponto Físico</a>
+        <a href="experiencia-de-salao.html" class="nav-link">Vendas & Retenção</a>
         <a href="sobre.html" class="nav-link">Sobre</a>
         <a href="#scanner" class="nav-link nav-link-cta">Diagnóstico</a>
         
@@ -1351,6 +1552,73 @@
     </div>
   </section>
 
+  <!-- Investimento em Tráfego Pago & IA -->
+  <section class="pricing-section" id="investimento">
+    <div class="container">
+      <div class="pricing-header reveal">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Formatos & Investimento</span>
+        <h2>Quanto custa rodar anúncios com método?</h2>
+        <p>Escolha entre começar apenas pela gestão focada de tráfego pago ou estruturar toda a sua presença em buscas, mapas e Inteligência Artificial.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plano Entrada: Gestão de Tráfego Pago -->
+        <div class="price-card featured reveal">
+          <div>
+            <span class="price-pill">Até 3 campanhas ativas</span>
+            <h3>Gestão de Tráfego Pago</h3>
+            <div class="price-value-wrap">
+              <span class="price-prefix">Planos a partir de</span>
+              <div class="price-amount">R$ <span>700,00</span> /mês</div>
+              <span class="price-subnote">Honorários de gestão • Verba de anúncios investida diretamente nas plataformas</span>
+            </div>
+            <ul class="price-list">
+              <li>Gestão ativa de até 3 campanhas simultâneas (Meta Ads ou Google Ads).</li>
+              <li>Campanhas desenhadas para atrair fluxo ao ponto físico ou vendas no canal digital.</li>
+              <li>Segmentação por raio local, perfil comprador e itens de maior margem.</li>
+              <li>Ciclos quinzenais de testes e otimização focados em retorno no caixa.</li>
+            </ul>
+            <p class="price-scope-note">
+              <strong>Escopo transparente:</strong> plano focado estritamente em gestão de tráfego pago. Não inclui SEO/GEO nem gestão ou otimização de redes sociais.
+            </p>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20a%20gest%C3%A3o%20de%20tr%C3%A1fego%20pago%20a%20partir%20de%20R%24%20700%20(at%C3%A9%203%20campanhas)%20para%20o%20meu%20neg%C3%B3cio." class="btn" style="width: 100%;" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Trafego_Plano_Entrada_700' });">
+            Avaliar Tráfego para Minha Loja
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Plano Completo: Tráfego + GEO (IA) & Google Ativo -->
+        <div class="price-card reveal delay-1">
+          <div>
+            <span class="price-pill">Tráfego + IA Search (GEO)</span>
+            <h3>Tração Digital & Autoridade</h3>
+            <div class="price-value-wrap">
+              <span class="price-prefix">Dimensionamento sob medida</span>
+              <div class="price-amount">Sob <span>Diagnóstico</span></div>
+              <span class="price-subnote">Para negócios que querem unir anúncios, Google ativo, IA e conteúdo de autoridade</span>
+            </div>
+            <ul class="price-list">
+              <li>Gestão completa de tráfego pago regional calibrada pela Curva ABC.</li>
+              <li>Orquestração semanal do Google Meu Negócio para domínio em buscas locais.</li>
+              <li>Arquitetura semântica (GEO) para recomendação orgânica em ChatGPT e Gemini.</li>
+              <li>Roteirização de vídeos de autoridade e artes estratégicas sob demanda.</li>
+              <li>Integração com a frente de Operação & Margem para sustentar o crescimento.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20o%20plano%20completo%20de%20Tr%C3%A1fego%20%2B%20IA%20(GEO)%20e%20Google%20ativo." class="btn-light" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Trafego_GEO_Plano_Completo' });">
+            Solicitar Proposta Completa
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="pricing-footnote">
+        Os valores referem-se exclusivamente aos honorários da Ardor Gestão e Negócios. A verba de mídia (Meta/Google) é definida em conjunto conforme o raio da loja e paga diretamente pelo cliente às plataformas.
+      </p>
+    </div>
+  </section>
+
   <!-- CTA Final Direto para o WhatsApp -->
   <section class="cta-final-section">
     <div class="container">
@@ -1390,7 +1658,7 @@
           <span class="drawer-arrow">✓</span>
         </a>
         <a href="experiencia-de-salao.html" class="drawer-link">
-          <span>Ponto Físico & Ativação</span>
+          <span>Vendas Presenciais & Retenção</span>
           <span class="drawer-arrow">→</span>
         </a>
         <a href="sobre.html" class="drawer-link">
