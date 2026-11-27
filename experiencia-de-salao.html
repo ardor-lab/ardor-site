@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1046996444988811');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1046996444988811&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Vendas Presenciais & Retenção | Ardor Gestão</title>
+  
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F8F6F2;
+      --card-bg: #FFFFFF;
+      --dark-surface: #151311;
+      --dark-card: #1F1B17;
+      --terracotta: #bb5928;
+      --terracotta-hover: #9c481e;
+      --terracotta-soft: rgba(187, 89, 40, 0.08);
+      --terracotta-glow: rgba(187, 89, 40, 0.28);
+      --amber-gold: #c9882b;
+      --amber-soft: rgba(201, 136, 43, 0.12);
+      --text-main: #1D1A17;
+      --text-muted: #5E5852;
+      --text-light-muted: #9E968E;
+      --border: #E6E1D7;
+      --border-dark: #D1C9B8;
+      --shadow-sm: 0 4px 18px rgba(35, 25, 18, 0.04);
+      --shadow-md: 0 12px 34px rgba(35, 25, 18, 0.07);
+      --shadow-xl: 0 24px 50px rgba(35, 25, 18, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      font-size: 14px;
+      width: 100%;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+
+    /* Logotipo Flutuante Oficial */
+    .brand-floating {
+      position: fixed;
+      top: 14px;
+      left: max(24px, calc((100vw - 1080px) / 2 + 24px));
+      z-index: 2147483647;
+      display: inline-flex;
+      align-items: center;
+      height: 84px;
+      cursor: pointer;
+      user-select: none;
+      transform-origin: left center;
+      transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
+      will-change: opacity, transform;
+    }
+
+    .brand-floating.scrolled {
+      opacity: 0.35;
+      top: 10px;
+      transform: scale(0.80) translate3d(0, 0, 0);
+    }
+
+    .brand-floating:hover {
+      opacity: 1 !important;
+      transform: scale(0.84) translate3d(0, 0, 0);
+    }
+
+    .brand-logo-img {
+      height: 84px;
+      width: auto;
+      display: block;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
+    }
+
+    /* Topo / Menu Desktop */
+    .top-bar {
+      min-height: 100px;
+      padding: 16px 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+    }
+
+    .nav-link.active {
+      color: var(--terracotta);
+      font-weight: 700;
+      background: var(--terracotta-soft);
+    }
+
+    .nav-link-cta {
+      border: 1.5px solid var(--terracotta);
+      color: var(--terracotta) !important;
+      background: #FFFFFF;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-link-cta:hover {
+      background: var(--terracotta) !important;
+      color: #FFFFFF !important;
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn:active {
+      transform: scale(0.92);
+      background: var(--terracotta-soft);
+    }
+
+    /* Modal Vidro Translúcido Mobile */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(21, 19, 17, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2147483646;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .mobile-drawer.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-glass-card {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 64px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 16px 40px rgba(35, 25, 18, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transform-origin: top right;
+      transform: scale(0.2) translate3d(20px, -40px, 0);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+    }
+
+    .mobile-drawer.is-open .mobile-glass-card {
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(230, 225, 215, 0.5);
+    }
+
+    .drawer-header-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-title {
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
+    }
+
+    .drawer-subtitle {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .drawer-close-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .drawer-close-btn:active {
+      transform: scale(0.9);
+      background: var(--terracotta-soft);
+      color: var(--terracotta);
+    }
+
+    .drawer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(35, 25, 18, 0.02);
+    }
+
+    .drawer-link:active {
+      transform: scale(0.98);
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--terracotta);
+    }
+
+    .drawer-arrow {
+      color: var(--terracotta);
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+
+    .drawer-footer {
+      padding-top: 4px;
+    }
+
+    .drawer-btn-cta {
+      width: 100%;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
+    }
+
+    /* Botões */
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.3px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(187, 89, 40, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.75s ease;
+    }
+
+    .btn:hover::before {
+      left: 140%;
+    }
+
+    .btn:hover {
+      background: var(--terracotta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(187, 89, 40, 0.45);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-dark);
+      padding: 15px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.90rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+      background: var(--amber-soft);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto 40px;
+    }
+
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .section-title-wrap p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ========================================================
+       HERO + SIMULADOR INTERATIVO DE CHURN SILENCIOSO
+       ======================================================== */
+    .ret-hero {
+      padding: 55px 0 65px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .ret-hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.9px;
+      margin-bottom: 18px;
+    }
+
+    .ret-hero h1 span.highlight {
+      color: var(--terracotta);
+    }
+
+    .ret-hero-desc {
+      font-size: 1.04rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 530px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Simulador de Churn */
+    .churn-sim-card {
+      background: linear-gradient(180deg, #1B1714 0%, #110F0E 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 26px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .sim-kicker {
+      font-size: 0.70rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .sim-title {
+      font-size: 1.18rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .sim-sub {
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      margin-bottom: 18px;
+    }
+
+    .sim-control {
+      margin-bottom: 16px;
+    }
+
+    .sim-control-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #E2DCD5;
+    }
+
+    .sim-val-badge {
+      color: #FFFFFF;
+      background: rgba(187, 89, 40, 0.28);
+      border: 1px solid rgba(187, 89, 40, 0.55);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.80rem;
+      font-weight: 800;
+    }
+
+    .sim-slider {
+      width: 100%;
+      accent-color: var(--terracotta);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .sim-result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sim-stat-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .sim-stat-box.gain {
+      background: rgba(52, 211, 153, 0.08);
+      border-color: rgba(52, 211, 153, 0.28);
+    }
+
+    .sim-stat-lbl {
+      display: block;
+      font-size: 0.70rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light-muted);
+      margin-bottom: 4px;
+    }
+
+    .sim-stat-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #F87171;
+      line-height: 1.15;
+    }
+
+    .sim-stat-box.gain .sim-stat-num {
+      color: #34D399;
+    }
+
+    .sim-note {
+      font-size: 0.76rem;
+      color: var(--text-light-muted);
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+
+    /* ========================================================
+       SEÇÃO 2: CHURN NO COMÉRCIO FÍSICO + DADOS DA NOVA GERAÇÃO
+       ======================================================== */
+    .insight-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .churn-explainer {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--terracotta);
+      border-radius: 20px;
+      padding: 32px 30px;
+      margin-bottom: 42px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .churn-explainer h2 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1.22;
+    }
+
+    .churn-explainer h2 span {
+      color: var(--terracotta);
+    }
+
+    .churn-explainer p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    .decade-header {
+      margin-bottom: 26px;
+    }
+
+    .decade-header h3 {
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+    }
+
+    .decade-header p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .data-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .data-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--terracotta);
+    }
+
+    .data-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--terracotta);
+      line-height: 1.05;
+      margin-bottom: 8px;
+      letter-spacing: -0.6px;
+    }
+
+    .data-desc {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .data-source {
+      font-size: 0.70rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .gen-pills-box {
+      background: linear-gradient(90deg, rgba(187, 89, 40, 0.08), rgba(201, 136, 43, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .gen-pills-title {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .gen-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .gen-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-dark);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* ========================================================
+       SEÇÃO 3: BENTO GRID — AS 4 ALAVANCAS DE VENDAS & RETENÇÃO
+       ======================================================== */
+    .bento-section {
+      padding: 85px 0;
+      background: var(--bg);
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .bento-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--terracotta);
+    }
+
+    .bento-span-7 { grid-column: span 7; }
+    .bento-span-5 { grid-column: span 5; }
+    .bento-span-6 { grid-column: span 6; }
+
+    .bento-card.dark {
+      background: linear-gradient(145deg, #1B1714 0%, #12100E 100%);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .bento-card.dark:hover {
+      border-color: var(--amber-gold);
+    }
+
+    .bento-badge {
+      display: inline-block;
+      font-size: 0.70rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+
+    .bento-card.dark .bento-badge {
+      color: #34D399;
+      background: rgba(52, 211, 153, 0.14);
+    }
+
+    .bento-card h3 {
+      font-size: 1.38rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .bento-card p {
+      font-size: 0.90rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .bento-card.dark p {
+      color: var(--text-light-muted);
+    }
+
+    .bento-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bento-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .bento-card.dark .bento-list li {
+      color: #EAE5DF;
+    }
+
+    .bento-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+    }
+
+    .bento-card.dark .bento-list li::before {
+      color: #34D399;
+    }
+
+    /* ========================================================
+       SEÇÃO 4: MOTOR DE FLUXO (DA TELA AO RETORNO) + ESCOPO
+       ======================================================== */
+    .loop-section {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .loop-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .loop-header h2 {
+      font-size: 2.05rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .loop-header p {
+      font-size: 0.96rem;
+      color: var(--text-light-muted);
+    }
+
+    .loop-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .loop-step {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 24px 20px;
+      position: relative;
+    }
+
+    .loop-num {
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: var(--amber-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .loop-step h4 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .loop-step p {
+      font-size: 0.84rem;
+      color: var(--text-light-muted);
+      line-height: 1.5;
+    }
+
+    .scope-strip {
+      background: rgba(187, 89, 40, 0.1);
+      border: 1.5px solid var(--terracotta);
+      border-radius: 20px;
+      padding: 32px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .scope-strip-info {
+      max-width: 620px;
+    }
+
+    .scope-strip-info span {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #34D399;
+      margin-bottom: 6px;
+    }
+
+    .scope-strip-info h3 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .scope-strip-info p {
+      font-size: 0.90rem;
+      color: #E2DCD5;
+      line-height: 1.55;
+    }
+
+    /* CTA Final Limpo */
+    .cta-final-section {
+      padding: 70px 0;
+      background: #FFFFFF;
+      text-align: center;
+    }
+
+    .cta-final-box {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .cta-final-box h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 12px;
+    }
+
+    .cta-final-box p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      line-height: 1.6;
+    }
+
+    /* WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2147483640;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08) translateY(-2px);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: #FFFFFF;
+    }
+
+    /* Rodapé */
+    footer {
+      padding: 45px 0 65px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: #FAF8F5;
+      border-top: 1px solid var(--border);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 8px 18px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 24px;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: rgba(187, 89, 40, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Responsivo Mobile */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      
+      .brand-floating { 
+        height: 48px; 
+        top: 14px; 
+        left: 16px; 
+      }
+      .brand-floating.scrolled {
+        opacity: 0.35;
+        top: 10px;
+        transform: scale(0.82) translate3d(0, 0, 0);
+      }
+      .brand-logo-img { 
+        height: 48px; 
+      }
+
+      .top-bar { 
+        min-height: 76px; 
+        padding: 10px 0;
+        justify-content: flex-end;
+      }
+
+      .nav-links .nav-link:not(.nav-link-cta) {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+        margin-left: 8px;
+      }
+
+      .nav-link-cta {
+        font-size: 0.76rem;
+        padding: 8px 14px;
+        border-radius: 20px;
+      }
+
+      .ret-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 24px 0 42px;
+      }
+      .ret-hero h1 {
+        font-size: 1.78rem;
+        line-height: 1.2;
+      }
+      .ret-hero-desc {
+        font-size: 0.94rem;
+        margin-bottom: 22px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn, .btn-ghost {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 0.86rem;
+      }
+
+      .churn-sim-card {
+        padding: 20px 18px;
+      }
+      .sim-result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .insight-section {
+        padding: 50px 0;
+      }
+      .churn-explainer {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 24px 20px;
+      }
+      .churn-explainer h2 {
+        font-size: 1.42rem;
+      }
+      .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .data-num {
+        font-size: 1.65rem;
+      }
+
+      .bento-section {
+        padding: 50px 0;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.55rem;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .bento-span-7, .bento-span-5, .bento-span-6 {
+        grid-column: span 1;
+      }
+      .bento-card {
+        padding: 24px 20px;
+      }
+
+      .loop-section {
+        padding: 55px 0;
+      }
+      .loop-header h2 {
+        font-size: 1.55rem;
+      }
+      .loop-steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .scope-strip {
+        padding: 24px 20px;
+      }
+
+      .cta-final-section {
+        padding: 50px 0;
+      }
+      .cta-final-box h2 {
+        font-size: 1.55rem;
+      }
+
+      footer {
+        padding: 45px 0 95px;
+      }
+
+      .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+      }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logotipo Flutuante Oficial -->
+  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao início">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="84" fetchpriority="high">
+  </div>
+
+  <div class="container">
+    <header class="top-bar">
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="operacao-e-margem.html" class="nav-link">Operação</a>
+        <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
+        <a href="experiencia-de-salao.html" class="nav-link active">Vendas & Retenção</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="ativos-digitais-e-ia.html#scanner" class="nav-link nav-link-cta">Diagnóstico</a>
+        
+        <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO + SIMULADOR INTERATIVO DE CHURN -->
+    <section class="ret-hero">
+      <div class="reveal">
+        <span class="section-tag">Vendas Presenciais & Retenção</span>
+        <h1>Atrair uma vez custa caro. O lucro mora em <span class="highlight">fazer o cliente voltar</span>.</h1>
+        <p class="ret-hero-desc">
+          Unimos campanhas físico-digitais, treinamento comercial de equipe, métodos gerenciais e games interativos no ponto de venda para reduzir o churn silencioso e transformar visitas avulsas em receita recorrente.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#alavancas" class="btn">
+            Ver Como Ativamos Sua Loja
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#churn" class="btn-ghost">O Que é Churn na Prática?</a>
+        </div>
+      </div>
+
+      <!-- Widget Interativo: Simulador de Churn Silencioso -->
+      <div class="churn-sim-card reveal delay-1">
+        <span class="sim-kicker">Simulador de Churn no Ponto Físico</span>
+        <h2 class="sim-title">Quanto você deixa na mesa sem retenção?</h2>
+        <p class="sim-sub">Ajuste os números aproximados do seu comércio:</p>
+
+        <div class="sim-control">
+          <div class="sim-control-top">
+            <label for="clientsRange">Clientes novos por mês</label>
+            <span class="sim-val-badge" id="clientsVal">250 clientes</span>
+          </div>
+          <input type="range" id="clientsRange" class="sim-slider" min="50" max="1500" step="50" value="250">
+        </div>
+
+        <div class="sim-control">
+          <div class="sim-control-top">
+            <label for="ticketRange">Ticket médio por visita</label>
+            <span class="sim-val-badge" id="ticketVal">R$ 85</span>
+          </div>
+          <input type="range" id="ticketRange" class="sim-slider" min="25" max="400" step="5" value="85">
+        </div>
+
+        <div class="sim-result-grid">
+          <div class="sim-stat-box">
+            <span class="sim-stat-lbl">Churn Silencioso (70% somem)</span>
+            <div class="sim-stat-num" id="churnLossVal">175/mês</div>
+          </div>
+          <div class="sim-stat-box gain">
+            <span class="sim-stat-lbl">Se só +25% voltarem 1x</span>
+            <div class="sim-stat-num" id="churnGainVal">+R$ 5.312/mês</div>
+          </div>
+        </div>
+
+        <p class="sim-note">
+          Sem gastar um real extra em anúncio: apenas retendo parte de quem já conheceu o seu balcão.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- SEÇÃO 2: CHURN + EXPERIÊNCIA NA PRÓXIMA DÉCADA -->
+  <section class="insight-section" id="churn">
+    <div class="container">
+      <!-- Explicação Clara de Churn -->
+      <div class="churn-explainer reveal">
+        <h2>O inimigo invisível do balcão chama-se <span>Churn</span>.</h2>
+        <p>
+          <strong>Churn</strong> é a taxa de clientes que conhecem a sua loja, compram uma vez e simplesmente somem sem reclamar. No comércio físico, ele é traiçoeiro: você só percebe quando o movimento esfria e precisa gastar cada vez mais em anúncios para tapar o buraco de quem não voltou. Combater o churn é o caminho mais curto para estabilizar o caixa.
+        </p>
+      </div>
+
+      <!-- Dados sobre a Experiência na Próxima Década -->
+      <div class="decade-header reveal">
+        <span class="section-tag">Consumo na Próxima Década</span>
+        <h3>Por que a experiência decide quem sobrevive daqui para frente</h3>
+        <p>Produto bom virou obrigação. Pesquisas globais de comportamento mostram o que faz o consumidor atual escolher, recomendar e voltar a um novo lugar:</p>
+      </div>
+
+      <div class="data-grid reveal delay-1">
+        <div class="data-card">
+          <div>
+            <div class="data-num">73%</div>
+            <p class="data-desc">apontam a experiência no atendimento como fator decisivo na escolha de onde comprar.</p>
+          </div>
+          <span class="data-source">PwC • Future of CX</span>
+        </div>
+
+        <div class="data-card">
+          <div>
+            <div class="data-num">43%</div>
+            <p class="data-desc">pagam mais caro por conveniência e agilidade — e 42% por atendimento acolhedor.</p>
+          </div>
+          <span class="data-source">PwC • Consumer Study</span>
+        </div>
+
+        <div class="data-card">
+          <div>
+            <div class="data-num">32%</div>
+            <p class="data-desc">abandonam uma marca que já gostavam após apenas uma única experiência ruim.</p>
+          </div>
+          <span class="data-source">PwC • Churn & Lealdade</span>
+        </div>
+
+        <div class="data-card">
+          <div>
+            <div class="data-num">5x</div>
+            <p class="data-desc">mais caro conquistar um cliente novo do que reter quem já entrou pela sua porta.</p>
+          </div>
+          <span class="data-source">Bain & Co. / HBR</span>
+        </div>
+      </div>
+
+      <div class="gen-pills-box reveal delay-2">
+        <span class="gen-pills-title">O que a nova geração mais valoriza ao conhecer um lugar novo:</span>
+        <div class="gen-pills">
+          <span class="gen-pill">⚡ Agilidade & Conveniência</span>
+          <span class="gen-pill">🤝 Atendimento Humano Real</span>
+          <span class="gen-pill">🎮 Interatividade Memorável</span>
+          <span class="gen-pill">📸 Experiência Compartilhável</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: BENTO GRID — AS 4 ALAVANCAS -->
+  <section class="bento-section" id="alavancas">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag">Engenharia de Vendas Presenciais</span>
+        <h2>4 Alavancas para Trazer Fluxo e Segurar o Cliente</h2>
+        <p>Nada de ações soltas. Conectamos o digital à porta da loja, treinamos quem atende e criamos motivos reais de retorno.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento 1 (Destaque Escuro - 7 colunas) -->
+        <div class="bento-card dark bento-span-7 reveal">
+          <div>
+            <span class="bento-badge">Diferencial Exclusivo no Ponto Físico</span>
+            <h3>Games Interativos para Clientes no PDV</h3>
+            <p>Transformamos a espera e o consumo no ponto físico em entretenimento memorável — gerando conversa nas mesas, compartilhamento orgânico e motivo real para voltar.</p>
+            <ul class="bento-list">
+              <li>Gamificação proprietária adaptada para telas e ativações de loja física.</li>
+              <li>Mecânicas de recompensa calibradas pela margem real (sem queimar lucro com desconto cego).</li>
+              <li>Gatilho de retorno programado para ativar dias e horários de menor movimento.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bento 2 (5 colunas) -->
+        <div class="bento-card bento-span-5 reveal delay-1">
+          <div>
+            <span class="bento-badge">Time que Vende Valor</span>
+            <h3>Treinamento Modular de Equipe</h3>
+            <p>Capacitações práticas e contínuas (ciclos objetivos de 1h) para tirar o time do atendimento mecânico.</p>
+            <ul class="bento-list">
+              <li>Abordagem consultiva e venda de itens de maior margem.</li>
+              <li>Padrão de acolhimento que reduz atritos e eleva o ticket médio.</li>
+              <li>Módulos conectados às metas comerciais do trimestre.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bento 3 (6 colunas) -->
+        <div class="bento-card bento-span-6 reveal">
+          <div>
+            <span class="bento-badge">Físico + Digital Integrados</span>
+            <h3>Campanhas de Fluxo para a Porta da Loja</h3>
+            <p>A ponte entre o celular do cliente no bairro e a entrada da sua loja, explorando novas janelas de consumo.</p>
+            <ul class="bento-list">
+              <li>Anúncios hiperlocais com motivo claro de visita em horários ociosos.</li>
+              <li>Ativação de linhas de conveniência para clientes menos sensíveis a preço.</li>
+              <li>Funis rápidos de reserva, retirada ou lista de transmissão no WhatsApp.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bento 4 (6 colunas) -->
+        <div class="bento-card bento-span-6 reveal delay-1">
+          <div>
+            <span class="bento-badge">Governança Comercial</span>
+            <h3>Aprimoramento de Métodos Gerenciais</h3>
+            <p>Retenção não depende de sorte nem do clima. Estruturamos a gestão comercial para manter previsibilidade o ano inteiro.</p>
+            <ul class="bento-list">
+              <li>Diversificação estratégica de mix para blindar a loja contra sazonalidade.</li>
+              <li>Campanhas motivacionais internas ligadas a ticket médio e recorrência.</li>
+              <li>Acompanhamento de indicadores reais de retorno e conversão presencial.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: CICLO DA TELA AO RETORNO + FORMATO -->
+  <section class="loop-section">
+    <div class="container">
+      <div class="loop-header reveal">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">O Ciclo Anti-Churn</span>
+        <h2>Da tela do celular até a segunda e terceira visita</h2>
+        <p>Como cada peça se encaixa para diminuir sua dependência de tráfego frio todos os meses.</p>
+      </div>
+
+      <div class="loop-steps reveal delay-1">
+        <div class="loop-step">
+          <span class="loop-num">Passo 01</span>
+          <h4>Atração Hiperlocal</h4>
+          <p>Campanhas digitais e posicionamento local trazem o perfil certo para a porta da loja.</p>
+        </div>
+        <div class="loop-step">
+          <span class="loop-num">Passo 02</span>
+          <h4>Atendimento de Valor</h4>
+          <p>Equipe treinada acolhe bem, reduz fricção e conduz o cliente aos itens de melhor margem.</p>
+        </div>
+        <div class="loop-step">
+          <span class="loop-num">Passo 03</span>
+          <h4>Experiência & Game</h4>
+          <p>Interatividade no ponto físico quebra o padrão comum e grava sua marca na memória.</p>
+        </div>
+        <div class="loop-step">
+          <span class="loop-num">Passo 04</span>
+          <h4>Retorno & Recorrência</h4>
+          <p>Motivos estruturados de volta reduzem o churn e estabilizam o faturamento na semana.</p>
+        </div>
+      </div>
+
+      <div class="scope-strip reveal delay-2">
+        <div class="scope-strip-info">
+          <span>Projetos Modulares ou Integrados</span>
+          <h3>Quer ativar sua loja física com esse método?</h3>
+          <p>Desenhamos o formato ideal para o porte do seu ponto de venda — seja com treinamento modular, ativação interativa (games) ou gestão completa físico + digital.</p>
+        </div>
+        <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20quero%20avaliar%20estrat%C3%A9gias%20de%20Vendas%20Presenciais%20%26%20Reten%C3%A7%C3%A3o%20para%20o%20meu%20ponto%20f%C3%ADsico." class="btn" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Vendas_Presenciais_WhatsApp' });">
+          Avaliar Projeto para Minha Loja
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Limpo -->
+  <section class="cta-final-section">
+    <div class="container">
+      <div class="cta-final-box reveal">
+        <h2>Pronto para descobrir o potencial oculto do seu comércio?</h2>
+        <p>Rode nosso diagnóstico gratuito em 1 minuto e receba a leitura inicial da sua visibilidade e operação.</p>
+        <a href="ativos-digitais-e-ia.html#scanner" class="btn">
+          Fazer Diagnóstico Gratuito
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Vidro Translúcido Mobile -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
+    <div class="mobile-glass-card">
+      <div class="drawer-header">
+        <div class="drawer-header-info">
+          <span class="drawer-title">Ecossistema Ardor</span>
+          <span class="drawer-subtitle">Arquitetura de Gestão</span>
+        </div>
+        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar">✕</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="index.html" class="drawer-link">
+          <span>Página Inicial</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="operacao-e-margem.html" class="drawer-link">
+          <span>Operação & Margem</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="ativos-digitais-e-ia.html" class="drawer-link">
+          <span>Tráfego & IA Search</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="experiencia-de-salao.html" class="drawer-link" style="background: rgba(255, 255, 255, 0.9); border-color: var(--terracotta);">
+          <span>Vendas Presenciais & Retenção</span>
+          <span class="drawer-arrow">✓</span>
+        </a>
+        <a href="sobre.html" class="drawer-link">
+          <span>Sobre a Ardor</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="ativos-digitais-e-ia.html#scanner" class="btn drawer-btn-cta">
+          Fazer Diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20Vendas%20Presenciais%20e%20Reten%C3%A7%C3%A3o%20com%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://instagram.com/ardorgestao" class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @ardorgestao
+        </a>
+      </div>
+      <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simulador Interativo de Churn Silencioso
+    let churnTracked = false;
+    const clientsRange = document.getElementById('clientsRange');
+    const ticketRange = document.getElementById('ticketRange');
+    const clientsVal = document.getElementById('clientsVal');
+    const ticketVal = document.getElementById('ticketVal');
+    const churnLossVal = document.getElementById('churnLossVal');
+    const churnGainVal = document.getElementById('churnGainVal');
+
+    function updateChurnSim(isUserAction) {
+      const clients = parseInt(clientsRange.value, 10);
+      const ticket = parseInt(ticketRange.value, 10);
+      const lostClients = Math.round(clients * 0.70);
+      const recoveredRevenue = Math.round(clients * 0.25 * ticket);
+
+      clientsVal.textContent = clients.toLocaleString('pt-BR') + ' clientes';
+      ticketVal.textContent = 'R$ ' + ticket.toLocaleString('pt-BR');
+      churnLossVal.textContent = lostClients.toLocaleString('pt-BR') + '/mês';
+      churnGainVal.textContent = '+R$ ' + recoveredRevenue.toLocaleString('pt-BR') + '/mês';
+
+      if (isUserAction && !churnTracked && typeof fbq === 'function') {
+        fbq('track', 'ViewContent', { content_name: 'Simulador_Churn_Interacao' });
+        churnTracked = true;
+      }
+    }
+
+    if (clientsRange && ticketRange) {
+      clientsRange.addEventListener('input', () => updateChurnSim(true));
+      ticketRange.addEventListener('input', () => updateChurnSim(true));
+      updateChurnSim(false);
+    }
+
+    // Scroll Reveal & Drawer Mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      reveals.forEach(el => observer.observe(el));
+
+      const openBtn = document.getElementById('openMenuBtn');
+      const closeBtn = document.getElementById('closeMenuBtn');
+      const drawer = document.getElementById('mobileDrawer');
+
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (drawer) {
+        drawer.addEventListener('click', function(e) {
+          if (e.target === drawer) closeDrawer();
+        });
+      }
+    });
+
+    // Logotipo Flutuante
+    (function() {
+      const logo = document.getElementById('ardorLogo');
+      if (logo) {
+        logo.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'index.html';
+        });
+      }
+
+      function onScroll() {
+        const pos = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (pos > 25) {
+          logo.classList.add('scrolled');
+        } else {
+          logo.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
