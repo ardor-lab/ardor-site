@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1046996444988811');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1046996444988811&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Operação & Margem | Ardor Gestão</title>
+  
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F8F6F2;
+      --card-bg: #FFFFFF;
+      --dark-surface: #151311;
+      --dark-card: #1F1B17;
+      --terracotta: #bb5928;
+      --terracotta-hover: #9c481e;
+      --terracotta-soft: rgba(187, 89, 40, 0.08);
+      --terracotta-glow: rgba(187, 89, 40, 0.28);
+      --amber-gold: #c9882b;
+      --amber-soft: rgba(201, 136, 43, 0.12);
+      --text-main: #1D1A17;
+      --text-muted: #5E5852;
+      --text-light-muted: #9E968E;
+      --border: #E6E1D7;
+      --border-dark: #D1C9B8;
+      --shadow-sm: 0 4px 18px rgba(35, 25, 18, 0.04);
+      --shadow-md: 0 12px 34px rgba(35, 25, 18, 0.07);
+      --shadow-xl: 0 24px 50px rgba(35, 25, 18, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      font-size: 14px;
+      width: 100%;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+
+    /* Logotipo Flutuante Oficial */
+    .brand-floating {
+      position: fixed;
+      top: 14px;
+      left: max(24px, calc((100vw - 1080px) / 2 + 24px));
+      z-index: 2147483647;
+      display: inline-flex;
+      align-items: center;
+      height: 84px;
+      cursor: pointer;
+      user-select: none;
+      transform-origin: left center;
+      transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
+      will-change: opacity, transform;
+    }
+
+    .brand-floating.scrolled {
+      opacity: 0.35;
+      top: 10px;
+      transform: scale(0.80) translate3d(0, 0, 0);
+    }
+
+    .brand-floating:hover {
+      opacity: 1 !important;
+      transform: scale(0.84) translate3d(0, 0, 0);
+    }
+
+    .brand-logo-img {
+      height: 84px;
+      width: auto;
+      display: block;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 14px rgba(187, 89, 40, 0.22));
+    }
+
+    /* Topo / Menu Desktop */
+    .top-bar {
+      min-height: 100px;
+      padding: 16px 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: var(--terracotta);
+      background: var(--terracotta-soft);
+    }
+
+    .nav-link.active {
+      color: var(--terracotta);
+      font-weight: 700;
+      background: var(--terracotta-soft);
+    }
+
+    .nav-link-cta {
+      border: 1.5px solid var(--terracotta);
+      color: var(--terracotta) !important;
+      background: #FFFFFF;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-link-cta:hover {
+      background: var(--terracotta) !important;
+      color: #FFFFFF !important;
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn:active {
+      transform: scale(0.92);
+      background: var(--terracotta-soft);
+    }
+
+    /* Modal Vidro Translúcido Mobile */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(21, 19, 17, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2147483646;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .mobile-drawer.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-glass-card {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 64px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 16px 40px rgba(35, 25, 18, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transform-origin: top right;
+      transform: scale(0.2) translate3d(20px, -40px, 0);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+    }
+
+    .mobile-drawer.is-open .mobile-glass-card {
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(230, 225, 215, 0.5);
+    }
+
+    .drawer-header-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-title {
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
+    }
+
+    .drawer-subtitle {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .drawer-close-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .drawer-close-btn:active {
+      transform: scale(0.9);
+      background: var(--terracotta-soft);
+      color: var(--terracotta);
+    }
+
+    .drawer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(35, 25, 18, 0.02);
+    }
+
+    .drawer-link:active {
+      transform: scale(0.98);
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--terracotta);
+    }
+
+    .drawer-arrow {
+      color: var(--terracotta);
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+
+    .drawer-footer {
+      padding-top: 4px;
+    }
+
+    .drawer-btn-cta {
+      width: 100%;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(187, 89, 40, 0.28);
+    }
+
+    /* Botão Padrão */
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.3px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(187, 89, 40, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.75s ease;
+    }
+
+    .btn:hover::before {
+      left: 140%;
+    }
+
+    .btn:hover {
+      background: var(--terracotta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(187, 89, 40, 0.45);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-dark);
+      padding: 15px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.90rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+      background: var(--amber-soft);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    /* ========================================================
+       HERO ASSIMÉTRICO + TERMÔMETRO INTERATIVO DE VAZAMENTO
+       ======================================================== */
+    .ops-hero {
+      padding: 55px 0 65px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .ops-hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.9px;
+      margin-bottom: 18px;
+    }
+
+    .ops-hero h1 span.highlight {
+      color: var(--terracotta);
+    }
+
+    .ops-hero-desc {
+      font-size: 1.04rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 540px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Termômetro Interativo (Painel Raio-X) */
+    .leak-widget {
+      background: linear-gradient(180deg, #1B1714 0%, #12100E 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 26px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .leak-widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .leak-widget-kicker {
+      font-size: 0.70rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-gold);
+    }
+
+    .leak-counter-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-light-muted);
+      transition: all 0.25s ease;
+    }
+
+    .leak-widget-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .leak-widget-sub {
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      margin-bottom: 16px;
+    }
+
+    .leak-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .leak-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: #EAE5DF;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .leak-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(201, 136, 43, 0.5);
+    }
+
+    .leak-item.checked {
+      background: rgba(187, 89, 40, 0.22);
+      border-color: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .leak-check-box {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: transparent;
+      transition: all 0.2s ease;
+    }
+
+    .leak-item.checked .leak-check-box {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .leak-meter-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .leak-bar-track {
+      width: 100%;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .leak-bar-fill {
+      height: 100%;
+      width: 12%;
+      background: #34D399;
+      border-radius: 6px;
+      transition: width 0.35s ease, background 0.35s ease;
+    }
+
+    .leak-feedback {
+      font-size: 0.80rem;
+      color: var(--text-light-muted);
+      line-height: 1.45;
+    }
+
+    .leak-feedback strong {
+      color: #FFFFFF;
+    }
+
+    /* ========================================================
+       SEÇÃO 2: SELETOR INTERATIVO DE ACULTURAMENTO
+       ======================================================== */
+    .culture-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 38px;
+    }
+
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .section-title-wrap p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .mode-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .mode-card-btn {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mode-card-btn:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .mode-card-btn.active {
+      background: #FFFFFF;
+      border-color: var(--terracotta);
+      box-shadow: 0 10px 26px rgba(187, 89, 40, 0.14);
+    }
+
+    .mode-kicker {
+      font-size: 0.70rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--text-muted);
+    }
+
+    .mode-card-btn.active .mode-kicker {
+      color: var(--terracotta);
+    }
+
+    .mode-name {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .mode-hint {
+      font-size: 0.80rem;
+      color: var(--text-muted);
+    }
+
+    .mode-panel {
+      display: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px 34px;
+      box-shadow: var(--shadow-sm);
+      animation: fadeMode 0.3s ease;
+    }
+
+    .mode-panel.active {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    @keyframes fadeMode {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mode-panel-main h3 {
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .mode-panel-main p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .mode-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mode-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 0.90rem;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .mode-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 900;
+    }
+
+    .mode-panel-side {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 4px solid var(--terracotta);
+    }
+
+    .mode-side-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--terracotta);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .mode-side-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .mode-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .mode-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: var(--bg);
+      border: 1px solid var(--border-dark);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .mode-side-note {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      font-style: italic;
+      font-family: 'Merriweather', Georgia, serif;
+    }
+
+    /* ========================================================
+       SEÇÃO 3: LINHA DO TEMPO DA VIRADA (4 MARCOS)
+       ======================================================== */
+    .roadmap-section {
+      padding: 85px 0;
+      background: var(--bg);
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .timeline-step {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.25s ease;
+    }
+
+    .timeline-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--terracotta);
+    }
+
+    .step-badge {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: var(--terracotta-soft);
+      border: 1.5px solid rgba(187, 89, 40, 0.25);
+      color: var(--terracotta);
+      font-size: 1.15rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-content h3 {
+      font-size: 1.18rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .step-content p {
+      font-size: 0.90rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .step-outcome {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--amber-gold);
+      background: var(--amber-soft);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* ========================================================
+       SEÇÃO 4: BLOCO ESCURO DE INVESTIMENTO TRANSPARENTE
+       ======================================================== */
+    .pricing-section {
+      padding: 85px 0;
+      background: linear-gradient(180deg, #181513 0%, #110F0E 100%);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pricing-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 44px;
+    }
+
+    .pricing-header h2 {
+      font-size: 2.15rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+
+    .pricing-header p {
+      font-size: 0.98rem;
+      color: var(--text-light-muted);
+      line-height: 1.65;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .price-card.featured {
+      background: rgba(187, 89, 40, 0.09);
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+    }
+
+    .price-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #34D399;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 5px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .price-card:not(.featured) .price-pill {
+      color: var(--amber-gold);
+      background: rgba(201, 136, 43, 0.14);
+      border-color: rgba(201, 136, 43, 0.3);
+    }
+
+    .price-card h3 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .price-value-wrap {
+      margin: 18px 0 22px;
+      padding: 18px 20px;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .price-prefix {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-light-muted);
+      margin-bottom: 4px;
+    }
+
+    .price-amount {
+      font-size: 2.05rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+
+    .price-amount span {
+      color: var(--amber-gold);
+    }
+
+    .price-subnote {
+      display: block;
+      font-size: 0.80rem;
+      color: var(--text-light-muted);
+      margin-top: 6px;
+    }
+
+    .price-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 28px;
+    }
+
+    .price-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.88rem;
+      color: #E2DCD5;
+      line-height: 1.5;
+    }
+
+    .price-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #34D399;
+      font-weight: 900;
+    }
+
+    .btn-light {
+      background: #FFFFFF;
+      color: var(--text-main);
+      padding: 15px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.90rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-light:hover {
+      background: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .pricing-footnote {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      margin-top: 28px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* CTA Final */
+    .cta-final-section {
+      padding: 70px 0;
+      background: #FFFFFF;
+      text-align: center;
+    }
+
+    .cta-final-box {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-final-box h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+    }
+
+    .cta-final-box p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2147483640;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08) translateY(-2px);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: #FFFFFF;
+    }
+
+    /* Rodapé */
+    footer {
+      padding: 45px 0 65px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: #FAF8F5;
+      border-top: 1px solid var(--border);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 8px 18px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 24px;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: rgba(187, 89, 40, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Responsivo Mobile */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      
+      .brand-floating { 
+        height: 48px; 
+        top: 14px; 
+        left: 16px; 
+      }
+      .brand-floating.scrolled {
+        opacity: 0.35;
+        top: 10px;
+        transform: scale(0.82) translate3d(0, 0, 0);
+      }
+      .brand-logo-img { 
+        height: 48px; 
+      }
+
+      .top-bar { 
+        min-height: 76px; 
+        padding: 10px 0;
+        justify-content: flex-end;
+      }
+
+      .nav-links .nav-link:not(.nav-link-cta) {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+        margin-left: 8px;
+      }
+
+      .nav-link-cta {
+        font-size: 0.76rem;
+        padding: 8px 14px;
+        border-radius: 20px;
+      }
+
+      .ops-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 24px 0 42px;
+      }
+      .ops-hero h1 {
+        font-size: 1.78rem;
+        line-height: 1.2;
+      }
+      .ops-hero-desc {
+        font-size: 0.94rem;
+        margin-bottom: 22px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn, .btn-ghost {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 0.86rem;
+      }
+
+      .leak-widget {
+        padding: 20px 18px;
+      }
+
+      .culture-section {
+        padding: 50px 0;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.55rem;
+      }
+      .mode-selector-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .mode-panel.active {
+        grid-template-columns: 1fr;
+        padding: 24px 18px;
+        gap: 22px;
+      }
+      .mode-panel-main h3 {
+        font-size: 1.30rem;
+      }
+
+      .roadmap-section {
+        padding: 50px 0;
+      }
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .timeline-step {
+        padding: 22px 18px;
+        gap: 14px;
+      }
+
+      .pricing-section {
+        padding: 55px 0;
+      }
+      .pricing-header h2 {
+        font-size: 1.55rem;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .price-card {
+        padding: 26px 20px;
+      }
+      .price-amount {
+        font-size: 1.65rem;
+      }
+
+      .cta-final-section {
+        padding: 50px 0;
+      }
+      .cta-final-box h2 {
+        font-size: 1.55rem;
+      }
+
+      footer {
+        padding: 45px 0 95px;
+      }
+
+      .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+      }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logotipo Flutuante Oficial -->
+  <div class="brand-floating" id="ardorLogo" role="button" tabindex="0" title="Voltar ao início">
+    <img src="assets/logo.png" alt="Ardor Gestão" class="brand-logo-img" width="168" height="84" fetchpriority="high">
+  </div>
+
+  <div class="container">
+    <header class="top-bar">
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="operacao-e-margem.html" class="nav-link active">Operação</a>
+        <a href="ativos-digitais-e-ia.html" class="nav-link">Tráfego & IA</a>
+        <a href="experiencia-de-salao.html" class="nav-link">Vendas & Retenção</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="ativos-digitais-e-ia.html#scanner" class="nav-link nav-link-cta">Diagnóstico</a>
+        
+        <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO ASSIMÉTRICO + TERMÔMETRO DE VAZAMENTO -->
+    <section class="ops-hero">
+      <div class="reveal">
+        <span class="section-tag">Organização, Cultura & Margem</span>
+        <h1>Organize a casa, aculture o time e <span class="highlight">estanque o que vaza do caixa</span>.</h1>
+        <p class="ops-hero-desc">
+          Vender mais em uma operação desorganizada só multiplica o retrabalho e as perdas. Entramos na rotina real da sua loja com metodologias validadas de inserção e aculturamento — trabalhando com o empresário, com a equipe ou com ambos — para transformar esforço em margem líquida.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#investimento" class="btn">
+            Ver Planos a Partir de 3x de R$ 600
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#formatos" class="btn-ghost">Como Aculturamos o Time</a>
+        </div>
+      </div>
+
+      <!-- Widget Interativo: Termômetro de Vazamento Operacional -->
+      <div class="leak-widget reveal delay-1">
+        <div class="leak-widget-header">
+          <span class="leak-widget-kicker">Termômetro Rápido de Balcão</span>
+          <span class="leak-counter-pill" id="leakCounterPill">0 de 4 sinais</span>
+        </div>
+        <h2 class="leak-widget-title">Toque no que acontece hoje na sua loja:</h2>
+        <p class="leak-widget-sub">Identifique em segundos onde sua margem pode estar escapando sem aparecer no caixa.</p>
+
+        <div class="leak-options">
+          <button type="button" class="leak-item" onclick="toggleLeak(this)">
+            <span class="leak-check-box">✓</span>
+            <span>CMV cego: descartes, quebras e consumo interno não são registrados diariamente.</span>
+          </button>
+          <button type="button" class="leak-item" onclick="toggleLeak(this)">
+            <span class="leak-check-box">✓</span>
+            <span>Ordens verbais se perdem e a equipe repete erros básicos toda semana.</span>
+          </button>
+          <button type="button" class="leak-item" onclick="toggleLeak(this)">
+            <span class="leak-check-box">✓</span>
+            <span>Quando um colaborador falta ou você se ausenta, o padrão cai na hora.</span>
+          </button>
+          <button type="button" class="leak-item" onclick="toggleLeak(this)">
+            <span class="leak-check-box">✓</span>
+            <span>Falta clareza de Curva ABC sobre quais itens realmente deixam lucro líquido.</span>
+          </button>
+        </div>
+
+        <div class="leak-meter-box">
+          <div class="leak-bar-track">
+            <div class="leak-bar-fill" id="leakBarFill"></div>
+          </div>
+          <p class="leak-feedback" id="leakFeedback">
+            <strong>Marque os pontos acima</strong> para ver o impacto direto na sua margem e qual formato de aculturamento resolve mais rápido.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SEÇÃO 2: SELETOR INTERATIVO DE INSERÇÃO & ACULTURAMENTO -->
+  <section class="culture-section" id="formatos">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag">Inserção & Aculturamento Validado</span>
+        <h2>Quem precisa entrar no processo de mudança?</h2>
+        <p>Planilha parada na gaveta não salva nenhum negócio. Adaptamos nossa metodologia de aculturamento para a realidade da sua estrutura — selecione o formato abaixo:</p>
+      </div>
+
+      <div class="mode-selector-grid reveal delay-1">
+        <button type="button" class="mode-card-btn active" onclick="selectMode(event, 'mode-ambos')">
+          <span class="mode-kicker">Mais Recomendado</span>
+          <span class="mode-name">Empresário + Equipe</span>
+          <span class="mode-hint">Virada cultural completa nas duas pontas</span>
+        </button>
+
+        <button type="button" class="mode-card-btn" onclick="selectMode(event, 'mode-dono')">
+          <span class="mode-kicker">Liderança & Controle</span>
+          <span class="mode-name">Foco no Empresário</span>
+          <span class="mode-hint">Domínio de caixa, CMV e delegação</span>
+        </button>
+
+        <button type="button" class="mode-card-btn" onclick="selectMode(event, 'mode-equipe')">
+          <span class="mode-kicker">Chão de Loja</span>
+          <span class="mode-name">Foco na Equipe</span>
+          <span class="mode-hint">Rotinas visuais, padrão e engajamento</span>
+        </button>
+      </div>
+
+      <!-- Painel 1: Empresário + Equipe -->
+      <div id="mode-ambos" class="mode-panel active">
+        <div class="mode-panel-main">
+          <h3>Alinhamento total entre quem paga as contas e quem executa no balcão</h3>
+          <p>
+            Quando só o dono entende de margem, ele vive cobrando e se desgastando. Quando estruturamos a gestão com o empresário e aculturamos a equipe na mesma linguagem, a rotina ganha ritmo próprio e o desperdício cai por cultura — não por vigilância constante.
+          </p>
+          <ul class="mode-list">
+            <li>Implantação assistida de controle de CMV, quebras e leitura de margem com a liderança.</li>
+            <li>Envolvimento direto nas rotinas da loja para validar processos sem engessar a operação.</li>
+            <li>Campanha motivacional trimestral ligando metas de redução de perdas ao engajamento do time.</li>
+          </ul>
+        </div>
+        <div class="mode-panel-side">
+          <span class="mode-side-label">Entregas Integradas</span>
+          <h4 class="mode-side-title">O que fica rodando na empresa:</h4>
+          <div class="mode-tags">
+            <span class="mode-tag">Planilha CMV + Treino</span>
+            <span class="mode-tag">Curva ABC</span>
+            <span class="mode-tag">Gestão Visual</span>
+            <span class="mode-tag">Checklists Anti-Falta</span>
+            <span class="mode-tag">Metas Trimestrais</span>
+          </div>
+          <p class="mode-side-note">
+            “A equipe deixa de depender de ordens verbais o tempo todo e o dono volta a ter cabeça fria para crescer o negócio.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Painel 2: Foco no Empresário -->
+      <div id="mode-dono" class="mode-panel">
+        <div class="mode-panel-main">
+          <h3>Visão cirúrgica de números e método para delegar sem perder o controle</h3>
+          <p>
+            Ideal para o empresário que ainda carrega a operação nas costas ou quer dominar seus custos antes de expandir o time. Construímos o painel de margem real do seu negócio e treinamos você para conduzir a rotina com leveza e autoridade.
+          </p>
+          <ul class="mode-list">
+            <li>Mapeamento de fichas técnicas, custo unitário e precificação segura por categoria.</li>
+            <li>Diagnóstico de Curva ABC para cortar drenos de caixa e destacar itens campeões de margem.</li>
+            <li>Roteiro de rituais semanais curtos de gestão para cobrar resultado com dados, não no grito.</li>
+          </ul>
+        </div>
+        <div class="mode-panel-side">
+          <span class="mode-side-label">Foco na Diretoria</span>
+          <h4 class="mode-side-title">O que você passa a dominar:</h4>
+          <div class="mode-tags">
+            <span class="mode-tag">Fim do CMV Cego</span>
+            <span class="mode-tag">Precificação Real</span>
+            <span class="mode-tag">Ritual de Compras</span>
+            <span class="mode-tag">Leitura de DRE</span>
+          </div>
+          <p class="mode-side-note">
+            “Você para de olhar só o saldo da conta no fim do mês e passa a enxergar onde cada real nasce ou se perde.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Painel 3: Foco na Equipe -->
+      <div id="mode-equipe" class="mode-panel">
+        <div class="mode-panel-main">
+          <h3>Rotina visual clara para o time trabalhar com padrão, agilidade e autonomia</h3>
+          <p>
+            Ótimo para lojas em que os números já estão mapeados, mas o gargalo está na execução diária. Aplicamos dinâmicas práticas de inserção no ponto de venda para eliminar retrabalho, padronizar turnos e blindar o atendimento em dias de falta.
+          </p>
+          <ul class="mode-list">
+            <li>Sistema físico de gestão visual de tarefas para alinhar abertura, reposição e fechamento.</li>
+            <li>Manuais e checklists diretos ao ponto — sem apostilas gigantes que ninguém lê.</li>
+            <li>Treinamento prático de postura, prevenção de quebras e preparação para escalas mais sustentáveis (como transição da 6x1).</li>
+          </ul>
+        </div>
+        <div class="mode-panel-side">
+          <span class="mode-side-label">Foco no Chão de Loja</span>
+          <h4 class="mode-side-title">O que muda no turno a turno:</h4>
+          <div class="mode-tags">
+            <span class="mode-tag">Quadro de Rotinas</span>
+            <span class="mode-tag">Manuais Visuais</span>
+            <span class="mode-tag">Cobertura de Faltas</span>
+            <span class="mode-tag">Zero Retrabalho</span>
+          </div>
+          <p class="mode-side-note">
+            “Quando cada pessoa sabe exatamente o que precisa entregar no turno, o clima melhora e o cliente sente a diferença na hora.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: LINHA DO TEMPO DA VIRADA OPERACIONAL -->
+  <section class="roadmap-section">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag">Engenharia de Margem</span>
+        <h2>Os 4 Marcos para Arrumar a Casa de Verdade</h2>
+        <p>Nosso envolvimento direto nas rotinas da operação segue uma sequência lógica para gerar caixa rápido e sustentar o resultado no longo prazo.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-step reveal">
+          <div class="step-badge">01</div>
+          <div class="step-content">
+            <h3>Fim do CMV Cego e Controle de Perdas</h3>
+            <p>Entregamos uma ferramenta personalizada no método Ardor para registro diário de quebras, descartes e custo real de mercadoria — com treinamento prático para a liderança alimentar e analisar os indicadores.</p>
+            <span class="step-outcome">Resultado: estancamento imediato de vazamentos invisíveis</span>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal delay-1">
+          <div class="step-badge">02</div>
+          <div class="step-content">
+            <h3>Engenharia de Mix e Curva ABC</h3>
+            <p>Cruzamos volume de saída com margem de contribuição real para identificar produtos âncora, itens que estão drenando seu caixa e oportunidades de exposição mais rentável no ponto de venda.</p>
+            <span class="step-outcome">Resultado: mais sobra líquida sobre o mesmo faturamento</span>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal">
+          <div class="step-badge">03</div>
+          <div class="step-content">
+            <h3>Gestão Visual, Manuais e Checklists</h3>
+            <p>Implantamos quadros visuais de fluxo de tarefas e checklists objetivos de abertura, reposição, atendimento e fechamento. Fim das ordens verbais perdidas e cobertura imediata quando alguém falta.</p>
+            <span class="step-outcome">Resultado: operação blindada e menos dependência do dono</span>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal delay-1">
+          <div class="step-badge">04</div>
+          <div class="step-content">
+            <h3>Aculturamento e Programa Motivacional</h3>
+            <p>Desenhamos metas trimestrais claras e bonificações inteligentes que colocam a equipe do mesmo lado do caixa — engajando o time na redução de perdas, no cuidado com o estoque e no aumento do ticket médio.</p>
+            <span class="step-outcome">Resultado: cultura de dono e equipe alinhada ao lucro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: BLOCO ESCURO DE INVESTIMENTO TRANSPARENTE -->
+  <section class="pricing-section" id="investimento">
+    <div class="container">
+      <div class="pricing-header reveal">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">Investimento Claro & Sem Surpresas</span>
+        <h2>Quanto custa organizar a sua operação?</h2>
+        <p>Estrutura executiva traduzida para caber na realidade do comércio local. Quanto mais cedo você estanca perdas de margem, mais rápido o projeto se paga no próprio caixa.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plano Entrada (Até 4 colaboradores) -->
+        <div class="price-card featured reveal">
+          <div>
+            <span class="price-pill">Empresas com até 4 colaboradores</span>
+            <h3>Estruturação & Paz — Entrada</h3>
+            <div class="price-value-wrap">
+              <span class="price-prefix">Planos a partir de</span>
+              <div class="price-amount">3x de <span>R$ 600,00</span></div>
+              <span class="price-subnote">Implantação pontual (a partir de R$ 1.800) • Foco em organização, CMV e rotina</span>
+            </div>
+            <ul class="price-list">
+              <li>Ferramenta personalizada de controle de margem e perdas (CMV) com treinamento prático.</li>
+              <li>Leitura de Curva ABC e revisão de mix focada nos itens mais rentáveis.</li>
+              <li>Gestão visual de rotinas e checklists essenciais para padronizar o dia a dia.</li>
+              <li>Aculturamento prático do empresário e da equipe enxuta sem travar a loja.</li>
+              <li>Otimização técnica inicial do Google Meu Negócio para buscas locais.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20tenho%20uma%20empresa%20com%20at%C3%A9%204%20colaboradores%20e%20quero%20avaliar%20o%20plano%20de%20Opera%C3%A7%C3%A3o%20%26%20Margem%20a%20partir%20de%203x%20de%20R%24%20600." class="btn" style="width: 100%;" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Operacao_Margem_Plano_Entrada' });">
+            Avaliar Minha Loja Neste Plano
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Plano Escala (5+ colaboradores) -->
+        <div class="price-card reveal delay-1">
+          <div>
+            <span class="price-pill">Equipes de 5 a 20+ colaboradores</span>
+            <h3>Estruturação Completa — Escala</h3>
+            <div class="price-value-wrap">
+              <span class="price-prefix">Dimensionamento por porte</span>
+              <div class="price-amount">Sob <span>Diagnóstico</span></div>
+              <span class="price-subnote">Implantação pontual parcelável em até 3x • Para operações com múltiplos setores ou turnos</span>
+            </div>
+            <ul class="price-list">
+              <li>Tudo da frente de entrada adaptado para estruturas com maior volume de equipe e estoque.</li>
+              <li>Manuais completos por função com cobertura de faltas e preparo para transição da escala 6x1.</li>
+              <li>Desenho completo de Campanha Motivacional Trimestral de metas e bonificação.</li>
+              <li>Encontros de aculturamento com liderança e time para garantir adesão real no balcão.</li>
+              <li>Integração opcional com Tráfego Pago, GEO (IA) e Vendas Presenciais & Retenção.</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20tenho%20uma%20equipe%20com%205%20ou%20mais%20colaboradores%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20Opera%C3%A7%C3%A3o%20%26%20Margem." class="btn-light" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Operacao_Margem_Plano_Escala' });">
+            Solicitar Proposta Sob Medida
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="pricing-footnote">
+        Os valores acima referem-se à implantação operacional pontual (Operação & Margem). Caso deseje somar gestão contínua de tráfego pago, presença em IAs ou programas de retenção no ponto físico, montamos o escopo integrado após o diagnóstico.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-final-section">
+    <div class="container">
+      <div class="cta-final-box reveal">
+        <h2>Quer descobrir onde sua operação está perdendo margem hoje?</h2>
+        <p>Faça o diagnóstico rápido em 1 minuto ou chame nossa consultoria direto no WhatsApp para avaliarmos o momento da sua equipe e do seu caixa.</p>
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="ativos-digitais-e-ia.html#scanner" class="btn">
+            Fazer Diagnóstico Gratuito
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20a%20frente%20de%20Opera%C3%A7%C3%A3o%20%26%20Margem%20da%20Ardor." class="btn-ghost" target="_blank" rel="noopener noreferrer" onclick="if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Operacao_Margem_WhatsApp_Final' });">
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Vidro Translúcido Mobile -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Ecossistema Ardor">
+    <div class="mobile-glass-card">
+      <div class="drawer-header">
+        <div class="drawer-header-info">
+          <span class="drawer-title">Ecossistema Ardor</span>
+          <span class="drawer-subtitle">Arquitetura de Gestão</span>
+        </div>
+        <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fechar">✕</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="index.html" class="drawer-link">
+          <span>Página Inicial</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="operacao-e-margem.html" class="drawer-link" style="background: rgba(255, 255, 255, 0.9); border-color: var(--terracotta);">
+          <span>Operação & Margem</span>
+          <span class="drawer-arrow">✓</span>
+        </a>
+        <a href="ativos-digitais-e-ia.html" class="drawer-link">
+          <span>Tráfego & IA Search</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="experiencia-de-salao.html" class="drawer-link">
+          <span>Vendas Presenciais & Retenção</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+        <a href="sobre.html" class="drawer-link">
+          <span>Sobre a Ardor</span>
+          <span class="drawer-arrow">→</span>
+        </a>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="ativos-digitais-e-ia.html#scanner" class="btn drawer-btn-cta">
+          Fazer Diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5511966699449?text=Ol%C3%A1,%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20Opera%C3%A7%C3%A3o%20e%20Margem%20com%20a%20Ardor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://instagram.com/ardorgestao" class="social-icon-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @ardorgestao
+        </a>
+      </div>
+      <div>© 2026 Ardor Gestão e Negócios. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Termômetro Interativo de Vazamentos
+    function toggleLeak(btn) {
+      btn.classList.toggle('checked');
+      const count = document.querySelectorAll('.leak-item.checked').length;
+      const pill = document.getElementById('leakCounterPill');
+      const bar = document.getElementById('leakBarFill');
+      const feedback = document.getElementById('leakFeedback');
+
+      pill.textContent = count + ' de 4 sinais';
+
+      if (count === 0) {
+        bar.style.width = '12%';
+        bar.style.background = '#34D399';
+        pill.style.background = 'rgba(255, 255, 255, 0.08)';
+        pill.style.color = '#9E968E';
+        feedback.innerHTML = '<strong>Marque os pontos acima</strong> para ver o impacto direto na sua margem e qual formato de aculturamento resolve mais rápido.';
+      } else if (count === 1) {
+        bar.style.width = '35%';
+        bar.style.background = '#FBBF24';
+        pill.style.background = 'rgba(251, 191, 36, 0.16)';
+        pill.style.color = '#FBBF24';
+        feedback.innerHTML = '<strong>Alerta Amarelo:</strong> Um vazamento isolado já corrói parte da sua sobra mensal. O ajuste pontual devolve previsibilidade rápido.';
+      } else if (count === 2) {
+        bar.style.width = '65%';
+        bar.style.background = '#F97316';
+        pill.style.background = 'rgba(249, 115, 22, 0.18)';
+        pill.style.color = '#FB923C';
+        feedback.innerHTML = '<strong>Risco Moderado-Alto:</strong> Sua equipe provavelmente trabalha duro, mas parte do esforço vira retrabalho ou quebra invisível no caixa.';
+      } else {
+        bar.style.width = '95%';
+        bar.style.background = '#EF4444';
+        pill.style.background = 'rgba(239, 68, 68, 0.2)';
+        pill.style.color = '#F87171';
+        feedback.innerHTML = '<strong>Sangria Operacional Crítica:</strong> Antes de gastar mais com anúncios, você precisa estancar esses pontos — o próprio ganho de margem costuma pagar a implantação.';
+      }
+    }
+
+    // Seletor de Formato de Aculturamento
+    function selectMode(evt, modeId) {
+      document.querySelectorAll('.mode-card-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.mode-panel').forEach(p => p.classList.remove('active'));
+
+      evt.currentTarget.classList.add('active');
+      const target = document.getElementById(modeId);
+      if (target) target.classList.add('active');
+    }
+
+    // Scroll Reveal & Drawer Mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      reveals.forEach(el => observer.observe(el));
+
+      const openBtn = document.getElementById('openMenuBtn');
+      const closeBtn = document.getElementById('closeMenuBtn');
+      const drawer = document.getElementById('mobileDrawer');
+
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (drawer) {
+        drawer.addEventListener('click', function(e) {
+          if (e.target === drawer) closeDrawer();
+        });
+      }
+    });
+
+    // Logotipo Flutuante
+    (function() {
+      const logo = document.getElementById('ardorLogo');
+      if (logo) {
+        logo.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'index.html';
+        });
+      }
+
+      function onScroll() {
+        const pos = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (pos > 25) {
+          logo.classList.add('scrolled');
+        } else {
+          logo.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
